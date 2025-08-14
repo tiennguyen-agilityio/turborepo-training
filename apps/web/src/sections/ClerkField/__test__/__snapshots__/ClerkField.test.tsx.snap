@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ClerkField matches snapshot 1`] = `
+<div>
+  <div
+    class=""
+  >
+    <label
+      class="mb-1.25"
+    >
+      Username
+    </label>
+    <div
+      class="relative"
+    >
+      <input
+        class="w-full rounded border border-input p-3 text-sm placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50"
+        data-testid="clerk-input"
+        placeholder="Enter username"
+        type="text"
+      />
+    </div>
+    <span
+      class="text-error"
+    >
+      Error
+    </span>
+  </div>
+</div>
+`;

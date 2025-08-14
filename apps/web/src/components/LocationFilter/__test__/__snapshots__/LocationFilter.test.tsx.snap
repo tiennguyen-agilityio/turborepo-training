@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`LocationFilter component should render correctly 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <p
+      class="text-2xl w-fit pb-3 mb-5 border-b-[3px] border-chart-2"
+    >
+      Filter By
+    </p>
+    <div
+      class="w-full bg-sidebar-accent p-5"
+    >
+      <div>
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
+          data-slot="label"
+        >
+          Budget Per Night
+        </label>
+        <span
+          aria-disabled="false"
+          class="relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col"
+          data-orientation="horizontal"
+          data-slot="slider"
+          data-testid="slider"
+          dir="ltr"
+          style="--radix-slider-thumb-transform: translateX(-50%);"
+        >
+          <span
+            class="bg-input relative grow overflow-hidden data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1"
+            data-orientation="horizontal"
+            data-slot="slider-track"
+          >
+            <span
+              class="bg-info absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+              data-orientation="horizontal"
+              data-slot="slider-range"
+              style="left: 0%;"
+            />
+          </span>
+        </span>
+        <div
+          class="flex justify-between mt-3"
+        >
+          <span>
+            KES. 
+            0
+          </span>
+          <span>
+            KES. 
+            0
+          </span>
+        </div>
+      </div>
+      <div
+        class="w-full border-t border-dashed border-border my-4"
+      />
+      <div
+        class="mt-1"
+      >
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          data-slot="label"
+        >
+          Location
+        </label>
+        <div
+          class="flex flex-wrap mt-3 gap-2.5"
+        >
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="all"
+            type="button"
+          >
+            Anywhere
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="camp kadolta"
+            type="button"
+          >
+            Camp Kadolta
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="mombasa"
+            type="button"
+          >
+            Mombasa
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="suswa conservancy"
+            type="button"
+          >
+            Suswa Conservancy
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="lewa conservancy"
+            type="button"
+          >
+            Lewa Conservancy
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="ol dubai campsite"
+            type="button"
+          >
+            Ol Dubai Campsite
+          </button>
+        </div>
+      </div>
+      <div
+        class="w-full border-t border-dashed border-border my-4"
+      />
+      <div
+        class="mt-1"
+      >
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          data-slot="label"
+        >
+          Category
+        </label>
+        <div
+          class="flex flex-wrap mt-3 gap-2.5"
+        >
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Anywhere
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Historic Site
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Monument
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Archaeological Site
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Marine Reserve
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Notable Building
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Hot Springs
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LocationFilter component should render correctly with default value locations, categories 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <p
+      class="text-2xl w-fit pb-3 mb-5 border-b-[3px] border-chart-2"
+    >
+      Filter By
+    </p>
+    <div
+      class="w-full bg-sidebar-accent p-5"
+    >
+      <div>
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
+          data-slot="label"
+        >
+          Budget Per Night
+        </label>
+        <span
+          aria-disabled="false"
+          class="relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col"
+          data-orientation="horizontal"
+          data-slot="slider"
+          data-testid="slider"
+          dir="ltr"
+          style="--radix-slider-thumb-transform: translateX(-50%);"
+        >
+          <span
+            class="bg-input relative grow overflow-hidden data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1"
+            data-orientation="horizontal"
+            data-slot="slider-track"
+          >
+            <span
+              class="bg-info absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+              data-orientation="horizontal"
+              data-slot="slider-range"
+              style="left: 0%;"
+            />
+          </span>
+        </span>
+        <div
+          class="flex justify-between mt-3"
+        >
+          <span>
+            KES. 
+            0
+          </span>
+          <span>
+            KES. 
+            0
+          </span>
+        </div>
+      </div>
+      <div
+        class="w-full border-t border-dashed border-border my-4"
+      />
+      <div
+        class="mt-1"
+      >
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          data-slot="label"
+        >
+          Location
+        </label>
+        <div
+          class="flex flex-wrap mt-3 gap-2.5"
+        >
+          <button
+            aria-pressed="true"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="on"
+            data-testid="all"
+            type="button"
+          >
+            Anywhere
+          </button>
+          <button
+            aria-pressed="true"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="on"
+            data-testid="camp kadolta"
+            type="button"
+          >
+            Camp Kadolta
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="mombasa"
+            type="button"
+          >
+            Mombasa
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="suswa conservancy"
+            type="button"
+          >
+            Suswa Conservancy
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="lewa conservancy"
+            type="button"
+          >
+            Lewa Conservancy
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            data-testid="ol dubai campsite"
+            type="button"
+          >
+            Ol Dubai Campsite
+          </button>
+        </div>
+      </div>
+      <div
+        class="w-full border-t border-dashed border-border my-4"
+      />
+      <div
+        class="mt-1"
+      >
+        <label
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          data-slot="label"
+        >
+          Category
+        </label>
+        <div
+          class="flex flex-wrap mt-3 gap-2.5"
+        >
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Anywhere
+          </button>
+          <button
+            aria-pressed="true"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="on"
+            type="button"
+          >
+            Historic Site
+          </button>
+          <button
+            aria-pressed="true"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="on"
+            type="button"
+          >
+            Monument
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Archaeological Site
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Marine Reserve
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Notable Building
+          </button>
+          <button
+            aria-pressed="false"
+            class="inline-flex items-center justify-center gap-2 text-md font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap cursor-pointer p-2 px-4 text-current rounded-none border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-info data-[state=on]:text-background h-auto min-w-9"
+            data-slot="toggle"
+            data-state="off"
+            type="button"
+          >
+            Hot Springs
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

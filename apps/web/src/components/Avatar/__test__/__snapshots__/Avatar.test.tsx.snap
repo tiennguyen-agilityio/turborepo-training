@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Avatar component should render correctly 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    >
+      TN
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Avatar component should render correctly has new activity 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    >
+      TN
+    </span>
+    <div
+      class="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full"
+    >
+      <div
+        class="w-2.25 h-2.25 bg-error rounded-full"
+      />
+    </div>
+  </span>
+</div>
+`;
+
+exports[`Avatar component should render correctly with default image 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    />
+  </span>
+</div>
+`;
+
+exports[`Avatar component should render correctly with fallback 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    >
+      TN
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Avatar component should render correctly with fallback has new activity 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    >
+      TN
+    </span>
+    <div
+      class="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full"
+    >
+      <div
+        class="w-2.25 h-2.25 bg-error rounded-full"
+      />
+    </div>
+  </span>
+</div>
+`;
+
+exports[`Avatar component should render correctly with size lg 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-16.5"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    >
+      TN
+    </span>
+  </span>
+</div>
+`;

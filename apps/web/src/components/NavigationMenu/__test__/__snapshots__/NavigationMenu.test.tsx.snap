@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`NavigationMenu should render correctly 1`] = `
+<div>
+  <nav
+    aria-label="Main"
+    class="group/navigation-menu relative flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    data-slot="navigation-menu"
+    data-viewport="true"
+    dir="ltr"
+  >
+    <div
+      style="position: relative;"
+    >
+      <ul
+        class="group flex flex-1 list-none items-center justify-center gap-2 md:gp-3 lg:gap-5"
+        data-orientation="horizontal"
+        data-slot="navigation-menu-list"
+        data-testid="menu"
+        dir="ltr"
+      >
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/camping-locations"
+          >
+            <span
+              class=""
+            >
+              Camping Locations
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/activities"
+          >
+            <span
+              class=""
+            >
+              Activities
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/equipment"
+          >
+            <span
+              class=""
+            >
+              Equipment
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/blogs"
+          >
+            <span
+              class=""
+            >
+              Blogs
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="absolute top-full left-0 isolate z-50 flex justify-center"
+    />
+  </nav>
+</div>
+`;
+
+exports[`NavigationMenu should render correctly Activities 1`] = `
+<div>
+  <nav
+    aria-label="Main"
+    class="group/navigation-menu relative flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    data-slot="navigation-menu"
+    data-viewport="true"
+    dir="ltr"
+  >
+    <div
+      style="position: relative;"
+    >
+      <ul
+        class="group flex flex-1 list-none items-center justify-center gap-2 md:gp-3 lg:gap-5"
+        data-orientation="horizontal"
+        data-slot="navigation-menu-list"
+        data-testid="menu"
+        dir="ltr"
+      >
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold text-primary"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/camping-locations"
+          >
+            <span
+              class="text-primary"
+            >
+              Camping Locations
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-100 bg-primary"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/activities"
+          >
+            <span
+              class=""
+            >
+              Activities
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/equipment"
+          >
+            <span
+              class=""
+            >
+              Equipment
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+        <li
+          class="relative pt-3"
+          data-slot="navigation-menu-item"
+        >
+          <a
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            data-radix-collection-item=""
+            data-slot="navigation-menu-link"
+            href="/blogs"
+          >
+            <span
+              class=""
+            >
+              Blogs
+            </span>
+            <span
+              class="w-2 h-2 rounded-full transition-opacity opacity-0"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="absolute top-full left-0 isolate z-50 flex justify-center"
+    />
+  </nav>
+</div>
+`;

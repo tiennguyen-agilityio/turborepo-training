@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Loading test cases should render correctly 1`] = `
+<div>
+  <div
+    class="flex flex-col items-center justify-center h-screen w-full gap-4"
+  >
+    <div
+      class="animate-spin rounded-full size-12 border-4 border-t-transparent"
+    />
+    <span
+      class="text-sm text-current"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
