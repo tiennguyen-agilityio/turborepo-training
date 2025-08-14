@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`StatisticsSection component should render correctly 1`] = `
+<div>
+  <section
+    class="container mx-auto flex justify-between flex-wrap md:flex-nowrap my-20 px-5"
+  >
+    <div
+      class="w-1/2 md:w-1/4"
+    >
+      <div
+        class="w-full"
+      >
+        <h6
+          class="text-sm font-primary mb-4"
+        >
+          Camping Locations
+        </h6>
+        <span
+          class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]"
+        >
+          68+
+        </span>
+      </div>
+    </div>
+    <div
+      class="w-1/2 md:w-1/4"
+    >
+      <div
+        class="w-full"
+      >
+        <h6
+          class="text-sm font-primary mb-4"
+        >
+          Hotels
+        </h6>
+        <span
+          class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]"
+        >
+          102+
+        </span>
+      </div>
+    </div>
+    <div
+      class="w-1/2 md:w-1/4"
+    >
+      <div
+        class="w-full"
+      >
+        <h6
+          class="text-sm font-primary mb-4"
+        >
+          Activities
+        </h6>
+        <span
+          class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]"
+        >
+          84+
+        </span>
+      </div>
+    </div>
+    <div
+      class="w-1/2 md:w-1/4"
+    >
+      <div
+        class="w-full"
+      >
+        <h6
+          class="text-sm font-primary mb-4"
+        >
+          Equipment Providers
+        </h6>
+        <span
+          class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]"
+        >
+          35+
+        </span>
+      </div>
+    </div>
+  </section>
+</div>
+`;

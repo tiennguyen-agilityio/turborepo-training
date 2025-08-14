@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Divider component should render correctly 1`] = `
+<div>
+  <div
+    class="shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px w-full bg-input relative"
+    data-orientation="horizontal"
+    data-slot="separator"
+    role="none"
+  />
+</div>
+`;
+
+exports[`Divider component should render with text 1`] = `
+<div>
+  <div
+    class="shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px w-full bg-input relative"
+    data-orientation="horizontal"
+    data-slot="separator"
+    role="none"
+  >
+    <span
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 bg-background z-2"
+    >
+      OR
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`AlertDialog component should render correctly 1`] = `<div />`;
+
+exports[`AlertDialog component should render correctly with full props 1`] = `
+<div>
+  <button
+    aria-controls="radix-«r3»"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:text-accent-foreground dark:hover:bg-accent/50 has-[>svg]:px-3 p-0 h-auto hover:bg-transparent"
+    data-slot="alert-dialog-trigger"
+    data-state="closed"
+    data-testid="btn-confirm"
+    type="button"
+  >
+    Click me!
+  </button>
+</div>
+`;

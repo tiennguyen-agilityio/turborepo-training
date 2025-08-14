@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ExperienceItem component should render correctly 1`] = `
+<div>
+  <div
+    class="max-w-fit"
+  >
+    <h6
+      class="text-sm uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
+    >
+      Check out
+    </h6>
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 p-0 sm:pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline"
+      data-slot="button"
+    >
+      Top Camping Sites
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ExperienceItem component should render with active true 1`] = `
+<div>
+  <div
+    class="max-w-fit"
+  >
+    <h6
+      class="text-sm uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
+    >
+      Check out
+    </h6>
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 capitalize w-fit h-fit text-sm rounded-none md:text-base text-center lg:text-left border-b-1 p-0 sm:pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline text-accent-foreground border-b-accent-foreground"
+      data-slot="button"
+    >
+      Top Camping Sites
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ExperienceItem component should render with only title 1`] = `
+<div>
+  <div
+    class="max-w-fit"
+  >
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 p-0 sm:pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline"
+      data-slot="button"
+    >
+      Top Camping Sites
+    </button>
+  </div>
+</div>
+`;

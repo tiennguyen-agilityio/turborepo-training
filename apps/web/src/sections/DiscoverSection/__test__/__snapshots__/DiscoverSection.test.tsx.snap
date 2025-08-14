@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DiscoverSection renders correctly and matches snapshot 1`] = `
+<div>
+  <section
+    class="bg-sidebar-accent py-24"
+  >
+    <div
+      class="container mx-auto px-5"
+    >
+      <h6
+        class="text-sm font-bold text-ring mb-5"
+      >
+        DISCOVER
+      </h6>
+      <div>
+        <div>
+          <p>
+            Discover 1
+          </p>
+          <img
+            alt="Discover 1"
+            src="https://example.com/1.png"
+          />
+        </div>
+        <div>
+          <p>
+            Discover 2
+          </p>
+          <img
+            alt="Discover 2"
+            src="https://example.com/2.png"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
