@@ -1,11 +1,16 @@
 {
   "name": "turborepo-training",
   "private": true,
+  "packageManager": "yarn@1.22.22",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "build": "turbo run build"
+  },
   "devDependencies": {
     "turbo": "^2.5.5"
   }
