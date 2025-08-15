@@ -8,7 +8,7 @@ const UserLayout = ({
   return (
     <Layout hasBorderBottomHeader>
       <div className="flex flex-col items-center justify-center py-15 pt-35">{children}</div>
-		</Layout>
+    </Layout>
   );
 };
 
