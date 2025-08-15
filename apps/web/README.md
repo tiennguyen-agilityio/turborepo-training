@@ -36,14 +36,11 @@
 
 - [Shadcn](https://v3.shadcn.com/docs/installation)
 
-
 ## Timeline
 
 - Estimated time: 3 weeks
-
-	- Read and apply Clerk: 8 days
-	
-	- Read and apply Shadcn: 7 days
+  - Read and apply Clerk: 8 days
+  - Read and apply Shadcn: 7 days
 
 ## Time size
 
@@ -62,7 +59,6 @@
 - Using Shadcn to build your component library
 
 - Deploy on [Vercel](https://vercel.com)
-
 
 ## Features
 
@@ -90,16 +86,16 @@
 
 #### Step by step to run this app in your local:
 
-| Command                                                                     | Action                                         |
-|:----------------------------------------------------------------------------|:-----------------------------------------------|
-| `git clone git@gitlab.asoft-python.com:tien.nguyen/nextjs-training.git`     | Download source code                           |
-| `cd nextjs-training`                                                        | Move to folder                                 |
-| `git checkout feature/apply-shadcn`                                         | Move branch                                    |
-| `cd travel-landing-page`                                                    | Move to the folder containing the source code  |
-| `pnpm install`                                                              | Installs dependencies                          |
-| `pnpm test`                                                                 | Run test                                       |
-| `pnpm storybook`                                                            | Preview UI component: `http://localhost:6006`  |
-| `pnpm dev`                                                                  | Starts local dev server at `localhost:3000`    |
-| `pnpm start`                                                                | Preview your build locally: `localhost:3000`   |
+| Command                                                                 | Action                                        |
+| :---------------------------------------------------------------------- | :-------------------------------------------- |
+| `git clone git@gitlab.asoft-python.com:tien.nguyen/nextjs-training.git` | Download source code                          |
+| `cd nextjs-training`                                                    | Move to folder                                |
+| `git checkout feature/apply-shadcn`                                     | Move branch                                   |
+| `cd travel-landing-page`                                                | Move to the folder containing the source code |
+| `pnpm install`                                                          | Installs dependencies                         |
+| `pnpm test`                                                             | Run test                                      |
+| `pnpm storybook`                                                        | Preview UI component: `http://localhost:6006` |
+| `pnpm dev`                                                              | Starts local dev server at `localhost:3000`   |
+| `pnpm start`                                                            | Preview your build locally: `localhost:3000`  |
 
 > Note: Before running `pnpm dev` or `pnpm start`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)

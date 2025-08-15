@@ -115,7 +115,9 @@ describe("webhookHandler", () => {
   });
 
   it("should skip updateUser when user does not exist", async () => {
-    (userService.fetchUserById as jest.Mock).mockResolvedValue({ user: undefined });
+    (userService.fetchUserById as jest.Mock).mockResolvedValue({
+      user: undefined,
+    });
 
     const req = mockRequest("user.updated");
     const res = await webhookHandler(req);
@@ -146,7 +148,9 @@ describe("webhookHandler", () => {
   });
 
   it("should skip deleteUser when user does not exist", async () => {
-    (userService.fetchUserById as jest.Mock).mockResolvedValue({ user: undefined });
+    (userService.fetchUserById as jest.Mock).mockResolvedValue({
+      user: undefined,
+    });
 
     const req = mockRequest("user.deleted");
     const res = await webhookHandler(req);
