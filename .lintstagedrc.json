@@ -1,0 +1,7 @@
+{
+  "apps/web/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config apps/web/eslint.config.mjs --fix",
+    "prettier --write --ignore-unknown"
+  ],
+  "**/*.{json,md,css}": ["prettier --write --ignore-unknown"]
+}
