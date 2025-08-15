@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "turbo run dev",
     "start": "turbo run start",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "turbo": "^2.5.5"

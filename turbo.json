@@ -1,5 +1,16 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "./node_modules/turbo/schema.json",
+	"globalEnv": [
+		"CLERK_SECRET_KEY",
+		"NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+		"NEXT_PUBLIC_CLERK_SIGN_IN_URL",
+		"NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL",
+		"NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL",
+		"NEXT_PUBLIC_CLERK_SIGN_UP_URL",
+		"NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL",
+		"NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL",
+		"NEXT_PUBLIC_API_URL"
+	],
   "tasks": {
     "dev": {
       "cache": false
@@ -12,6 +23,14 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "dist/**"]
     },
-    "lint": {}
+		"test": {
+      "dependsOn": ["^test"]
+    },
+    "lint": {
+			"dependsOn": ["^lint"]
+		},
+    "clean": {
+      "cache": false
+    }
   }
 }

@@ -14,7 +14,7 @@ import {
 
 import Button from "../Button";
 
-interface AlertDialogProps {
+export interface AlertDialogProps {
   title: string;
   description?: string;
   textButton?: string;
