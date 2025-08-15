@@ -5,12 +5,12 @@ import { Experience } from "@/types/common";
 import Heading from "../Heading";
 import Button from "../Button";
 
-interface ExperienceItem extends Experience {
+export interface ExperienceItemProps extends Experience {
   isActive?: boolean;
   onClick?: () => void;
 }
 
-const ExperienceItem = ({ title, label = "", isActive = false, onClick }: ExperienceItem) => {
+const ExperienceItem = ({ title, label = "", isActive = false, onClick }: ExperienceItemProps) => {
   return (
     <div className="max-w-fit">
       {label && (

@@ -1,18 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { useState } from "react";
 
-import ExperienceItem from ".";
+import ExperienceItem, {ExperienceItemProps} from ".";
 
+const ExperienceItemWithState = (props: ExperienceItemProps) => {
+  const [value, setValue] = useState("");
+  const handleClick = () => setValue("checkout");
+
+  return (
+    <ExperienceItem
+      {...props}
+      isActive={value === "checkout"}
+      onClick={handleClick}
+    />
+  );
+}
 const meta: Meta<typeof ExperienceItem> = {
   title: "Components/ExperienceItem",
   component: ExperienceItem,
-  render: (props) => {
-    const [value, setValue] = useState("");
-
-    const handleClick = () => setValue("checkout");
-
-    return <ExperienceItem {...props} isActive={value === "checkout"} onClick={handleClick} />;
-  },
+  render: (props) => <ExperienceItemWithState {...props} />,
 };
 
 export default meta;
