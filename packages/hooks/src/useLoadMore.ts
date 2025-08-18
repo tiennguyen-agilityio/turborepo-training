@@ -8,7 +8,10 @@ type UseLoadMoreOptions<T> = {
   limit?: number;
 };
 
-export const useLoadMore = <T>({ fetcher, limit = PAGE_SIZE }: UseLoadMoreOptions<T>) => {
+export const useLoadMore = <T>({
+  fetcher,
+  limit = PAGE_SIZE,
+}: UseLoadMoreOptions<T>) => {
   const [data, setData] = useState<T[]>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);

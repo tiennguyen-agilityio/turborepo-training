@@ -15,7 +15,7 @@
     "utils": "@repo/utils/styles",
     "ui": "@/components/ui",
     "lib": "@/lib",
-    "hooks": "@/hooks"
+    "hooks": "@repo/hooks"
   },
   "iconLibrary": "lucide"
 }

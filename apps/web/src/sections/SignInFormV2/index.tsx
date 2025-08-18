@@ -14,7 +14,7 @@ import { ERROR_MESSAGES } from "@repo/constants/messages";
 import { ROUTES } from "@repo/constants/routes";
 
 // Hooks
-import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
 
 // Components
 import Input from "@/components/Input";
