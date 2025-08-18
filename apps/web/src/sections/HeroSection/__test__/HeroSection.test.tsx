@@ -7,11 +7,11 @@ import Button from "@/components/Button";
 import HeroSection from "..";
 
 // Mock constants
-jest.mock("@/constants/common", () => ({
+jest.mock("@repo/constants/common", () => ({
   EXPERIENCES: [{ id: 1, title: "Hiking" }],
 }));
 
-jest.mock("@/constants/video", () => ({
+jest.mock("@repo/constants/video", () => ({
   HOME_VIDEO: {
     src: "/video.mp4",
     poster: "/poster.jpg",

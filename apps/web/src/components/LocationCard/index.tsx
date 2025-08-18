@@ -7,7 +7,7 @@ import Image from "next/image";
 import { LocationItem } from "@repo/types/location";
 
 // Constants
-import { EMPTY_IMAGE } from "@/constants/images";
+import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
 import { formatMinutes } from "@/utils/time";

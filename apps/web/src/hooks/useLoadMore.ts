@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { PAGE_SIZE } from "@/constants/common";
+import { PAGE_SIZE } from "@repo/constants/common";
 import { QueryParams, Response } from "@repo/types/api";
 
 type UseLoadMoreOptions<T> = {

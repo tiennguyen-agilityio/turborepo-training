@@ -1,4 +1,4 @@
-import { CAROUSELS } from "@/constants/carousel";
+import { CAROUSELS } from "@repo/constants/carousel";
 
 import Heading from "@/components/Heading";
 import Carousel from "@/components/Carousel";

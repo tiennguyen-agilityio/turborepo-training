@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import { EXPERIENCES } from "@/constants/common";
-import { HOME_VIDEO } from "@/constants/video";
+import { EXPERIENCES } from "@repo/constants/common";
+import { HOME_VIDEO } from "@repo/constants/video";
 
 import Experiences from "@/components/Experiences";
 import VideoPlayer from "@/components/VideoPlayer";

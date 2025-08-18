@@ -1,5 +1,5 @@
-import { API_ROUTES } from "@/constants/routes";
-import { PAGE_SIZE } from "@/constants/common";
+import { API_ROUTES } from "@repo/constants/routes";
+import { PAGE_SIZE } from "@repo/constants/common";
 import { LOCATIONS } from "@/mocks/location";
 
 import { fetchLocations } from "../location";

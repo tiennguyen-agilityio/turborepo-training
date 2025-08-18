@@ -7,7 +7,7 @@ import { useSignIn, useSignUp } from "@clerk/nextjs";
 import { OAuthStrategy } from "@repo/types/auth";
 
 // Constants
-import { ERROR_MESSAGES } from "@/constants/messages";
+import { ERROR_MESSAGES } from "@repo/constants/messages";
 
 // Components
 import Button from "@/components/Button";

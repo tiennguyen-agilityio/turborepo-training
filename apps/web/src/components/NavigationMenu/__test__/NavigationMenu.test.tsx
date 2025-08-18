@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import { NAV_BAR } from "@/constants/nav";
+import { NAV_BAR } from "@repo/constants/nav";
 
 import NavigationMenu from "..";
 

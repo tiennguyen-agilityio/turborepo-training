@@ -9,9 +9,9 @@ import { useForm } from "react-hook-form";
 import { VerifyFormData } from "@repo/types/auth";
 
 // Constants
-import { SCHEMA } from "@/constants/validation";
-import { ERROR_MESSAGES } from "@/constants/messages";
-import { ROUTES } from "@/constants/routes";
+import { SCHEMA } from "@repo/constants/validation";
+import { ERROR_MESSAGES } from "@repo/constants/messages";
+import { ROUTES } from "@repo/constants/routes";
 
 // Components
 import Input from "@/components/Input";

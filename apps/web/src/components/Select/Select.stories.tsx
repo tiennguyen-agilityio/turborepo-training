@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { MONTHS } from "@/constants";
+import { MONTHS } from "@repo/constants/common";
 
 import Select from ".";
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { EXPERIENCES } from "@/constants/common";
+import { EXPERIENCES } from "@repo/constants/common";
 
 import Experiences from ".";
 

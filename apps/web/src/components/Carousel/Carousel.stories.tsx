@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import Carousel from ".";
-import { CAROUSELS } from "@/constants";
+import { CAROUSELS } from "@repo/constants/carousel";
 
 const meta: Meta<typeof Carousel> = {
   title: "Components/Carousel",

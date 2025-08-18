@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HOME_VIDEO } from "@/constants/video";
+import { HOME_VIDEO } from "@repo/constants/video";
 import VideoPlayer from "@/components/VideoPlayer";
 import HeroSection from "@/sections/HeroSection";
 import CarouselSection from "@/sections/CarouselSection";

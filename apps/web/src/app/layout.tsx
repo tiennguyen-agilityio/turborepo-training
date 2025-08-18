@@ -3,7 +3,7 @@ import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@/themes/theme.css";
 
-import { LOCALIZATION } from "@/constants/localization";
+import { LOCALIZATION } from "@repo/constants/localization";
 import { abel } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
 import SessionWatcher from "@/components/SessionWatcher";

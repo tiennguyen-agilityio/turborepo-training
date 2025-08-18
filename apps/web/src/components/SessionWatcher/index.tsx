@@ -5,8 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 // Constants
-import { ROUTES } from "@/constants/routes";
-import { LOCAL_STORAGE_KEYS } from "@/constants/common";
+import { ROUTES } from "@repo/constants/routes";
+import { LOCAL_STORAGE_KEYS } from "@repo/constants/common";
 
 // Components
 import AlertDialog from "../AlertDialog";

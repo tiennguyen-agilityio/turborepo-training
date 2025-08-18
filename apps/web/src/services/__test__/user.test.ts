@@ -1,4 +1,4 @@
-import { API_ROUTES } from "@/constants/routes";
+import { API_ROUTES } from "@repo/constants/routes";
 import { USERS } from "@/mocks/user";
 
 import { fetchUsers, fetchUserById, createUser, updateUser, deleteUser, UserJSON } from "../user";

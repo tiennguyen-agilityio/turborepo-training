@@ -1,6 +1,6 @@
 import React from "react";
 
-import { STATISTICS_BY_SERVICES } from "@/constants/common";
+import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
 
 import StatisticsCard from "@/components/StatisticsCard";
 

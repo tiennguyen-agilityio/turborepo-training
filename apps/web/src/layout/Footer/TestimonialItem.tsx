@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 // Constants
-import { DEFAULT_AVATAR } from "@/constants/images";
+import { DEFAULT_AVATAR } from "@repo/constants/images";
 
 // Utils
 import { generateImageToBase64 } from "@/utils/images";

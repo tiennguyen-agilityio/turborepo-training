@@ -9,9 +9,9 @@ import { toast } from "sonner";
 import { DIRECTION } from "@repo/types/svg";
 
 // Constants
-import { LOCAL_STORAGE_KEYS } from "@/constants/common";
-import { USER_DROPDOWNS, USER_DROPDOWNS_LENGTH } from "@/constants/nav";
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@/constants/messages";
+import { LOCAL_STORAGE_KEYS } from "@repo/constants/common";
+import { USER_DROPDOWNS, USER_DROPDOWNS_LENGTH } from "@repo/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
 
 // Utils
 import { cn } from "@/utils/styles";
@@ -27,7 +27,7 @@ import Avatar from "../Avatar";
 import ChevronIcon from "../Icons/ChevronIcon";
 import AlertDialog from "../AlertDialog";
 import Button from "../Button";
-import { ROUTES } from "@/constants";
+import { ROUTES } from "@repo/constants/routes";
 
 interface UserDropdownProps {
   onChange?: () => void;

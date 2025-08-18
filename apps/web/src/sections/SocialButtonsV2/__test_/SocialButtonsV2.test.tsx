@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { OAuthStrategy } from "@repo/types/auth";
 
-import { ERROR_MESSAGES } from "@/constants/messages";
+import { ERROR_MESSAGES } from "@repo/constants/messages";
 import SocialButtonsV2 from "..";
 
 // Mocks

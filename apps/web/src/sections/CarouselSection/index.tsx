@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CAROUSELS } from "@/constants/carousel";
+import { CAROUSELS } from "@repo/constants/carousel";
 
 import Carousel from "@/components/Carousel";
 

@@ -1,4 +1,4 @@
-import { API_ROUTES } from "@/constants";
+import { API_ROUTES } from "@repo/constants/routes";
 import { User as ClerkUser, UserJSON as ClerkUserJSON } from "@clerk/nextjs/server";
 
 export interface User extends ClerkUser {

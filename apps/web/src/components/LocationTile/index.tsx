@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Constants
-import { EMPTY_IMAGE } from "@/constants/images";
+import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
 import { generateImageToBase64 } from "@/utils/images";
