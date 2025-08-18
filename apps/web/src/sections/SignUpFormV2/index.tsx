@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 // Types
-import { SignUpFormData } from "@/types/auth";
+import { SignUpFormData } from "@repo/types/auth";
 
 // Constants
 import { SCHEMA } from "@/constants/validation";

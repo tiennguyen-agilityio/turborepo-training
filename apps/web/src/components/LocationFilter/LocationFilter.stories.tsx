@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { Filter } from "@/types/common";
+import { Filter } from "@repo/types/common";
 
 import FilterSection from ".";
 

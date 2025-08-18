@@ -6,7 +6,7 @@ import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/utils/styles";
 
-import { DIRECTION } from "@/types/svg";
+import { DIRECTION } from "@repo/types/svg";
 
 import ChevronIcon from "../Icons/ChevronIcon";
 import CheckIcon from "../Icons/CheckIcon";

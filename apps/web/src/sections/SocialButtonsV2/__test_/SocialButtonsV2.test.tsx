@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { OAuthStrategy } from "@/types/auth";
+import { OAuthStrategy } from "@repo/types/auth";
 
 import { ERROR_MESSAGES } from "@/constants/messages";
 import SocialButtonsV2 from "..";

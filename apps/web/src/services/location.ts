@@ -1,8 +1,8 @@
 import { PAGE_SIZE } from "@/constants/common";
 import { API_ROUTES } from "@/constants/routes";
-import { QueryParams, Response } from "@/types/api";
 
-import { LocationItem } from "@/types/location";
+import { QueryParams, Response } from "@repo/types/api";
+import { LocationItem } from "@repo/types/location";
 
 export const fetchLocations = async ({
   page = 1,

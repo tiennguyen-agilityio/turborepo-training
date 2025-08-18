@@ -4,7 +4,7 @@ import { memo, useCallback, useState } from "react";
 
 import { LOCATIONS, CATEGORIES } from "@/constants/common";
 
-import { Filter } from "@/types/common";
+import { Filter } from "@repo/types/common";
 
 import { formatAmount } from "@/utils/common";
 
