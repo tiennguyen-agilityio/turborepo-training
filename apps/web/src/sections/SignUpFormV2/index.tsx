@@ -15,7 +15,7 @@ import { DAYS, MONTHS, YEARS } from "@repo/constants/common";
 import { ROUTES } from "@repo/constants/routes";
 
 // Hooks
-import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
 
 // Components
 import Input from "@/components/Input";

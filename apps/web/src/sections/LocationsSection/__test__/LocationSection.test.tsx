@@ -2,13 +2,13 @@ import { ComponentProps } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { PAGE_SIZE } from "@repo/constants/common";
-import { useLoadMore } from "@/hooks/useLoadMore";
+import { useLoadMore } from "@repo/hooks/useLoadMore";
 
 import LocationCard from "@/components/LocationCard";
 import Button from "@/components/Button";
 import LocationsSection from "..";
 
-jest.mock("@/hooks/useLoadMore");
+jest.mock("@repo/hooks/useLoadMore");
 jest.mock("@/components/LocationCard", () => {
   const MockLocationCard = (props: ComponentProps<typeof LocationCard>) => (
     <div data-testid="location-card">{props.item.name}</div>

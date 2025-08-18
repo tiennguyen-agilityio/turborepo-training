@@ -18,7 +18,7 @@
       "dependsOn": ["@repo/utils#build"]
     },
     "start": {
-      "dependsOn": ["^start"],
+      "dependsOn": ["@repo/utils#build", "^start"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build": {
@@ -30,6 +30,10 @@
     },
     "lint": {
       "dependsOn": ["^lint"]
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "outputs": []
     },
     "clean": {
       "cache": false,

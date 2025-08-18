@@ -4,7 +4,7 @@ import * as SignIn from "@clerk/elements/sign-in";
 import * as Clerk from "@clerk/elements/common";
 
 // Hooks
-import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
 
 // Components
 import Button from "@/components/Button";

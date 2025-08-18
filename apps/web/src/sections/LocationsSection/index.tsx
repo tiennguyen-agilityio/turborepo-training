@@ -7,7 +7,7 @@ import { LocationItem } from "@repo/types/location";
 import { PAGE_SIZE } from "@repo/constants/common";
 
 // Hooks
-import { useLoadMore } from "@/hooks/useLoadMore";
+import { useLoadMore } from "@repo/hooks/useLoadMore";
 
 // Services
 import { fetchLocations } from "@/services/location";

@@ -7,7 +7,7 @@ import * as SignUp from "@clerk/elements/sign-up";
 import { DAYS, MONTHS, YEARS } from "@repo/constants/common";
 
 // Hooks
-import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
 
 // Components
 import Button from "@/components/Button";

@@ -24,14 +24,20 @@ export const useCleanClerkUrl = () => {
 
     const parsed = new URLSearchParams(hash.replace(/^#\/?\??/, ""));
 
-    const signInRedirect = parsed.get("sign_in_force_redirect_url") || undefined;
-    const signUpRedirect = parsed.get("sign_up_force_redirect_url") || undefined;
+    const signInRedirect =
+      parsed.get("sign_in_force_redirect_url") || undefined;
+    const signUpRedirect =
+      parsed.get("sign_up_force_redirect_url") || undefined;
     const afterSignInUrl = parsed.get("after_sign_in_url") || undefined;
     const afterSignUpUrl = parsed.get("after_sign_up_url") || undefined;
     const redirectUrl = parsed.get("redirect_url") || undefined;
 
     const needsCleaning =
-      signInRedirect || signUpRedirect || afterSignInUrl || afterSignUpUrl || redirectUrl;
+      signInRedirect ||
+      signUpRedirect ||
+      afterSignInUrl ||
+      afterSignUpUrl ||
+      redirectUrl;
 
     if (needsCleaning) {
       router.replace(pathname);

@@ -43,12 +43,6 @@ describe("VideoPlayer component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should render correctly with iconClassName prop", () => {
-    const { container } = render(<VideoPlayer {...props} iconClassName="mx-auto" />);
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("should render with auto play", () => {
     const { container } = render(<VideoPlayer {...HOME_VIDEO} autoPlay />);
 

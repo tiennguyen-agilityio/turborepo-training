@@ -1,0 +1,29 @@
+{
+  "name": "@repo/hooks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./useCleanClerkUrl": "./src/useCleanClerkUrl.ts",
+    "./useLoadMore": "./src/useLoadMore.ts"
+  },
+  "dependencies": {
+    "@repo/constants": "*",
+    "@repo/types": "*"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/prettier-config": "*",
+    "@repo/typescript-config": "*"
+  }
+}
