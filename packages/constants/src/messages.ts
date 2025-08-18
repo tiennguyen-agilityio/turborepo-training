@@ -6,8 +6,10 @@ export const ERROR_MESSAGES = {
   PASSWORD_NOT_LONG: "Your password must be at least 8 characters long",
   PASSWORD_NOT_MATCH: "Password and Confirm password do not match",
   PASSWORD_NOT_HAVE_NUMBER: "Your password must contain at least one number",
-  PASSWORD_NOT_HAVE_UPPERCASE: "Your password must contain at least one uppercase character",
-  PASSWORD_NOT_HAVE_SYMBOL: "Your password must contain at least one special character",
+  PASSWORD_NOT_HAVE_UPPERCASE:
+    "Your password must contain at least one uppercase character",
+  PASSWORD_NOT_HAVE_SYMBOL:
+    "Your password must contain at least one special character",
   LOGIN_FAILED: "Email or password is incorrect!",
   USERNAME_INVALID: "Username can only contain letters, numbers and - or _.",
   CODE_INVALID: "Verification code must contain only numbers.",

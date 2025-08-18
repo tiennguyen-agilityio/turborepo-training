@@ -1,4 +1,4 @@
-import { HOME_VIDEO } from "@/constants/video";
+import { HOME_VIDEO } from "@repo/constants/video";
 
 import VideoPlayer from "@/components/VideoPlayer";
 import Heading from "@/components/Heading";

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import NavigationMenu from ".";
-import { NAV_BAR } from "@/constants";
+import { NAV_BAR } from "@repo/constants/nav";
 
 const options = NAV_BAR.map((item) => item.href);
 

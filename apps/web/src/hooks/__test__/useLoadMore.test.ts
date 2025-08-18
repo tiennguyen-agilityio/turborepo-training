@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from "@testing-library/react";
 import { LocationItem } from "@repo/types/location";
 
 import { LOCATIONS } from "@/mocks/location";
-import { PAGE_SIZE } from "@/constants/common";
+import { PAGE_SIZE } from "@repo/constants/common";
 
 import { useLoadMore } from "../useLoadMore";
 

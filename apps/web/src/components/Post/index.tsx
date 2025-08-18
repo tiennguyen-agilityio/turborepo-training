@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 // Constants
-import { EMPTY_IMAGE } from "@/constants/images";
+import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
 import { generateImageToBase64 } from "@/utils/images";

@@ -1,4 +1,4 @@
-import { DEFAULT_AVATAR } from "@/constants/images";
+import { DEFAULT_AVATAR } from "@repo/constants/images";
 import {
   Avatar as ShadCNAvatar,
   AvatarFallback,

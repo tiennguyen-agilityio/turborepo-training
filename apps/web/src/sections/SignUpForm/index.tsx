@@ -4,7 +4,7 @@ import * as Clerk from "@clerk/elements/common";
 import * as SignUp from "@clerk/elements/sign-up";
 
 // Constants
-import { DAYS, MONTHS, YEARS } from "@/constants";
+import { DAYS, MONTHS, YEARS } from "@repo/constants/common";
 
 // Hooks
 import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";

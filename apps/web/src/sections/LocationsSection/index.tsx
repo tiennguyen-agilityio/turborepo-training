@@ -4,7 +4,7 @@
 import { LocationItem } from "@repo/types/location";
 
 // Constants
-import { PAGE_SIZE } from "@/constants/common";
+import { PAGE_SIZE } from "@repo/constants/common";
 
 // Hooks
 import { useLoadMore } from "@/hooks/useLoadMore";

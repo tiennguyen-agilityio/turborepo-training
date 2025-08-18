@@ -2,7 +2,7 @@
 
 import { memo, useCallback, useState } from "react";
 
-import { LOCATIONS, CATEGORIES } from "@/constants/common";
+import { LOCATIONS, CATEGORIES } from "@repo/constants/common";
 
 import { Filter } from "@repo/types/common";
 

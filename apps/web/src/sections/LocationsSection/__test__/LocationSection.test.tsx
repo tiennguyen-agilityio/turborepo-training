@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { PAGE_SIZE } from "@/constants/common";
+import { PAGE_SIZE } from "@repo/constants/common";
 import { useLoadMore } from "@/hooks/useLoadMore";
 
 import LocationCard from "@/components/LocationCard";

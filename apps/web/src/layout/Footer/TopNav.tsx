@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { NAV_FOOTERS } from "@/constants/nav";
+import { NAV_FOOTERS } from "@repo/constants/nav";
 
 import Button from "@/components/Button";
 import Input from "@/components/Input";

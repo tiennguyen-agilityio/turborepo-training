@@ -9,10 +9,10 @@ import { useForm } from "react-hook-form";
 import { SignUpFormData } from "@repo/types/auth";
 
 // Constants
-import { SCHEMA } from "@/constants/validation";
-import { ERROR_MESSAGES } from "@/constants/messages";
-import { DAYS, MONTHS, YEARS } from "@/constants/common";
-import { ROUTES } from "@/constants";
+import { SCHEMA } from "@repo/constants/validation";
+import { ERROR_MESSAGES } from "@repo/constants/messages";
+import { DAYS, MONTHS, YEARS } from "@repo/constants/common";
+import { ROUTES } from "@repo/constants/routes";
 
 // Hooks
 import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";

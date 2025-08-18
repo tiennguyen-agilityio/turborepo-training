@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
-import { STATISTICS_BY_SERVICES } from "@/constants";
+import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
 
 import StatisticsCard from ".";
 

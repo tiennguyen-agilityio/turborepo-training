@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
-import { CATEGORIES, LOCATIONS } from "@/constants/common";
+import { CATEGORIES, LOCATIONS } from "@repo/constants/common";
 import LocationFilter from "..";
 
 describe("LocationFilter component", () => {

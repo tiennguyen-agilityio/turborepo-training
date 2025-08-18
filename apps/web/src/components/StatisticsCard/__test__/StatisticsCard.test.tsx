@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 
 import StatisticsCard from "..";
-import { STATISTICS_BY_SERVICES } from "@/constants";
+import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
 
 describe("StatisticsCard component", () => {
   const props = {

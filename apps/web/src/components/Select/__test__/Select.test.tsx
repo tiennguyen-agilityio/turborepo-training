@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
-import { MONTHS } from "@/constants/common";
+import { MONTHS } from "@repo/constants/common";
 
 import Select from "..";
 

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 // Constants
-import { NAV_BAR } from "@/constants/nav";
+import { NAV_BAR } from "@repo/constants/nav";
 
 // Utils
 import { cn } from "@/utils/styles";

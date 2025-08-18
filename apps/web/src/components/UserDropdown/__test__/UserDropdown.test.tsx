@@ -2,9 +2,9 @@ import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event";
 import { toast } from "sonner";
 
-import { USER_DROPDOWNS_LENGTH } from "@/constants/nav";
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@/constants/messages";
-import { ROUTES } from "@/constants/routes";
+import { USER_DROPDOWNS_LENGTH } from "@repo/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
+import { ROUTES } from "@repo/constants/routes";
 
 import UserDropdown from "..";
 

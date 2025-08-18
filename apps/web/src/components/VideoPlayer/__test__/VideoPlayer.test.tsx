@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import { HOME_VIDEO } from "@/constants";
+import { HOME_VIDEO } from "@repo/constants/video";
 
 import VideoPlayer from "..";
 

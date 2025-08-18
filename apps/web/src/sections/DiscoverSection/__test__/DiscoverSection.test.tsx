@@ -5,7 +5,7 @@ import DiscoverSection from "..";
 import { CarouselItem } from "@repo/types/carousel";
 
 // Mock carousel data
-jest.mock("@/constants/carousel", () => ({
+jest.mock("@repo/constants/carousel", () => ({
   CAROUSELS: [
     {
       id: "1",

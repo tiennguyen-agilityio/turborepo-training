@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import { EXPERIENCES } from "@/constants";
+import { EXPERIENCES } from "@repo/constants/common";
 
 import Experiences from "..";
 

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 // Constants
-import { HOME_VIDEO } from "@/constants/video";
+import { HOME_VIDEO } from "@repo/constants/video";
 
 // Components
 import VideoPlayer from "@/components/VideoPlayer";
