@@ -1,7 +1,8 @@
 "use client";
 
 import React, { ReactNode, useRef, useState } from "react";
-import clsx from "clsx";
+
+import { cn } from "@repo/utils/styles";
 
 import PauseIcon from "../Icons/PauseIcon";
 import PlayIcon from "../Icons/PlayIcon";
@@ -71,7 +72,7 @@ const VideoPlayer = ({
               {description && <p className="text-shadow-md/20 text-white">{description}</p>}
               {hasPlayed && (
                 <div
-                  className={clsx(
+                  className={cn(
                     "w-21.25 h-21.25 p-3 rounded-full border border-accent z-40",
                     !description && "mx-auto"
                   )}

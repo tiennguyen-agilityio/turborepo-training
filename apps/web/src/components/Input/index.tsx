@@ -1,7 +1,7 @@
 import React, { ComponentProps, useId } from "react";
 
 // Utils
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 // Components
 import { Input as ShadCNInput } from "@/components/ui/input";

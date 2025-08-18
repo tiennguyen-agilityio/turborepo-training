@@ -10,8 +10,8 @@ import { LocationItem } from "@repo/types/location";
 import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
-import { formatMinutes } from "@/utils/time";
-import { generateImageToBase64 } from "@/utils/images";
+import { formatMinutes } from "@repo/utils/time";
+import { generateImageToBase64 } from "@repo/utils/images";
 
 // Components
 import AddressIcon from "../Icons/AddressIcon";

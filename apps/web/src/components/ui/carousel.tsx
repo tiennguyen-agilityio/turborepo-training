@@ -4,7 +4,7 @@ import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 
 import { DIRECTION } from "@repo/types/svg";
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 import { Button } from "../ui/button";
 import ChevronIcon from "../Icons/ChevronIcon";

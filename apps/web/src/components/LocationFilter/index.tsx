@@ -6,7 +6,7 @@ import { LOCATIONS, CATEGORIES } from "@repo/constants/common";
 
 import { Filter } from "@repo/types/common";
 
-import { formatAmount } from "@/utils/common";
+import { formatAmount } from "@repo/utils/common";
 
 import { Label } from "../ui/label";
 import { Slider } from "../ui/slider";

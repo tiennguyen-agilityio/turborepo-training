@@ -1,5 +1,6 @@
 import React from "react";
-import clsx from "clsx";
+
+import { cn } from "@repo/utils/styles";
 
 type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -19,7 +20,7 @@ const headingStyles: Record<HeadingLevel, string> = {
 };
 
 const Heading = ({ as: Tag = "h1", children, className = "" }: HeadingProps) => {
-  return <Tag className={clsx(headingStyles[Tag], className)}>{children}</Tag>;
+  return <Tag className={cn(headingStyles[Tag], className)}>{children}</Tag>;
 };
 
 export default Heading;

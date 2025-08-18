@@ -1,5 +1,4 @@
-import clsx from "clsx";
-
+import { cn } from "@repo/utils/styles";
 import { Experience } from "@repo/types/common";
 
 import Heading from "../Heading";
@@ -23,7 +22,7 @@ const ExperienceItem = ({ title, label = "", isActive = false, onClick }: Experi
       )}
       <Button
         variant="link"
-        className={clsx(
+        className={cn(
           "capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 p-0 sm:pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline",
           isActive && "text-accent-foreground border-b-accent-foreground"
         )}

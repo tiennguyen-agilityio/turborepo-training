@@ -4,7 +4,7 @@ import React from "react";
 import { LOCATION_TILES } from "@/mocks";
 
 // Utils
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 // Components
 import LocationTile from "@/components/LocationTile";

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import clsx from "clsx";
+
+import { cn } from "@repo/utils/styles";
 
 import {
   NavigationMenu as ShadCNNavigationMenu,
@@ -30,9 +31,9 @@ const NavigationMenu = ({ list, path = "" }: NavigationMenuProps) => (
             <NavigationMenuLink asChild>
               <Link
                 href={href}
-                className={clsx("items-center font-bold", isActive && "text-primary")}
+                className={cn("items-center font-bold", isActive && "text-primary")}
               >
-                <span className={clsx(isActive && "text-primary")}>{name}</span>
+                <span className={cn(isActive && "text-primary")}>{name}</span>
                 <span
                   className={`w-2 h-2 rounded-full transition-opacity ${
                     isActive ? "opacity-100 bg-primary" : "opacity-0"

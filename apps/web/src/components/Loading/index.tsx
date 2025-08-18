@@ -1,4 +1,4 @@
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 interface LoadingProps {
   iconOnly?: boolean;

@@ -14,7 +14,7 @@ import { USER_DROPDOWNS, USER_DROPDOWNS_LENGTH } from "@repo/constants/nav";
 import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
 
 // Utils
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 // Components
 import {
