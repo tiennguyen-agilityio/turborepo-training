@@ -3,5 +3,9 @@
     "eslint --config apps/web/eslint.config.mjs --fix",
     "prettier --write --ignore-unknown"
   ],
+  "packages/*/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config packages/eslint-config/base.js --fix",
+    "prettier --write --ignore-unknown"
+  ],
   "**/*.{json,md,css}": ["prettier --write --ignore-unknown"]
 }

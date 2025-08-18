@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 // Types
-import { VerifyFormData } from "@/types/auth";
+import { VerifyFormData } from "@repo/types/auth";
 
 // Constants
 import { SCHEMA } from "@/constants/validation";

@@ -3,7 +3,7 @@
 import { ComponentProps, useState, useEffect } from "react";
 
 // Types
-import { CarouselItem } from "@/types/carousel";
+import { CarouselItem } from "@repo/types/carousel";
 
 // Utils
 import { cn } from "@/utils/styles";

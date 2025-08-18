@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types/svg";
+import { SVGProps } from "@repo/types/svg";
 
 const USAFlagIcon = ({ color = "#d8d8d8", width = 20, height = 20, onClick }: SVGProps) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types/svg";
+import { SVGProps } from "@repo/types/svg";
 
 const PaypalIcon = ({ width = 70, height = 20, onClick }: SVGProps) => {
   return (

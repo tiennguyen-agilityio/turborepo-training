@@ -1,4 +1,4 @@
-import { SVGProps } from "@/types/svg";
+import { SVGProps } from "@repo/types/svg";
 import React from "react";
 
 const SearchIcon = ({ color = "currentColor", width = 19, height = 19, onClick }: SVGProps) => {

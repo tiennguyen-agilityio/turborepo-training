@@ -1,4 +1,4 @@
-import { NavFooter } from "@/types/common";
+import { NavFooter } from "@repo/types/common";
 import { ROUTES } from "./routes";
 
 export const NAV_BAR = [

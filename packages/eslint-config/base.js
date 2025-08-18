@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import { defineConfig } from "eslint/config";
 
 const baseConfig = [
   {
@@ -29,7 +30,7 @@ const baseConfig = [
       "react/react-in-jsx-scope": "off",
     },
   },
-	 {
+  {
     // React Hooks rules
     plugins: {
       "react-hooks": pluginReactHooks,
@@ -41,4 +42,4 @@ const baseConfig = [
   },
 ];
 
-export default baseConfig;
+export default defineConfig(baseConfig);

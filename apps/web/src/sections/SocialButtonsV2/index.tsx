@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSignIn, useSignUp } from "@clerk/nextjs";
 
 // Types
-import { OAuthStrategy } from "@/types/auth";
+import { OAuthStrategy } from "@repo/types/auth";
 
 // Constants
 import { ERROR_MESSAGES } from "@/constants/messages";

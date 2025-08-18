@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // Types
-import { Filter } from "@/types/common";
+import { Filter } from "@repo/types/common";
 
 // Constants
 import { LOCATIONS } from "@/mocks";

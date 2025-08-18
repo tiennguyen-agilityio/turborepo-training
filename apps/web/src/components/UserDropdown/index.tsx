@@ -6,7 +6,7 @@ import { useClerk, useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
 
 // Types
-import { DIRECTION } from "@/types/svg";
+import { DIRECTION } from "@repo/types/svg";
 
 // Constants
 import { LOCAL_STORAGE_KEYS } from "@/constants/common";

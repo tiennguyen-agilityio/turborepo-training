@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 
 import DiscoverSection from "..";
-import { CarouselItem } from "@/types/carousel";
+import { CarouselItem } from "@repo/types/carousel";
 
 // Mock carousel data
 jest.mock("@/constants/carousel", () => ({

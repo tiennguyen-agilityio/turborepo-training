@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import { LocationItem } from "@/types/location";
+import { LocationItem } from "@repo/types/location";
 import { LOCATIONS } from "@/mocks";
 
 import LocationCard from "..";

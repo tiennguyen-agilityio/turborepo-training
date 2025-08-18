@@ -2,7 +2,7 @@
 
 import React, { Fragment, useState } from "react";
 
-import { Experience } from "@/types/common";
+import { Experience } from "@repo/types/common";
 
 import { Separator } from "../ui/separator";
 import ExperienceItem from "../ExperienceItem";

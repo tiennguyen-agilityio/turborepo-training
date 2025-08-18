@@ -1,7 +1,7 @@
 "use client";
 
 // Types
-import { LocationItem } from "@/types/location";
+import { LocationItem } from "@repo/types/location";
 
 // Constants
 import { PAGE_SIZE } from "@/constants/common";

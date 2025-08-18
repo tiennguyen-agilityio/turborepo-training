@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types/svg";
+import { SVGProps } from "@repo/types/svg";
 
 const MPesaIcon = ({ width = 50, height = 25, onClick }: SVGProps) => {
   return (

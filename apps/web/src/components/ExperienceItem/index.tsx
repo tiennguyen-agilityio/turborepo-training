@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { Experience } from "@/types/common";
+import { Experience } from "@repo/types/common";
 
 import Heading from "../Heading";
 import Button from "../Button";

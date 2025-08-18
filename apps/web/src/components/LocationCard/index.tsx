@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Types
-import { LocationItem } from "@/types/location";
+import { LocationItem } from "@repo/types/location";
 
 // Constants
 import { EMPTY_IMAGE } from "@/constants/images";
