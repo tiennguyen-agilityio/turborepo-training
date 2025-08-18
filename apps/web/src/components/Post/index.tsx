@@ -7,8 +7,8 @@ import Image from "next/image";
 import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
-import { generateImageToBase64 } from "@/utils/images";
-import { cn } from "@/utils/styles";
+import { generateImageToBase64 } from "@repo/utils/images";
+import { cn } from "@repo/utils/styles";
 
 // Components
 import ArrowIcon from "../Icons/ArrowIcon";

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (

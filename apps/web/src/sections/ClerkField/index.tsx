@@ -2,7 +2,7 @@
 
 import { HTMLInputTypeAttribute, useState, ComponentProps } from "react";
 import { Field, Label, Input, FieldError, FieldState } from "@clerk/elements/common";
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 import Button from "@/components/Button";
 

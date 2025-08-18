@@ -6,7 +6,7 @@ import Image from "next/image";
 import { DEFAULT_AVATAR } from "@repo/constants/images";
 
 // Utils
-import { generateImageToBase64 } from "@/utils/images";
+import { generateImageToBase64 } from "@repo/utils/images";
 
 interface TestimonialItemProps {
   title: string;

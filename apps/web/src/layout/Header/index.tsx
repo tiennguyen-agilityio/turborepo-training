@@ -8,7 +8,7 @@ import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@c
 import { NAV_BAR } from "@repo/constants/nav";
 
 // Utils
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 // Components
 import Logo from "@/components/Logo";

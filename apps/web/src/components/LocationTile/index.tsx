@@ -7,7 +7,7 @@ import Link from "next/link";
 import { EMPTY_IMAGE } from "@repo/constants/images";
 
 // Utils
-import { generateImageToBase64 } from "@/utils/images";
+import { generateImageToBase64 } from "@repo/utils/images";
 
 // Components
 import { Card, CardContent } from "@/components/ui/card";

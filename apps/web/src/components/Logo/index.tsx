@@ -1,6 +1,7 @@
 import React from "react";
-import clsx from "clsx";
 import Link from "next/link";
+
+import { cn } from "@repo/utils/styles";
 
 interface LogoProps {
   text?: string;
@@ -9,7 +10,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ text = "Travelsy", className = "" }: LogoProps) => {
   return (
-    <Link href="/" className={clsx("text-lg font-bold", className)}>
+    <Link href="/" className={cn("text-lg font-bold", className)}>
       {text}
     </Link>
   );

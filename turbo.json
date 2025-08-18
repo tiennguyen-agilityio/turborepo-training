@@ -14,7 +14,8 @@
   ],
   "tasks": {
     "dev": {
-      "cache": false
+      "cache": false,
+      "dependsOn": ["@repo/utils#build"]
     },
     "start": {
       "dependsOn": ["^start"],

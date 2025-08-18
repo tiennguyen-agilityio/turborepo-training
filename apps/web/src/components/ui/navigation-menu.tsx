@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
-import { cn } from "@/utils/styles";
+import { cn } from "@repo/utils/styles";
 
 function NavigationMenu({
   className,
