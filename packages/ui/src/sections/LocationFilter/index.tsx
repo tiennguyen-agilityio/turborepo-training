@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Filter } from "@repo/types/common";
 
 // Constants
-import { LOCATIONS } from "@/mocks";
+import { LOCATIONS } from "@repo/constants/location";
 
 // Components
 import Heading from "@repo/ui/components/Heading";

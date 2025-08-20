@@ -10,7 +10,7 @@ import { PAGE_SIZE } from "@repo/constants/common";
 import { useLoadMore } from "@repo/hooks/useLoadMore";
 
 // Services
-import { fetchLocations } from "@/services/location";
+import { fetchLocations } from "@repo/services/location";
 
 // Components
 import Button from "@repo/ui/components/Button";

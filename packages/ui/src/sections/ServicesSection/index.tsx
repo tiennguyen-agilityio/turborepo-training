@@ -1,7 +1,7 @@
 import React from "react";
 
 // Constants
-import { LOCATION_TILES } from "@/mocks";
+import { LOCATION_TILES } from "@repo/constants/location";
 
 // Utils
 import { cn } from "@repo/utils/styles";

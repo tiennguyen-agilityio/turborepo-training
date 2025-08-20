@@ -2,7 +2,13 @@ import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 
-import { createUser, deleteUser, fetchUserById, updateUser, UserJSON } from "./user";
+import {
+  createUser,
+  deleteUser,
+  fetchUserById,
+  updateUser,
+  UserJSON,
+} from "./user";
 
 const handleEvent = async (event: WebhookEvent) => {
   const { type, data } = event;
@@ -60,7 +66,11 @@ export const webhookHandler = async (req: Request) => {
     "svix-signature": headerPayload.get("svix-signature") || "",
   };
 
-  if (!svixHeaders["svix-id"] || !svixHeaders["svix-timestamp"] || !svixHeaders["svix-signature"]) {
+  if (
+    !svixHeaders["svix-id"] ||
+    !svixHeaders["svix-timestamp"] ||
+    !svixHeaders["svix-signature"]
+  ) {
     return new Response("Error: Missing Svix headers", { status: 400 });
   }
 

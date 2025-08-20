@@ -1,0 +1,32 @@
+{
+  "name": "@repo/services",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./location": "./src/location.ts",
+    "./user": "./src/user.ts",
+    "./webhook": "./src/webhook.ts"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.23.2",
+    "@repo/constants": "*",
+    "@repo/types": "*",
+    "svix": "^1.69.0"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/prettier-config": "*",
+    "@repo/typescript-config": "*"
+  }
+}
