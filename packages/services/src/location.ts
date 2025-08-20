@@ -9,12 +9,15 @@ export const fetchLocations = async ({
   limit = PAGE_SIZE,
 }: QueryParams): Promise<Response<LocationItem>> => {
   try {
-    const response = await fetch(`${API_ROUTES.LOCATIONS}?page=${page}&limit=${limit}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `${API_ROUTES.LOCATIONS}?page=${page}&limit=${limit}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
 
     if (!response.ok) {
       return {
@@ -30,7 +33,8 @@ export const fetchLocations = async ({
       error: "",
     };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to fetch the Locations.";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to fetch the Locations.";
 
     return {
       data: [],

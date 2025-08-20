@@ -1,5 +1,8 @@
 import { API_ROUTES } from "@repo/constants/routes";
-import { User as ClerkUser, UserJSON as ClerkUserJSON } from "@clerk/nextjs/server";
+import {
+  User as ClerkUser,
+  UserJSON as ClerkUserJSON,
+} from "@clerk/nextjs/server";
 
 export interface User extends ClerkUser {
   userId?: string;
@@ -10,7 +13,7 @@ export interface UserJSON extends ClerkUserJSON {
 }
 
 export const fetchUsers = async (
-  query: string
+  query: string,
 ): Promise<{
   users: User[];
   error: string | null;
@@ -30,7 +33,8 @@ export const fetchUsers = async (
       error: null,
     };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to fetch the users.";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to fetch the users.";
 
     return {
       users: [],
@@ -40,7 +44,7 @@ export const fetchUsers = async (
 };
 
 export const fetchUserById = async (
-  userId: string
+  userId: string,
 ): Promise<{
   user?: User;
   error: string | null;
@@ -60,7 +64,10 @@ export const fetchUserById = async (
       error: null,
     };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to fetch the user by id.";
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "Failed to fetch the user by id.";
 
     return {
       error: errorMessage,
@@ -69,7 +76,7 @@ export const fetchUserById = async (
 };
 
 export const createUser = async (
-  data: UserJSON
+  data: UserJSON,
 ): Promise<{
   user: User | null;
   error: string | null;
@@ -90,7 +97,8 @@ export const createUser = async (
       error: null,
     };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to create user.";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to create user.";
 
     return {
       user: null,
@@ -101,7 +109,7 @@ export const createUser = async (
 
 export const updateUser = async (
   userId: string,
-  data: UserJSON
+  data: UserJSON,
 ): Promise<{
   user: User | null;
   error: string | null;
@@ -122,7 +130,8 @@ export const updateUser = async (
       error: null,
     };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to update user.";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to update user.";
 
     return {
       user: null,
@@ -132,7 +141,7 @@ export const updateUser = async (
 };
 
 export const deleteUser = async (
-  userId: string
+  userId: string,
 ): Promise<{
   message: string | null;
 }> => {
@@ -146,7 +155,8 @@ export const deleteUser = async (
 
     return { message: "Deleted User Success." };
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to delete user.";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to delete user.";
 
     return { message: errorMessage };
   }
