@@ -7,6 +7,7 @@
     "./common": "./src/common.ts",
     "./images": "./src/images.ts",
     "./localization": "./src/localization.ts",
+    "./location": "./src/location.ts",
     "./messages": "./src/messages.ts",
     "./nav": "./src/nav.ts",
     "./routes": "./src/routes.ts",
