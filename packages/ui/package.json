@@ -45,7 +45,7 @@
     "input-otp": "^1.4.2",
     "next": "*",
     "next-themes": "*",
-    "react": "*",
+    "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.61.1",
     "sonner": "^2.0.6",
@@ -59,6 +59,7 @@
     "@repo/typescript-config": "*",
     "@tailwindcss/postcss": "*",
     "@tailwindcss/cli": "^4.1.12",
-    "tailwindcss": "*"
+    "tailwindcss": "*",
+    "@types/react": "19.1.10"
   }
 }
