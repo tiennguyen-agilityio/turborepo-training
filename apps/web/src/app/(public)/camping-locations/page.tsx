@@ -4,11 +4,11 @@ import { Suspense } from "react";
 import { HOME_VIDEO } from "@repo/constants/video";
 
 // Components
-import VideoPlayer from "@/components/VideoPlayer";
-import Loading from "@/components/Loading";
-import DiscoverSection from "@/sections/DiscoverSection";
-import FilterSection from "@/sections/LocationFilter";
-import LocationsSection from "@/sections/LocationsSection";
+import VideoPlayer from "@repo/ui/components/VideoPlayer";
+import Loading from "@repo/ui/components/Loading";
+import DiscoverSection from "@repo/ui/sections/DiscoverSection";
+import FilterSection from "@repo/ui/sections/LocationFilter";
+import LocationsSection from "@repo/ui/sections/LocationsSection";
 
 const CampingLocationsPage = () => {
   return (

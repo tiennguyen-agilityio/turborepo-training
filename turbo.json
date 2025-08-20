@@ -15,10 +15,10 @@
   "tasks": {
     "dev": {
       "cache": false,
-      "dependsOn": ["@repo/utils#build"]
+      "persistent": true
     },
     "start": {
-      "dependsOn": ["@repo/utils#build", "^start"],
+      "dependsOn": ["^start"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build": {

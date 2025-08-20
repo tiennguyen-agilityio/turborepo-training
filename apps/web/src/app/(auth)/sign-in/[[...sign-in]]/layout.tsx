@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+import Layout from "@repo/ui/layout";
 
 const SignInLayout = ({
   children,
@@ -7,7 +7,7 @@ const SignInLayout = ({
 }>) => {
   return (
     <Layout hasBorderBottomHeader>
-      <div className="flex flex-col items-center justify-center h-fit pb-15 pt-45">{children}</div>
+      <div className="flex flex-col items-center justify-center">{children}</div>
     </Layout>
   );
 };

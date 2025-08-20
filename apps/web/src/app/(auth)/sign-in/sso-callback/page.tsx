@@ -1,4 +1,4 @@
-import RedirectCallback from "@/sections/RedirectCallback";
+import RedirectCallback from "@repo/ui/sections/RedirectCallback";
 
 const Page = () => <RedirectCallback />;
 

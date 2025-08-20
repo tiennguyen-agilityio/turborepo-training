@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Heading from "@/components/Heading";
-import FaceFrownIcon from "@/components/Icons/FaceFrownIcon";
+import Heading from "@repo/ui/components/Heading";
+import FaceFrownIcon from "@repo/ui/icons/FaceFrownIcon";
 
 const NotFound = () => {
   return (

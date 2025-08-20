@@ -1,7 +1,7 @@
 "use client";
 
-import Button from "@/components/Button";
-import Heading from "@/components/Heading";
+import Button from "@repo/ui/components/Button";
+import Heading from "@repo/ui/components/Heading";
 
 const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   return (
