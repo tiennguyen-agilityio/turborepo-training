@@ -1,4 +1,4 @@
-import HeroVideoSection from "@/sections/HeroVideoSection";
+import HeroVideoSection from "@repo/ui/sections/HeroVideoSection";
 
 const EquipmentPage = () => <HeroVideoSection title="Equipment Page" />;
 

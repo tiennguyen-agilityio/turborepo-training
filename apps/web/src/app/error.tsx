@@ -1,8 +1,8 @@
 "use client";
 
-import Button from "@/components/Button";
-import Heading from "@/components/Heading";
-import FaceFrownIcon from "@/components/Icons/FaceFrownIcon";
+import Button from "@repo/ui/components/Button";
+import Heading from "@repo/ui/components/Heading";
+import FaceFrownIcon from "@repo/ui/icons/FaceFrownIcon";
 
 const GlobalError = ({ reset }: { error: Error; reset: () => void }) => {
   return (

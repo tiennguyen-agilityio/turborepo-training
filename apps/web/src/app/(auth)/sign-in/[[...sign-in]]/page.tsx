@@ -1,4 +1,4 @@
-import SignInForm from "@/sections/SignInForm";
+import SignInForm from "@repo/ui/sections/SignInForm";
 
 const SignInPage = () => {
   return <SignInForm />;

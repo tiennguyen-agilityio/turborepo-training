@@ -1,6 +1,6 @@
 import React from "react";
 
-import HeroVideoSection from "@/sections/HeroVideoSection";
+import HeroVideoSection from "@repo/ui/sections/HeroVideoSection";
 
 const BlogsPage = () => <HeroVideoSection title="Blogs Page" />;
 
