@@ -1,16 +1,12 @@
 {
   "name": "turborepo-training",
   "private": true,
-  "packageManager": "yarn@1.22.22",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "dev": "turbo run dev",
     "start": "turbo run start",
     "build": "turbo run build",
-    "clean": "turbo run clean && rm -rf node_modules && rm -rf ./apps/*/node_modules",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf ./apps/*/node_modules && pnpm store prune",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check --cache-dir=.turbo/typecheck",
     "prepare": "husky"

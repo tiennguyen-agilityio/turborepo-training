@@ -9,8 +9,8 @@
     "./useLoadMore": "./src/useLoadMore.ts"
   },
   "dependencies": {
-    "@repo/constants": "*",
-    "@repo/types": "*"
+    "@repo/constants": "workspace:*",
+    "@repo/types": "workspace:*"
   },
   "peerDependencies": {
     "next": "*",
@@ -22,8 +22,8 @@
     }
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/prettier-config": "*",
-    "@repo/typescript-config": "*"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }

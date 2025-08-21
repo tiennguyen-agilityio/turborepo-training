@@ -13,5 +13,13 @@
     "./routes": "./src/routes.ts",
     "./validation": "./src/validation.ts",
     "./video": "./src/video.ts"
+  },
+  "dependencies": {
+    "@repo/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }

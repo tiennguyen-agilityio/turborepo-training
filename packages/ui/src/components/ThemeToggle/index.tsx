@@ -35,7 +35,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
   }, [theme, resolvedTheme, setTheme]);
 
   return (
-    <div className="block w-20">
+    <div className="block">
       <div className="hidden md:flex">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

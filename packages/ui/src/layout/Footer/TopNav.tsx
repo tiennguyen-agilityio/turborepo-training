@@ -68,7 +68,7 @@ const TopNav = () => {
           >
             <h3 className="font-bold text-[13px] mb-3">{label}</h3>
             <div className="flex flex-col gap-2.5">
-              {links?.map(({ text = "", href = "" }, currentIndex) => (
+              {links?.map(({ text = "", href = "" }, currentIndex: number) => (
                 <Link className="text-xs w-fit" key={currentIndex} href={href}>
                   {text}
                 </Link>

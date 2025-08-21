@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.23.2",
-    "@repo/constants": "*",
-    "@repo/types": "*",
+    "@repo/constants": "workspace:*",
+    "@repo/types": "workspace:*",
     "svix": "^1.69.0"
   },
   "peerDependencies": {
@@ -25,8 +25,8 @@
     }
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/prettier-config": "*",
-    "@repo/typescript-config": "*"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }
