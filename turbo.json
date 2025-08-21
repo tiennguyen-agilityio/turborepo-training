@@ -14,16 +14,25 @@
   ],
   "tasks": {
     "dev": {
+      "dependsOn": ["^dev", "@repo/ui#dev:styles"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev:style": {
       "cache": false,
       "persistent": true
     },
     "start": {
-      "dependsOn": ["^start"],
+      "dependsOn": ["^start", "@repo/ui#build:styles"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "build:style": {
+      "cache": false,
+      "persistent": true
     },
     "test": {
       "dependsOn": ["^test"]
