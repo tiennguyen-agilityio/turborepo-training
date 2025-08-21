@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import "@repo/tailwind-config";
 import "@repo/ui/styles.css";
 
 import { LOCALIZATION } from "@repo/constants/localization";
