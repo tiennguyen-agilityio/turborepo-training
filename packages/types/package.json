@@ -12,8 +12,8 @@
     "./svg": "./src/svg.ts"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/prettier-config": "*",
-    "@repo/typescript-config": "*"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }
