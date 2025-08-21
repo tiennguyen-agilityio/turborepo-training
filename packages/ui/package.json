@@ -14,7 +14,8 @@
     "./components/ui/*": "./src/components/ui/*.tsx",
     "./icons/*": "./src/components/Icons/*.tsx",
     "./themes/styles.css": "./src/themes/styles.css",
-    "./providers/*": "./src/providers/*.tsx"
+    "./providers/*": "./src/providers/*.tsx",
+    "./fonts": "./src/assets/fonts.ts"
   },
   "scripts": {
     "build:styles": "tailwindcss -i ./src/themes/styles.css -o ./dist/index.css",

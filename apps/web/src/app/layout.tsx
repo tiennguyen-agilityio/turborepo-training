@@ -4,7 +4,7 @@ import "@repo/tailwind-config";
 import "@repo/ui/styles.css";
 
 import { LOCALIZATION } from "@repo/constants/localization";
-import { abel } from "@/config/fonts";
+import { abel } from "@repo/ui/fonts";
 import { Toaster } from "@repo/ui/components/ui/sonner";
 import SessionWatcher from "@repo/ui/components/SessionWatcher";
 
