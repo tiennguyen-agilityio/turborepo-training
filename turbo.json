@@ -14,7 +14,7 @@
   ],
   "tasks": {
     "dev": {
-      "dependsOn": ["^dev", "@repo/ui#dev:styles"],
+      "dependsOn": ["^dev", "build:style"],
       "cache": false,
       "persistent": true
     },
@@ -23,7 +23,7 @@
       "persistent": true
     },
     "start": {
-      "dependsOn": ["^start", "@repo/ui#build:styles"],
+      "dependsOn": ["^start"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build": {
