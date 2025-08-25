@@ -1,0 +1,28 @@
+{
+  "name": "@packages/tamagui",
+  "version": "0.0.0",
+  "sideEffects": [
+    "*.css"
+  ],
+  "private": true,
+  "files": [
+    "types",
+    "dist"
+  ],
+  "exports": {
+    ".": "./src",
+    "./config": "./src/config.ts"
+  },
+  "dependencies": {
+    "@tamagui/config": "^1.132.20",
+    "@tamagui/core": "^1.132.20",
+    "@tamagui/shorthands": "^1.132.20",
+    "@tamagui/themes": "^1.132.20",
+    "tamagui": "^1.132.20"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  }
+}
