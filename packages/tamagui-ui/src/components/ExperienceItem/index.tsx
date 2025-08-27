@@ -10,7 +10,7 @@ export interface ExperienceItemProps extends Experience {
 }
 
 const LinkButton = styled(Button, {
-  variant: "ghost",
+  variant: "link",
   borderWidth: 0,
   borderRadius: 0,
   borderBottomWidth: 1,
@@ -20,7 +20,6 @@ const LinkButton = styled(Button, {
   paddingLeft: 0,
   color: "$color",
   fontWeight: 700,
-  fontSize: "$4",
   height: "$5",
   hoverStyle: {
     opacity: 1,
@@ -28,10 +27,14 @@ const LinkButton = styled(Button, {
     borderColor: "$primary",
   },
   textProps: {
+    fontSize: "$3",
     lineHeight: "$sm",
     textTransform: "capitalize",
     hoverStyle: {
       color: "$primary",
+    },
+    $xs: {
+      fontSize: "$4",
     },
   },
 
@@ -55,12 +58,16 @@ const ExperienceItem = ({
     <YStack maxWidth="fit-content" gap="$2.5" justifyContent="flex-start">
       {label && (
         <H6
-          size="$3.5"
+          size="$2.5"
           textTransform="uppercase"
-          textAlign="left"
+          textAlign="center"
           fontWeight={700}
           lineHeight="$3.5"
           color="$ring"
+          $xs={{
+            textAlign: "left",
+            size: "$3.5",
+          }}
         >
           {label}
         </H6>

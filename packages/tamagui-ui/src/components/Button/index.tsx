@@ -56,6 +56,9 @@ export const ButtonFrame = styled(TButton, {
         color: "$primary",
         textDecorationLine: "underline",
         textDecorationColor: "$primary",
+        hoverStyle: {
+          backgroundColor: "transparent",
+        },
       },
     },
 
