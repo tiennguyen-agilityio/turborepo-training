@@ -17,9 +17,13 @@
   "dependencies": {
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-native": "0.81.0",
+    "tamagui": "^1.132.20",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "babel-plugin-module-resolver": "^5.0.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "turbo": "^2.5.5"

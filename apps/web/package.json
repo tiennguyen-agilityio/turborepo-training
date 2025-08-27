@@ -19,16 +19,19 @@
     "@clerk/elements": "^0.23.38",
     "@clerk/nextjs": "^6.23.2",
     "@clerk/themes": "^2.2.53",
+    "@packages/tamagui": "workspace:*",
+    "@packages/tamagui-ui": "workspace:*",
     "@repo/constants": "workspace:*",
+    "@repo/hooks": "workspace:*",
     "@repo/services": "workspace:*",
     "@repo/types": "workspace:*",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",
-    "next": "*",
+    "@tamagui/next-plugin": "^1.132.22",
+    "@tamagui/next-theme": "^1.132.22",
     "next-themes": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-hook-form": "*"
+    "tamagui": "^1.132.21",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -37,5 +40,12 @@
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "*",
     "prettier": "*"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-dom": "*",
+    "react-hook-form": "*"
   }
 }
