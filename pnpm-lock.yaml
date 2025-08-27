@@ -271,6 +271,9 @@ importers:
       '@packages/tamagui':
         specifier: workspace:*
         version: link:../tamagui
+      '@repo/constants':
+        specifier: workspace:*
+        version: link:../constants
       '@repo/hooks':
         specifier: workspace:*
         version: link:../hooks
