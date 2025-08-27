@@ -1,12 +1,10 @@
 export const colors = {
-  primary: "#5ECE7B",
   dark: "#1D1F22",
   light: "#FFFFFF",
   notification: "#FF3B30",
 } as const;
 
 export const backgroundColors = {
-  backgroundPrimary: "#5ECE7B",
   backgroundSecondary: "#F1F2F3",
   backgroundHover: "#eaeaea",
   backgroundOverlay: "rgba(0, 0, 0, 0.502)",

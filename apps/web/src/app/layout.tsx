@@ -8,7 +8,8 @@ import { abel } from "@repo/ui/fonts";
 import { Toaster } from "@repo/ui/components/ui/sonner";
 import SessionWatcher from "@repo/ui/components/SessionWatcher";
 
-import { ThemeProvider } from "@repo/ui/providers/NextTheme";
+// import { ThemeProvider } from "@repo/ui/providers/NextTheme";
+import { TamaguiProviderWeb } from "@packages/tamagui-ui/providers/TamaguiProviderWeb";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,7 +39,7 @@ export default function RootLayout({
             cssLayerName: "clerk",
           }}
         >
-          <ThemeProvider
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
@@ -47,7 +48,10 @@ export default function RootLayout({
             {children}
             <SessionWatcher />
             <Toaster theme="light" closeButton richColors />
-          </ThemeProvider>
+          </ThemeProvider> */}
+          <TamaguiProviderWeb>{children}</TamaguiProviderWeb>
+          <SessionWatcher />
+          <Toaster theme="light" closeButton richColors />
         </ClerkProvider>
       </body>
     </html>

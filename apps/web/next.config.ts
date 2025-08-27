@@ -1,31 +1,48 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
+import { withTamagui } from "@tamagui/next-plugin";
 
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-        pathname: "/**",
-      },
-    ],
-  },
-  experimental: {
-    optimizePackageImports: [
-      "react",
-      "react-dom",
-      "next",
-      "next-themes",
-      "next/navigation",
-      "next/link",
-      "next/image",
-      "tailwindcss",
-      "@storybook/nextjs",
-      "@testing-library/react",
-      "@testing-library/jest-dom",
-    ],
-  },
-};
+export default function createConfig(
+  name: string,
+  { defaultConfig }: { defaultConfig: NextConfig }
+): NextConfig {
+  const config: NextConfig = {
+    ...defaultConfig,
+    reactStrictMode: true,
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "i.ibb.co",
+          pathname: "/**",
+        },
+      ],
+    },
+    experimental: {
+      optimizePackageImports: [
+        "react",
+        "react-dom",
+        "next",
+        "next-themes",
+        "next/navigation",
+        "next/link",
+        "next/image",
+        "tailwindcss",
+        "@storybook/nextjs",
+        "@testing-library/react",
+        "@testing-library/jest-dom",
+      ],
+      externalDir: true,
+    },
+  };
 
-export default nextConfig;
+  const tamaguiPlugin = withTamagui({
+    config: "./tamagui.config.ts",
+    components: ["tamagui"],
+    appDir: true,
+  });
+
+  return {
+    ...config,
+    ...tamaguiPlugin(config),
+  };
+}

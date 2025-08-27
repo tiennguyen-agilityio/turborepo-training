@@ -1,0 +1,27 @@
+{
+  "name": "@packages/tamagui-ui",
+  "version": "0.0.0",
+  "scripts": {},
+  "exports": {
+    "./components": "./src/components/index.ts",
+    "./components/*": "./src/components/*/index.tsx",
+    "./sections/*": "./src/sections/*/index.tsx",
+    "./providers/*": "./src/providers/*/index.tsx"
+  },
+  "dependencies": {
+    "@packages/tamagui": "workspace:*",
+    "@repo/hooks": "workspace:*",
+    "@tamagui/next-plugin": "^1.132.22"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*",
+    "tamagui": "*"
+  }
+}
