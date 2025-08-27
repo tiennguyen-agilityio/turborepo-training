@@ -5,11 +5,13 @@
   "exports": {
     "./components": "./src/components/index.ts",
     "./components/*": "./src/components/*/index.tsx",
+    "./sections": "./src/sections/index.ts",
     "./sections/*": "./src/sections/*/index.tsx",
     "./providers/*": "./src/providers/*/index.tsx"
   },
   "dependencies": {
     "@packages/tamagui": "workspace:*",
+    "@repo/constants": "workspace:*",
     "@repo/hooks": "workspace:*",
     "@tamagui/next-plugin": "^1.132.22"
   },
