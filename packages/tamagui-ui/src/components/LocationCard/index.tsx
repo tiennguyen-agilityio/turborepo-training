@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardBackground } from "tamagui";
+import { Card, CardHeader, CardBackground, CardProps } from "tamagui";
 import { YStack, XStack, Paragraph, SizableText, Image } from "tamagui";
 import { MapPin, Star } from "@tamagui/lucide-icons";
 
@@ -13,12 +13,12 @@ import { EMPTY_IMAGE } from "@repo/constants/images";
 // Utils
 import { formatMinutes } from "@repo/utils/time";
 
-interface LocationCardProps {
+interface LocationCardProps extends CardProps {
   item: LocationItem;
   onItemClick?: () => void;
 }
 
-const LocationCard = ({ item, onItemClick }: LocationCardProps) => {
+const LocationCard = ({ item, onItemClick, ...props }: LocationCardProps) => {
   const {
     title = "",
     image,
@@ -40,8 +40,9 @@ const LocationCard = ({ item, onItemClick }: LocationCardProps) => {
         borderColor: "$border",
       }}
       onPress={onItemClick}
+      {...props}
     >
-      <CardHeader padding={0} minHeight={250} maxHeight={350}>
+      <CardHeader padding={0} minHeight={300} maxHeight={350}>
         <CardBackground>
           <Image
             source={{

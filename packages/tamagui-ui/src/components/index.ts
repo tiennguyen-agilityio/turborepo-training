@@ -6,3 +6,5 @@ export { default as ExperienceItem } from "./ExperienceItem";
 export { default as Experiences } from "./Experiences";
 export { default as Input } from "./Input";
 export { default as LocationCard } from "./LocationCard";
+export { default as Skeleton } from "./Skeleton";
+export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
