@@ -12,3 +12,4 @@ export { default as Post } from "./Post";
 export { default as Skeleton } from "./Skeleton";
 export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
 export { default as Select } from "./Select";
+export { default as StatisticsCard } from "./StatisticsCard";
