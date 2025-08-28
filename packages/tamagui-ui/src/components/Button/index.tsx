@@ -11,7 +11,7 @@ export const ButtonFrame = styled(TButton, {
   name: "Button",
   borderRadius: "$sm",
   fontSize: "$sm",
-  fontWeight: "$bold",
+  fontWeight: 600,
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "row",
@@ -21,13 +21,14 @@ export const ButtonFrame = styled(TButton, {
     opacity: 0.85,
   },
   hoverStyle: {
-    opacity: 0.8,
+    opacity: 0.85,
   },
   gap: 4,
 
   variants: {
     variant: {
       default: {
+        unstyled: true,
         backgroundColor: "$primary",
         color: "$primaryForeground",
         shadowColor: "$shadowColor",
@@ -54,10 +55,10 @@ export const ButtonFrame = styled(TButton, {
       link: {
         backgroundColor: "transparent",
         color: "$primary",
-        textDecorationLine: "underline",
         textDecorationColor: "$primary",
         hoverStyle: {
           backgroundColor: "transparent",
+          textDecorationLine: "underline",
         },
       },
     },
