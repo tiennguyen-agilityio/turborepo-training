@@ -11,3 +11,4 @@ export { default as Logo } from "./Logo";
 export { default as Post } from "./Post";
 export { default as Skeleton } from "./Skeleton";
 export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
+export { default as Select } from "./Select";
