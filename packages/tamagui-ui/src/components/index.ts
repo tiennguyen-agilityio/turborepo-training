@@ -13,3 +13,4 @@ export { default as Skeleton } from "./Skeleton";
 export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
 export { default as Select } from "./Select";
 export { default as StatisticsCard } from "./StatisticsCard";
+export { default as VideoPlayer } from "./VideoPlayer";
