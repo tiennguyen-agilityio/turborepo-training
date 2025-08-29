@@ -1,5 +1,4 @@
 import { Stack, Text, H6 } from "tamagui";
-import { Plus } from "@tamagui/lucide-icons";
 
 interface StatisticsCardProps {
   title: string;
@@ -21,7 +20,6 @@ const StatisticsCard = ({ title, value }: StatisticsCardProps) => {
         }}
       >
         {value}
-        <Plus fontWeight={700} display="inline" $md={{ size: 40 }} />
       </Text>
     </Stack>
   );
