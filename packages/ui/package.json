@@ -39,8 +39,8 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-toggle": "^1.1.9",
     "@repo/constants": "workspace:*",
-    "@repo/services": "workspace:*",
     "@repo/hooks": "workspace:*",
+    "@repo/services": "workspace:*",
     "@repo/types": "workspace:*",
     "@repo/utils": "workspace:*",
     "class-variance-authority": "^0.7.1",
@@ -60,9 +60,9 @@
     "@repo/prettier-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@tailwindcss/postcss": "*",
     "@tailwindcss/cli": "^4.1.12",
-    "tailwindcss": "*",
-    "@types/react": "19.1.10"
+    "@tailwindcss/postcss": "*",
+    "@types/react": "19.1.10",
+    "tailwindcss": "*"
   }
 }
