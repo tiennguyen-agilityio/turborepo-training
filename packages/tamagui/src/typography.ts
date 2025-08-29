@@ -24,4 +24,6 @@ export const lineHeight = {
   base: 24,
   lg: 28,
   xl: 28,
+  "2xl": 34,
+  "3xl": 40,
 } as const;

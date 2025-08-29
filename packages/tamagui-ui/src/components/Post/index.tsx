@@ -22,7 +22,6 @@ const Post = ({ text, image, alt = "", onReadMore, ...props }: PostProps) => {
       flex={1}
       width="100%"
       gap="$1"
-      background="pink"
       $sm={{ flexDirection: "column", gap: "$4" }}
       {...props}
     >
