@@ -21,7 +21,6 @@ const LocationTile = ({
     <Card
       borderRadius="$1"
       overflow="hidden"
-      backgroundColor="$muted"
       cursor="pointer"
       position="relative"
       hoverStyle={{ borderColor: "$border" }}

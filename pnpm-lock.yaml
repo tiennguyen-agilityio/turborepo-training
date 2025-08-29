@@ -240,6 +240,9 @@ importers:
 
   packages/hooks:
     dependencies:
+      '@packages/tamagui':
+        specifier: workspace:*
+        version: link:../tamagui
       '@repo/constants':
         specifier: workspace:*
         version: link:../constants
@@ -252,6 +255,9 @@ importers:
       react:
         specifier: '*'
         version: 19.1.1
+      tamagui:
+        specifier: '*'
+        version: 1.132.21(react-dom@19.1.1(react@19.1.1))(react-native@0.81.1(@babel/core@7.28.3)(@react-native-community/cli@20.0.0)(@react-native/metro-config@0.81.1(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       zustand:
         specifier: '*'
         version: 5.0.8(@types/react@19.1.10)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
