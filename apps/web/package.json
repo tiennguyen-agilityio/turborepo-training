@@ -9,11 +9,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "eslint:fix": "eslint --fix .",
-    "type-check": "tsc --noEmit",
-    "test": "jest",
-    "test:coverage": "jest --coverage -u",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@clerk/elements": "^0.23.38",
@@ -47,7 +43,6 @@
   "peerDependencies": {
     "next": "*",
     "react": "*",
-    "react-native": "*",
     "react-dom": "*",
     "react-hook-form": "*"
   }
