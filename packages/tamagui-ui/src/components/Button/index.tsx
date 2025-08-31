@@ -64,28 +64,8 @@ export const ButtonFrame = styled(TButton, {
     },
 
     size: {
-      xs: {
-        height: 36,
-        paddingHorizontal: 12,
-        paddingVertical: 8,
-      },
-      sm: {
-        height: 40,
-        paddingHorizontal: 26,
-      },
       default: {
         height: 50,
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-      },
-      lg: {
-        height: 56,
-        paddingHorizontal: 28,
-      },
-      icon: {
-        width: 36,
-        height: 36,
-        padding: 0,
       },
     },
   },
