@@ -9,6 +9,7 @@ export { default as Input } from "./Input";
 export { default as LocationCard } from "./LocationCard";
 export { default as LocationTile } from "./LocationTile";
 export { default as Logo } from "./Logo";
+export { default as NavigationMenu } from "./NavigationMenu";
 export { default as Post } from "./Post";
 export { default as Skeleton } from "./Skeleton";
 export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
