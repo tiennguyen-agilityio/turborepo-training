@@ -1,5 +1,6 @@
-import { Input as TInput, Label, YStack, styled } from "tamagui";
-import { ComponentProps, useId } from "react";
+import { Input as TInput, Label, YStack, styled, Text, Stack } from "tamagui";
+import { ComponentProps, useCallback, useId, useState } from "react";
+import Button from "../Button";
 
 const InputFrame = styled(TInput, {
   name: "InputFrame",
@@ -8,6 +9,7 @@ const InputFrame = styled(TInput, {
   paddingHorizontal: "$2.5",
   placeholderTextColor: "$mutedForeground",
   borderColor: "$input",
+  fontSize: "$sm",
 
   focusStyle: {
     outlineWidth: 0,
@@ -49,13 +51,25 @@ const InputFrame = styled(TInput, {
   },
 });
 
-type InputProps = ComponentProps<typeof TInput> & {
+export type InputProps = ComponentProps<typeof TInput> & {
   label?: string;
-  invalid?: boolean;
+  errorMessage?: string;
+  isPassword?: boolean;
 };
 
-const Input = ({ label, invalid, ...props }: InputProps) => {
+const Input = ({
+  label = "",
+  errorMessage = "",
+  isPassword = false,
+  ...props
+}: InputProps) => {
   const id = useId();
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleToggleVisible = useCallback(() => {
+    setIsVisible((prev) => !prev);
+  }, []);
 
   return (
     <YStack>
@@ -70,7 +84,35 @@ const Input = ({ label, invalid, ...props }: InputProps) => {
           {label}
         </Label>
       )}
-      <InputFrame id={id} {...props} invalid={invalid} />
+      <Stack position="relative">
+        <InputFrame
+          id={id}
+          invalid={!!errorMessage}
+          secureTextEntry={isPassword && !isVisible}
+          {...props}
+        />
+        {isPassword && (
+          <Button
+            variant="link"
+            textProps={{
+              textDecorationLine: "none",
+              textDecorationColor: "transparent",
+            }}
+            position="absolute"
+            top="50%"
+            y="-50%"
+            right="$2"
+            onPress={handleToggleVisible}
+          >
+            {isVisible ? "Hide Password" : "Show Password"}
+          </Button>
+        )}
+      </Stack>
+      {errorMessage && (
+        <Text marginTop="$1.5" fontSize="$xs" color="$error">
+          {errorMessage}
+        </Text>
+      )}
     </YStack>
   );
 };

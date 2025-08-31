@@ -1,4 +1,4 @@
-import SignInForm from "@repo/ui/sections/SignInForm";
+import SignInForm from "@packages/tamagui-ui/sections/SignInForm";
 
 const SignInPage = () => {
   return <SignInForm />;
