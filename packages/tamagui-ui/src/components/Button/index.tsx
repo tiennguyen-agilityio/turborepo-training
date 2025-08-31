@@ -23,8 +23,11 @@ export const ButtonFrame = styled(TButton, {
   hoverStyle: {
     opacity: 0.85,
   },
+  textProps: {
+    fontSize: "$sm",
+    lineHeight: "$base",
+  },
   gap: 4,
-
   variants: {
     variant: {
       default: {
@@ -66,6 +69,7 @@ export const ButtonFrame = styled(TButton, {
     size: {
       default: {
         height: 50,
+        lineHeight: "$lg",
       },
     },
   },
