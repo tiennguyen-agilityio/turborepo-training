@@ -14,22 +14,25 @@ interface NavigationMenuProps {
 
 const NavigationMenu = ({ list, path = "" }: NavigationMenuProps) => {
   return (
-    <XStack tag="nav" gap="$3" justifyContent="center" alignItems="center">
+    <XStack gap="$3" justifyContent="center" alignItems="center">
       {list?.map(({ name, href }, index) => {
         const isActive = path === href;
 
         return (
           <YStack
             key={index}
+            alignContent="center"
             alignItems="center"
             justifyContent="center"
             paddingHorizontal="$2"
-            paddingVertical="$3"
+            paddingTop="$5"
+            paddingBottom="$1"
           >
             <Anchor
               asChild
               href={href}
               fontWeight={700}
+              fontSize="$sm"
               color={isActive ? "$primary" : "$color"}
             >
               <Text>{name}</Text>

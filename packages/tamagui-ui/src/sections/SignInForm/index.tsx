@@ -68,7 +68,7 @@ const SignInForm = () => {
   return (
     <YStack
       paddingHorizontal="$4"
-      marginVertical="$6"
+      marginVertical="$12"
       marginHorizontal="auto"
       justifyContent="center"
       width="100%"
@@ -76,7 +76,7 @@ const SignInForm = () => {
     >
       <Form onSubmit={handleSubmit(handleSignIn)}>
         <YStack gap="$5">
-          <H1 textAlign="center" fontFamily="$heading">
+          <H1 textAlign="center" fontSize={70} lineHeight={74}>
             Sign In
           </H1>
 
