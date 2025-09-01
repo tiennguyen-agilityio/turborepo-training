@@ -1,4 +1,5 @@
-import Layout from "@repo/ui/layout";
+import { Header } from "@packages/tamagui-ui/layouts";
+import { Stack, YStack } from "tamagui";
 
 const SignUpLayout = ({
   children,
@@ -6,9 +7,10 @@ const SignUpLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <Layout hasBorderBottomHeader>
-      <div className="flex flex-col items-center justify-center h-fit pb-15 pt-45">{children}</div>
-    </Layout>
+    <Stack>
+      <Header hasBorderBottom />
+      <YStack justifyContent="center">{children}</YStack>
+    </Stack>
   );
 };
 

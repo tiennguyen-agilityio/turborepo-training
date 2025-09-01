@@ -83,50 +83,48 @@ const SignInForm = () => {
           <SocialButtons isSignIn />
           <Divider text="OR" />
 
-          <YStack gap="$2">
-            <Controller
-              name="email"
-              control={control}
-              rules={SCHEMA.email}
-              render={({
-                field: { value, onChange, ...props },
-                fieldState: { error },
-              }) => (
-                <Input
-                  label="Email"
-                  placeholder="Enter email"
-                  errorMessage={error?.message}
-                  value={value}
-                  disabled={isLoading}
-                  onChangeText={onChange}
-                  onSubmitEditing={() => passwordRef.current?.focus()}
-                  {...props}
-                />
-              )}
-            />
+          <Controller
+            name="email"
+            control={control}
+            rules={SCHEMA.email}
+            render={({
+              field: { value, onChange, ...props },
+              fieldState: { error },
+            }) => (
+              <Input
+                label="Email"
+                placeholder="Enter email"
+                errorMessage={error?.message}
+                value={value}
+                disabled={isLoading}
+                onChangeText={onChange}
+                onSubmitEditing={() => passwordRef.current?.focus()}
+                {...props}
+              />
+            )}
+          />
 
-            <Controller
-              name="password"
-              control={control}
-              rules={SCHEMA.password}
-              render={({
-                field: { value, onChange, ...props },
-                fieldState: { error },
-              }) => (
-                <Input
-                  label="Password"
-                  placeholder="Enter password"
-                  errorMessage={error?.message}
-                  value={value}
-                  isPassword
-                  disabled={isLoading}
-                  onChangeText={onChange}
-                  onSubmitEditing={handleSubmit(handleSignIn)}
-                  {...props}
-                />
-              )}
-            />
-          </YStack>
+          <Controller
+            name="password"
+            control={control}
+            rules={SCHEMA.password}
+            render={({
+              field: { value, onChange, ...props },
+              fieldState: { error },
+            }) => (
+              <Input
+                label="Password"
+                placeholder="Enter password"
+                errorMessage={error?.message}
+                value={value}
+                isPassword
+                disabled={isLoading}
+                onChangeText={onChange}
+                onSubmitEditing={handleSubmit(handleSignIn)}
+                {...props}
+              />
+            )}
+          />
 
           <XStack justifyContent="space-between">
             <Checkbox defaultChecked label="Remember me" disabled={isLoading} />

@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useId, useState } from "react";
+import { memo, useCallback, useId, useState } from "react";
 import { Label, Select as TSelect, YStack } from "tamagui";
 import { ChevronDown, Check } from "@tamagui/lucide-icons";
 
 interface SelectProps {
   label?: string;
-  items: { label: string; value: string }[];
+  items: string[];
   placeholder?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
@@ -50,20 +50,27 @@ const Select = ({
         value={value}
         onValueChange={handleValueChange}
       >
-        <TSelect.Trigger iconAfter={ChevronDown}>
+        <TSelect.Trigger
+          iconAfter={ChevronDown}
+          borderColor="$border"
+          paddingHorizontal="$2"
+          height="$11.5"
+          hoverStyle={{
+            backgroundColor: "transparent",
+          }}
+        >
           <TSelect.Value
-            paddingLeft="$2"
-            paddingVertical="$2"
             fontSize="$sm"
             lineHeight="$md"
+            size="$1"
             placeholder={placeholder}
           />
         </TSelect.Trigger>
 
         <TSelect.Content>
           <TSelect.ScrollUpButton />
-          <TSelect.Viewport>
-            {items?.map(({ value, label }, index) => (
+          <TSelect.Viewport borderColor="$border">
+            {items?.map((value, index) => (
               <TSelect.Item
                 key={index}
                 index={index}
@@ -72,7 +79,7 @@ const Select = ({
                 paddingVertical="$2"
               >
                 <TSelect.ItemText fontSize="$sm" lineHeight="$md">
-                  {label}
+                  {value}
                 </TSelect.ItemText>
                 <TSelect.ItemIndicator>
                   <Check color="$primary" />
@@ -87,4 +94,4 @@ const Select = ({
   );
 };
 
-export default Select;
+export default memo(Select);
