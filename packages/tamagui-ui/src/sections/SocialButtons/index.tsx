@@ -105,24 +105,24 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
           flex={1}
           backgroundColor="$facebook"
           justifyContent="center"
+          icon={FacebookIcon}
           disabled={!!socialLoading}
           isLoading={socialLoading === OAuthStrategy.Facebook}
           onPress={handleClickFacebook}
         >
-          <FacebookIcon />
-          <Separator vertical />
+          <Separator vertical width={1} height="$6" backgroundColor="$border" />
           {`Sign ${isSignIn ? "in" : "up"} with Facebook`}
         </Button>
         <Button
           flex={1}
           backgroundColor="$google"
           disabled={!!socialLoading}
+          icon={GoogleIcon}
           isLoading={socialLoading === OAuthStrategy.Google}
           onPress={handleClickGoogle}
         >
-          <GoogleIcon />
-          <Separator vertical width={4} backgroundColor="pink" />
-          {`Sign ${isSignIn ? "in" : "up"} with Facebook`}
+          <Separator vertical width={1} height="$6" backgroundColor="$border" />
+          {`Sign ${isSignIn ? "in" : "up"} with Google`}
         </Button>
       </YStack>
       <YStack

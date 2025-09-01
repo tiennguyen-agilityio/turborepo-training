@@ -1,0 +1,146 @@
+"use client";
+
+import { useCallback, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { useClerk, useUser } from "@clerk/nextjs";
+import { useToastController } from "@tamagui/toast";
+import { Popover, XStack, YStack } from "tamagui";
+
+// Types
+import { DIRECTION } from "@repo/types/svg";
+
+// Constants
+import { LOCAL_STORAGE_KEYS } from "@repo/constants/common";
+import { USER_DROPDOWNS } from "@repo/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
+import { ROUTES } from "@repo/constants/routes";
+
+// Components
+import { Avatar, AlertDialog, Button } from "..";
+import { ChevronIcon } from "../../icons";
+
+interface UserDropdownProps {
+  onChange?: () => void;
+}
+
+const UserDropdown = ({ onChange }: UserDropdownProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const toast = useToastController();
+  const { user } = useUser();
+  const { signOut } = useClerk();
+
+  const isUserProfile = pathname.startsWith(ROUTES.USER_PROFILE);
+
+  const [isOpenAlert, setIsOpenAlert] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { imageUrl = "", firstName = "", lastName = "" } = user || {};
+  const displayName = `${firstName?.trim().charAt(0)}${lastName?.trim().charAt(0)}`;
+
+  const handleToggleAlert = useCallback(() => {
+    setIsOpenAlert((prev) => !prev);
+  }, []);
+
+  const handleToggleMenu = useCallback(() => {
+    setIsOpenMenu((prev) => !prev);
+  }, []);
+
+  const handleClick = (href: string, isSignOut: boolean) => {
+    setIsOpenMenu(false);
+    if (isSignOut) {
+      return setIsOpenAlert(true);
+    }
+
+    onChange?.();
+    return router.push(href);
+  };
+
+  const handleSignOut = async () => {
+    setIsLoading(true);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.MANUAL_SIGN_OUT, "true");
+
+    await signOut({ redirectUrl: pathname })
+      .then(() => {
+        setIsOpenAlert(false);
+        setIsLoading(false);
+        onChange?.();
+        toast.show(SUCCESS_MESSAGES.SIGNED_OUT, {
+          type: "success",
+        });
+      })
+      .catch(() => {
+        setIsOpenAlert(false);
+        setIsLoading(false);
+        onChange?.();
+        toast.show(ERROR_MESSAGES.SIGN_OUT_FAILED, {
+          type: "error",
+        });
+      });
+  };
+
+  return (
+    <XStack>
+      <Popover
+        resize
+        allowFlip
+        stayInFrame
+        offset={6}
+        placement="bottom"
+        open={isOpenMenu}
+        onOpenChange={handleToggleMenu}
+      >
+        <Popover.Trigger asChild cursor="pointer">
+          <XStack gap="$4" alignItems="center">
+            <Avatar src={imageUrl || ""} name={displayName} isActive />
+            <ChevronIcon
+              direction={isOpenMenu ? DIRECTION.UP : DIRECTION.DOWN}
+            />
+          </XStack>
+        </Popover.Trigger>
+
+        <Popover.Content bordered marginRight="$5" elevate animation="quick">
+          <YStack>
+            {USER_DROPDOWNS.map(({ text, href, isSignOut = false }, index) => {
+              const isActive = isUserProfile && href === ROUTES.USER_PROFILE;
+              return (
+                <Button
+                  key={index}
+                  variant="ghost"
+                  justifyContent="center"
+                  alignContent="center"
+                  alignItems="center"
+                  height="$10.5"
+                  paddingHorizontal="$5"
+                  borderBottomWidth={
+                    index === USER_DROPDOWNS?.length - 1 ? 0 : 1
+                  }
+                  borderRadius="none"
+                  borderBottomColor="$border"
+                  color={isActive ? "$primary" : "$color"}
+                  backgroundColor={isActive ? "$accent" : "transparent"}
+                  onPress={() => handleClick(href, isSignOut)}
+                >
+                  {text}
+                </Button>
+              );
+            })}
+          </YStack>
+        </Popover.Content>
+      </Popover>
+
+      <AlertDialog
+        open={isOpenAlert}
+        isLoading={isLoading}
+        onOpenChange={handleToggleAlert}
+        title="Confirm Logout"
+        description="Are you sure you want to log out?"
+        textAction="Logout"
+        onClickAction={handleSignOut}
+      />
+    </XStack>
+  );
+};
+
+export default UserDropdown;

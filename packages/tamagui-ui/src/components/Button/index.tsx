@@ -1,11 +1,7 @@
 "use client";
 
-import { ComponentProps } from "react";
+import { ComponentProps, memo, useMemo } from "react";
 import { Button as TButton, styled, Spinner } from "tamagui";
-
-type CustomButtonProps = ComponentProps<typeof ButtonFrame> & {
-  isLoading?: boolean;
-};
 
 export const ButtonFrame = styled(TButton, {
   name: "Button",
@@ -52,6 +48,7 @@ export const ButtonFrame = styled(TButton, {
         backgroundColor: "transparent",
         color: "$accentForeground",
         hoverStyle: {
+          color: "$primary",
           backgroundColor: "$accent",
         },
         padding: 0,
@@ -81,13 +78,22 @@ export const ButtonFrame = styled(TButton, {
   },
 });
 
-const Button = ({ isLoading, children, ...props }: CustomButtonProps) => {
+type ButtonProps = ComponentProps<typeof ButtonFrame> & {
+  isLoading?: boolean;
+};
+
+const Button = ({ isLoading, children, iconAfter, ...props }: ButtonProps) => {
+  const renderIconAfter = useMemo(() => {
+    if (iconAfter) return iconAfter;
+    if (isLoading) return <Spinner size="small" color="$background" />;
+    return null;
+  }, [iconAfter, isLoading]);
+
   return (
-    <ButtonFrame disabled={isLoading} {...props}>
+    <ButtonFrame disabled={isLoading} iconAfter={renderIconAfter} {...props}>
       {children}
-      {isLoading && <Spinner size="small" color="$background" />}
     </ButtonFrame>
   );
 };
 
-export default Button;
+export default memo(Button);
