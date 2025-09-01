@@ -7,7 +7,7 @@ export const ButtonFrame = styled(TButton, {
   name: "Button",
   borderRadius: "$sm",
   fontSize: "$sm",
-  fontWeight: 600,
+  fontWeight: 400,
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "row",
@@ -28,6 +28,7 @@ export const ButtonFrame = styled(TButton, {
     variant: {
       default: {
         unstyled: true,
+        borderWidth: 0,
         backgroundColor: "$primary",
         color: "$primaryForeground",
         shadowColor: "$shadowColor",
@@ -54,6 +55,7 @@ export const ButtonFrame = styled(TButton, {
         padding: 0,
       },
       link: {
+        padding: 0,
         backgroundColor: "transparent",
         color: "$link",
         textDecorationColor: "$link",

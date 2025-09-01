@@ -20,17 +20,20 @@ const Checkbox = ({
 
   return (
     <XStack alignItems="center" gap="$2.5">
-      <TCheckbox id={id} size={size} overflow="hidden" {...props}>
+      <TCheckbox
+        id={id}
+        size={size}
+        overflow="hidden"
+        borderColor="$border"
+        {...props}
+      >
         <TCheckbox.Indicator
-          width="$full"
-          height="$full"
           backgroundColor="$primary"
           alignItems="center"
           justifyContent="center"
           disabled={disabled}
-          cursor=""
         >
-          <Check size="$4" color="$background" />
+          <Check size="$5" color="$background" />
         </TCheckbox.Indicator>
       </TCheckbox>
       {label && (

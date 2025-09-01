@@ -7,7 +7,7 @@ interface DividerProps {
 const Divider = ({ text = "" }: DividerProps) => {
   return (
     <YStack position="relative">
-      <Separator backgroundColor="$muted" />
+      <Separator borderColor="$border" />
       {text && (
         <Text
           position="absolute"
@@ -18,6 +18,7 @@ const Divider = ({ text = "" }: DividerProps) => {
           zIndex={2}
           x="-50%"
           y="-50%"
+          fontSize="$sm"
         >
           {text}
         </Text>
