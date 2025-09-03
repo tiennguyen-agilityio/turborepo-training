@@ -81,16 +81,19 @@ const MiniHeader = ({ hasBorderBottom = false, ...props }: MiniHeaderProps) => {
           type: "error",
         });
       });
-  }, []);
+  }, [pathname, toast, signOut]);
 
-  const handleClick = useCallback((href: string, isSignOut: boolean) => {
-    setOpen(false);
-    if (isSignOut) {
-      return setIsOpenAlert(true);
-    }
+  const handleClick = useCallback(
+    (href: string, isSignOut: boolean) => {
+      setOpen(false);
+      if (isSignOut) {
+        return setIsOpenAlert(true);
+      }
 
-    return router.push(href);
-  }, []);
+      return router.push(href);
+    },
+    [router],
+  );
 
   const handleToggleAlert = useCallback(() => {
     setIsOpenAlert((prev) => !prev);

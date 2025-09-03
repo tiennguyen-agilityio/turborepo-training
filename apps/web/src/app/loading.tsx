@@ -1,6 +1,6 @@
 "use client";
 
-import { Loading } from "@packages/tamagui-ui/components";
+import { Loading } from "@packages/ui/components";
 
 const LoadingPage = () => <Loading />;
 

@@ -61,7 +61,7 @@ const UserDropdown = ({
       onChange?.();
       return router.push(href);
     },
-    [onChange],
+    [onChange, router],
   );
 
   const handleSignOut = useCallback(async () => {
@@ -85,7 +85,7 @@ const UserDropdown = ({
           type: "error",
         });
       });
-  }, []);
+  }, [toast, pathname, onChange, signOut]);
 
   return (
     <XStack>

@@ -4,9 +4,9 @@ import { YStack } from "tamagui";
 import { HOME_VIDEO } from "@repo/constants/video";
 
 // Components
-import { Header, Footer } from "@packages/tamagui-ui/layouts";
-import { FilterSection, LocationsSection } from "@packages/tamagui-ui/sections";
-import VideoPlayer from "@packages/tamagui-ui/components/VideoPlayer";
+import { Header, Footer } from "@packages/ui/layouts";
+import { FilterSection, LocationsSection } from "@packages/ui/sections";
+import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const CampingLocationsPage = () => {
   return (

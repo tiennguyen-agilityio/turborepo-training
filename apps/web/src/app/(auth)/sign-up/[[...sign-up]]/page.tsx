@@ -1,4 +1,4 @@
-import SignUpForm from "@packages/tamagui-ui/sections/SignUpForm";
+import SignUpForm from "@packages/ui/sections/SignUpForm";
 
 const SignUpPage = () => {
   return <SignUpForm />;

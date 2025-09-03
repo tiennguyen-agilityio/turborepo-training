@@ -127,9 +127,9 @@ importers:
       '@packages/tamagui':
         specifier: workspace:*
         version: link:../../packages/tamagui
-      '@packages/tamagui-ui':
+      '@packages/ui':
         specifier: workspace:*
-        version: link:../../packages/tamagui-ui
+        version: link:../../packages/ui
       '@repo/constants':
         specifier: workspace:*
         version: link:../../packages/constants
@@ -216,6 +216,9 @@ importers:
       '@eslint/js':
         specifier: ^9.31.0
         version: 9.34.0
+      '@next/eslint-plugin-next':
+        specifier: ^15.5.2
+        version: 15.5.2
       eslint:
         specifier: ^9.31.0
         version: 9.34.0
@@ -336,7 +339,25 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  packages/tamagui-ui:
+  packages/types:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+
+  packages/typescript-config:
+    dependencies:
+      '@react-native/typescript-config':
+        specifier: 0.81.0
+        version: 0.81.0
+
+  packages/ui:
     dependencies:
       '@packages/tamagui':
         specifier: workspace:*
@@ -397,35 +418,11 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  packages/types:
-    devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@repo/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-
-  packages/typescript-config:
-    dependencies:
-      '@react-native/typescript-config':
-        specifier: 0.81.0
-        version: 0.81.0
-
   packages/utils:
     dependencies:
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
-      tailwind-merge:
-        specifier: ^3.3.1
-        version: 3.3.1
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -1623,6 +1620,9 @@ packages:
 
   '@next/env@15.3.4':
     resolution: {integrity: sha512-ZkdYzBseS6UjYzz6ylVKPOK+//zLWvD6Ta+vpoye8cW11AjiQjGYVibF0xuvT4L0iJfAPfZLFidaEzAOywyOAQ==}
+
+  '@next/eslint-plugin-next@15.5.2':
+    resolution: {integrity: sha512-lkLrRVxcftuOsJNhWatf1P2hNVfh98k/omQHrCEPPriUypR6RcS13IvLdIrEvkm9AH2Nu2YpR5vLqBuy6twH3Q==}
 
   '@next/swc-darwin-arm64@15.3.4':
     resolution: {integrity: sha512-z0qIYTONmPRbwHWvpyrFXJd5F9YWLCsw3Sjrzj2ZvMYy9NPQMPZ1NjOJh4ojr4oQzcGYwgJKfidzehaNa1BpEg==}
@@ -3152,10 +3152,6 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
 
-  clsx@2.1.1:
-    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
-    engines: {node: '>=6'}
-
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
 
@@ -3696,6 +3692,10 @@ packages:
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+
+  fast-glob@3.3.1:
+    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
+    engines: {node: '>=8.6.0'}
 
   fast-glob@3.3.3:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
@@ -5567,9 +5567,6 @@ packages:
     resolution: {integrity: sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==}
     engines: {node: '>=10.0.0'}
 
-  tailwind-merge@3.3.1:
-    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
-
   tamagui-loader@1.132.23:
     resolution: {integrity: sha512-9Xp5J8/uDppBFmSVUAkW6uE/Z+rSu7ofeA2CTMlbVIHMygdRBMowh87w1SpesS3TrvKoXQN+X+a8nUF92YWHiA==}
 
@@ -7332,6 +7329,10 @@ snapshots:
       tslib: 2.8.1
 
   '@next/env@15.3.4': {}
+
+  '@next/eslint-plugin-next@15.5.2':
+    dependencies:
+      fast-glob: 3.3.1
 
   '@next/swc-darwin-arm64@15.3.4':
     optional: true
@@ -9872,8 +9873,6 @@ snapshots:
 
   clone@1.0.4: {}
 
-  clsx@2.1.1: {}
-
   color-convert@1.9.3:
     dependencies:
       color-name: 1.1.3
@@ -10552,6 +10551,14 @@ snapshots:
   exponential-backoff@3.1.2: {}
 
   fast-deep-equal@3.1.3: {}
+
+  fast-glob@3.3.1:
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.8
 
   fast-glob@3.3.3:
     dependencies:
@@ -12910,8 +12917,6 @@ snapshots:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-
-  tailwind-merge@3.3.1: {}
 
   tamagui-loader@1.132.23(react-dom@19.1.1(react@19.1.1))(react-native@0.79.6(@babel/core@7.28.3)(@react-native-community/cli@20.0.0)(@types/react@19.1.12)(react@19.1.1))(react@19.1.1)(webpack@5.101.3(esbuild@0.25.9)):
     dependencies:

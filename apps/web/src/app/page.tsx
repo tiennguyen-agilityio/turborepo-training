@@ -5,14 +5,14 @@ import { YStack } from "tamagui";
 import { HOME_VIDEO } from "@repo/constants/video";
 
 // Components
-import { Header, Footer } from "@packages/tamagui-ui/layouts";
+import { Header, Footer } from "@packages/ui/layouts";
 import {
   HeroSection,
   AboutSection,
   ServicesSection,
   StatisticsSection,
-} from "@packages/tamagui-ui/sections";
-import VideoPlayer from "@packages/tamagui-ui/components/VideoPlayer";
+} from "@packages/ui/sections";
+import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const Home = () => {
   return (

@@ -25,7 +25,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
       setIsOpen(false);
       onChange?.();
     },
-    [onChange],
+    [onChange, setTheme],
   );
 
   const handleOpenChange = useCallback((value: boolean) => {
@@ -35,7 +35,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
   const handleToggleTheme = useCallback(() => {
     toggleTheme();
     onChange?.();
-  }, [onChange]);
+  }, [onChange, toggleTheme]);
 
   return (
     <YStack>

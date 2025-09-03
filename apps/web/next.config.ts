@@ -26,7 +26,6 @@ export default function createConfig(
         "next/navigation",
         "next/link",
         "next/image",
-        "tailwindcss",
         "@storybook/nextjs",
         "@testing-library/react",
         "@testing-library/jest-dom",

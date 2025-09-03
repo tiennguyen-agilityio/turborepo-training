@@ -1,7 +1,7 @@
 "use client";
 
 import { UserProfile } from "@clerk/nextjs";
-import { Container } from "@packages/tamagui-ui/components";
+import { Container } from "@packages/ui/components";
 
 const ProfilePage = () => {
   return (

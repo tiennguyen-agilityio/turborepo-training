@@ -1,8 +1,8 @@
 "use client";
 
 import { H2, Paragraph, Stack, Text } from "tamagui";
-import { FaceFrownIcon } from "@packages/tamagui-ui/icons/FaceFrownIcon";
-import Button from "@packages/tamagui-ui/components/Button";
+import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
+import Button from "@packages/ui/components/Button";
 
 const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   return (
