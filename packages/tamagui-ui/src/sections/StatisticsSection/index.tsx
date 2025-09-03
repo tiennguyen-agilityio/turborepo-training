@@ -6,12 +6,17 @@ import { YStack, XStack } from "tamagui";
 import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
 
 // Components
-import StatisticsCard from "../../components/StatisticsCard";
+import { Container, StatisticsCard } from "../../components";
 
 const StatisticsSection = () => {
   return (
-    <YStack paddingHorizontal="$5" marginVertical="$20" marginHorizontal="auto">
-      <XStack flexWrap="wrap">
+    <Container
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+      marginVertical="$20"
+    >
+      <XStack width="100%" flexWrap="wrap">
         {STATISTICS_BY_SERVICES.map(({ title, value }) => (
           <YStack
             key={title}
@@ -23,7 +28,7 @@ const StatisticsSection = () => {
           </YStack>
         ))}
       </XStack>
-    </YStack>
+    </Container>
   );
 };
 
