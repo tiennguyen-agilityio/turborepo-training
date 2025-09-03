@@ -1,7 +1,9 @@
-import Loading from "@repo/ui/components/Loading";
+"use client";
+
+import { Spinner } from "tamagui";
 
 const LoadingPage = () => {
-  return <Loading />;
+  return <Spinner marginTop="$5" color="$primary" size="large" />;
 };
 
 export default LoadingPage;

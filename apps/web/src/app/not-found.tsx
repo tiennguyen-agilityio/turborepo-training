@@ -1,26 +1,50 @@
-import Link from "next/link";
+"use client";
 
-import Heading from "@repo/ui/components/Heading";
-import FaceFrownIcon from "@repo/ui/icons/FaceFrownIcon";
+import { useRouter } from "next/navigation";
+import { H2, Paragraph, Stack } from "tamagui";
+
+// Constants
+import { ROUTES } from "@repo/constants/routes";
+
+// Components
+import { FaceFrownIcon } from "@packages/tamagui-ui/icons/FaceFrownIcon";
+import { Container, Button } from "@packages/tamagui-ui/components";
 
 const NotFound = () => {
+  const router = useRouter();
   return (
-    <main className="bg-background">
-      <div className="container mx-auto">
-        <div className="flex flex-col justify-center items-center py-40 gap-5">
-          <FaceFrownIcon className="size-50" />
-          <Heading as="h4" className="text-error">
-            404 - Page Not Found
-          </Heading>
-          <Link
-            href="/"
-            className="mt-4 rounded-md px-4 py-2 text-card-foreground shover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hover:underline"
-          >
-            Go to Home
-          </Link>
-        </div>
-      </div>
-    </main>
+    <Container>
+      <Stack
+        flex={1}
+        justifyContent="center"
+        alignContent="center"
+        alignItems="center"
+        marginHorizontal="auto"
+        paddingVertical="$10"
+        gap="$10"
+        backgroundColor="$background"
+      >
+        <Paragraph color="$error">
+          <FaceFrownIcon height="200" width="200" />
+        </Paragraph>
+        <H2
+          color="$error"
+          fontWeight="$bold"
+          fontSize="$3xl"
+          lineHeight="$3xl"
+          whiteSpace="pre-line"
+        >
+          404 - Page Not Found
+        </H2>
+        <Button
+          backgroundColor="$error"
+          paddingHorizontal="$10"
+          onPress={() => router.replace(ROUTES.HOME)}
+        >
+          Go to Home
+        </Button>
+      </Stack>
+    </Container>
   );
 };
 

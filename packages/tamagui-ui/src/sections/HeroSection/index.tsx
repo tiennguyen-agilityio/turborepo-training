@@ -27,7 +27,6 @@ const HeroSection = () => {
 
       <YStack
         width="100%"
-        paddingHorizontal="$5"
         position="relative"
         $md={{
           height: "$25",

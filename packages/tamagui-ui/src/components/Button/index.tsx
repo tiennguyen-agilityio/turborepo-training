@@ -29,6 +29,7 @@ export const ButtonFrame = styled(TButton, {
       default: {
         unstyled: true,
         borderWidth: 0,
+        paddingHorizontal: "$5",
         backgroundColor: "$primary",
         color: "$primaryForeground",
         shadowColor: "$shadowColor",
@@ -88,7 +89,7 @@ const Button = ({ isLoading, children, iconAfter, ...props }: ButtonProps) => {
   const renderIconAfter = useMemo(() => {
     if (iconAfter) return iconAfter;
     if (isLoading) return <Spinner size="small" color="$background" />;
-    return null;
+    return undefined;
   }, [iconAfter, isLoading]);
 
   return (
