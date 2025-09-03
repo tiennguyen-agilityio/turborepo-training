@@ -1,5 +1,3 @@
-import { YStack } from "tamagui";
-
 // Constants
 import { HOME_VIDEO } from "@repo/constants/video";
 
@@ -10,7 +8,7 @@ import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const CampingLocationsPage = () => {
   return (
-    <YStack>
+    <>
       <Header position="absolute" top="0" left={0} zIndex={4} />
       <VideoPlayer
         autoPlay
@@ -22,7 +20,7 @@ const CampingLocationsPage = () => {
       <VideoPlayer hasPlayed {...HOME_VIDEO} />
       <LocationsSection />
       <Footer />
-    </YStack>
+    </>
   );
 };
 

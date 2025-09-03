@@ -12,7 +12,8 @@
     "./nav": "./src/nav.ts",
     "./routes": "./src/routes.ts",
     "./validation": "./src/validation.ts",
-    "./video": "./src/video.ts"
+    "./video": "./src/video.ts",
+    "./styles": "./src/styles.ts"
   },
   "dependencies": {
     "@repo/types": "workspace:*"

@@ -1,5 +1,5 @@
+import Container from "@packages/ui/components/Container";
 import { Header, Footer } from "@packages/ui/layouts";
-import { Stack, YStack } from "tamagui";
 
 const VerifyLayout = ({
   children,
@@ -7,11 +7,11 @@ const VerifyLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <Stack>
+    <>
       <Header hasBorderBottom />
-      <YStack justifyContent="center">{children}</YStack>
+      <Container justifyContent="center">{children}</Container>
       <Footer />
-    </Stack>
+    </>
   );
 };
 

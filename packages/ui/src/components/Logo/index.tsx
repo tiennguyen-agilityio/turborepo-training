@@ -1,7 +1,12 @@
 "use client";
 
 import { ButtonProps } from "tamagui";
+import { useRouter } from "next/navigation";
 
+// Constants
+import { ROUTES } from "@repo/constants/routes";
+
+// Components
 import Button from "../Button";
 
 interface LogoProps extends ButtonProps {
@@ -15,6 +20,8 @@ const Logo = ({
   textProps,
   ...props
 }: LogoProps) => {
+  const router = useRouter();
+
   return (
     <Button
       variant="ghost"
@@ -30,6 +37,7 @@ const Logo = ({
       hoverStyle={{
         backgroundColor: "transparent",
       }}
+      onPress={() => router.replace(ROUTES.HOME)}
       {...props}
     >
       {text}

@@ -25,6 +25,7 @@ const TopNav = () => {
           width="100%"
           marginTop="$5"
           paddingRight="$5"
+          gap="$2.5"
           $md={{ width: "fit-content" }}
         >
           <Text fontWeight={700} fontSize={13} marginBottom="$3">
@@ -54,7 +55,7 @@ const TopNav = () => {
           <Text fontWeight={700} fontSize="$sm" marginTop="$4">
             Contact Info:
           </Text>
-          <Paragraph fontSize={13}>
+          <Paragraph fontSize="$xs" lineHeight="$xs">
             2nd Floor, Fedha Plaza,
             <br />
             Westlands, Nairobi, Kenya.
@@ -135,6 +136,8 @@ const TopNav = () => {
           <Paragraph
             maxWidth={320}
             fontSize="$xs"
+            lineHeight="$xs"
+            letterSpacing={1.2}
             marginBottom="$3"
             textWrap="wrap"
           >
