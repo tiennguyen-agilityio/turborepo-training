@@ -17,6 +17,7 @@
     "@repo/hooks": "workspace:*",
     "@repo/types": "workspace:*",
     "@repo/utils": "workspace:*",
+    "@repo/services": "workspace:*",
     "@tamagui/lucide-icons": "^1.132.23",
     "@tamagui/next-plugin": "^1.132.22",
     "@tamagui/portal": "^1.132.22",

@@ -368,6 +368,9 @@ importers:
       '@repo/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@repo/services':
+        specifier: workspace:*
+        version: link:../services
       '@repo/types':
         specifier: workspace:*
         version: link:../types
