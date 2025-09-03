@@ -3,10 +3,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 // Constants
 import { LOCALIZATION } from "@repo/constants/localization";
-import { abel } from "@packages/tamagui-ui/fonts";
+import { abel } from "@packages/ui/fonts";
 
 // Providers
-import { TamaguiProviderWeb } from "@packages/tamagui-ui/providers/TamaguiProviderWeb";
+import { TamaguiProviderWeb } from "@packages/ui/providers/TamaguiProviderWeb";
 
 export const metadata: Metadata = {
   title: "Create Next App",

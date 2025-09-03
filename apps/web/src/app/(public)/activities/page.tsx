@@ -1,4 +1,4 @@
-import HeroVideoSection from "@packages/tamagui-ui/sections/HeroVideoSection";
+import HeroVideoSection from "@packages/ui/sections/HeroVideoSection";
 import React from "react";
 
 const ActivitiesPage = () => {

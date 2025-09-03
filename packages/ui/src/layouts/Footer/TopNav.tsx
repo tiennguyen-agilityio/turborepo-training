@@ -1,7 +1,6 @@
 "use client";
 
 import { YStack, XStack, Text, Paragraph } from "tamagui";
-import Link from "next/link";
 
 // Constants
 import { NAV_FOOTERS } from "@repo/constants/nav";
@@ -115,14 +114,9 @@ const TopNav = () => {
               {label}
             </Text>
             <YStack gap="$2.5">
-              {links?.map(({ text = "", href = "" }, currentIndex: number) => (
-                <Text
-                  asChild
-                  key={currentIndex}
-                  fontSize="$xs"
-                  cursor="pointer"
-                >
-                  <Link href={href}>{text}</Link>
+              {links?.map(({ text = "" }, currentIndex: number) => (
+                <Text key={currentIndex} fontSize="$xs" cursor="pointer">
+                  {text}
                 </Text>
               ))}
             </YStack>

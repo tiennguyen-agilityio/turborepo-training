@@ -1,4 +1,4 @@
-import { Header, Footer } from "@packages/tamagui-ui/layouts";
+import { Header, Footer } from "@packages/ui/layouts";
 import { Stack, YStack } from "tamagui";
 
 const VerifyLayout = ({

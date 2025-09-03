@@ -1,5 +1,5 @@
 import { Stack, YStack } from "tamagui";
-import { Header, Footer } from "@packages/tamagui-ui/layouts";
+import { Header, Footer } from "@packages/ui/layouts";
 
 const UserLayout = ({
   children,

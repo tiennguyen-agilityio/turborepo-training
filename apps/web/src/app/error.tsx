@@ -2,8 +2,8 @@
 
 import { Stack, H2, Paragraph } from "tamagui";
 
-import { Button } from "@packages/tamagui-ui/components";
-import { FaceFrownIcon } from "@packages/tamagui-ui/icons/FaceFrownIcon";
+import { Button } from "@packages/ui/components";
+import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
 
 const GlobalError = ({ reset }: { error: Error; reset: () => void }) => {
   return (
