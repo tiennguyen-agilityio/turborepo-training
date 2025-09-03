@@ -1,4 +1,4 @@
-import { Header } from "@packages/tamagui-ui/layouts";
+import { Header, Footer } from "@packages/tamagui-ui/layouts";
 import { Stack, YStack } from "tamagui";
 
 const VerifyLayout = ({
@@ -10,6 +10,7 @@ const VerifyLayout = ({
     <Stack>
       <Header hasBorderBottom />
       <YStack justifyContent="center">{children}</YStack>
+      <Footer />
     </Stack>
   );
 };

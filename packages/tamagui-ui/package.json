@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {},
   "exports": {
+    "./fonts": "./src/assets/fonts/index.ts",
     "./components": "./src/components/index.ts",
     "./components/*": "./src/components/*/index.tsx",
     "./layouts": "./src/layouts/index.ts",
@@ -22,6 +23,7 @@
     "@tamagui/next-plugin": "^1.132.22",
     "@tamagui/portal": "^1.132.22",
     "@tamagui/toast": "^1.132.22",
+    "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-native-svg": "^15.12.1"
@@ -32,6 +34,7 @@
     "@repo/typescript-config": "workspace:*"
   },
   "peerDependencies": {
+    "next": "*",
     "react": "*",
     "react-dom": "*",
     "react-native": "*",
