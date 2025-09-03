@@ -71,23 +71,25 @@ const LocationsSection = () => {
             </YStack>
           ))}
       </XStack>
+      <YStack>
+        {hasMore && (
+          <Button
+            height="$10"
+            marginTop="$10"
+            disabled={isLoading}
+            isLoading={isLoading}
+            onPress={onLoadMore}
+          >
+            Load More
+          </Button>
+        )}
 
-      {hasMore && (
-        <Button
-          height="$10"
-          disabled={isLoading}
-          isLoading={isLoading}
-          onPress={onLoadMore}
-        >
-          Load More
-        </Button>
-      )}
-
-      {error && (
-        <Text color="$error" fontSize="$sm" textAlign="left">
-          {error}
-        </Text>
-      )}
+        {error && (
+          <Text color="$error" fontSize="$sm" textAlign="left">
+            {error}
+          </Text>
+        )}
+      </YStack>
     </Container>
   );
 };

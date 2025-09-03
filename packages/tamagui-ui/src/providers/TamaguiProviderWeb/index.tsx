@@ -2,7 +2,6 @@
 
 import { TamaguiProvider, Theme, type TamaguiProviderProps } from "tamagui";
 import { ToastProvider, ToastViewport } from "@tamagui/toast";
-import { PortalProvider } from "@tamagui/portal";
 
 import { config } from "@packages/tamagui/config";
 
@@ -17,15 +16,13 @@ export const TamaguiProviderWeb = ({
 
   return (
     <TamaguiProvider config={config} defaultTheme={theme || "light"} {...rest}>
-      <PortalProvider shouldAddRootHost>
-        <ToastProvider swipeDirection="horizontal">
-          <Theme name={theme || "light"}>
-            {children}
-            <Toast />
-            <ToastViewport bottom="$5" right="$5" portalToRoot />
-          </Theme>
-        </ToastProvider>
-      </PortalProvider>
+      <ToastProvider swipeDirection="horizontal">
+        <Theme name={theme || "light"}>
+          {children}
+          <Toast />
+          <ToastViewport bottom="$5" right="$5" portalToRoot />
+        </Theme>
+      </ToastProvider>
     </TamaguiProvider>
   );
 };

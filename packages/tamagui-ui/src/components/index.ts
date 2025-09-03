@@ -7,6 +7,7 @@ export { default as Divider } from "./Divider";
 export { default as ExperienceItem } from "./ExperienceItem";
 export { default as Experiences } from "./Experiences";
 export { default as Input } from "./Input";
+export { default as Loading } from "./Loading";
 export { default as LocationCard } from "./LocationCard";
 export { default as LocationFilter } from "./LocationFilter";
 export { default as LocationTile } from "./LocationTile";
