@@ -1,7 +1,10 @@
 export * from "./BookmarkIcon";
 export * from "./CloseIcon";
 export * from "./ChevronIcon";
+export * from "./DiscoverIcon";
 export * from "./MoonIcon";
+export * from "./MasterCardIcon";
+export * from "./MPesaIcon";
 export * from "./WarningIcon";
 export * from "./InfoIcon";
 export * from "./HamburgerIcon";
@@ -10,3 +13,5 @@ export * from "./FaceFrownIcon";
 export * from "./GoogleIcon";
 export * from "./SearchIcon";
 export * from "./SunIcon";
+export * from "./PaypalIcon";
+export * from "./VisaIcon";

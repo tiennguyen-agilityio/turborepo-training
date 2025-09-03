@@ -5,7 +5,7 @@ import { YStack } from "tamagui";
 import { HOME_VIDEO } from "@repo/constants/video";
 
 // Components
-import { Header } from "@packages/tamagui-ui/layouts";
+import { Header, Footer } from "@packages/tamagui-ui/layouts";
 import {
   HeroSection,
   AboutSection,
@@ -23,6 +23,7 @@ const Home = () => {
       <ServicesSection />
       <StatisticsSection />
       <VideoPlayer hasPlayed {...HOME_VIDEO} />
+      <Footer />
     </YStack>
   );
 };

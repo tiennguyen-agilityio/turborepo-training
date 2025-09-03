@@ -1,5 +1,5 @@
-import { Header } from "@packages/tamagui-ui/layouts";
 import { Stack, YStack } from "tamagui";
+import { Header, Footer } from "@packages/tamagui-ui/layouts";
 
 const SignInLayout = ({
   children,
@@ -10,6 +10,7 @@ const SignInLayout = ({
     <Stack>
       <Header hasBorderBottom />
       <YStack justifyContent="center">{children}</YStack>
+      <Footer />
     </Stack>
   );
 };

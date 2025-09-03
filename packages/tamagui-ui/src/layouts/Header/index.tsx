@@ -110,7 +110,7 @@ const Header = ({ hasBorderBottom = false, ...props }: HeaderProps) => {
                 </SignUpButton>
               </SignedOut>
               <SignedIn>
-                <UserDropdown />
+                <UserDropdown iconColor={textColor} />
               </SignedIn>
             </ClerkLoaded>
           </XStack>
