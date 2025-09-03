@@ -14,7 +14,7 @@
   ],
   "tasks": {
     "dev": {
-      "dependsOn": ["^dev", "build:style"],
+      "dependsOn": ["^dev"],
       "cache": false,
       "persistent": true
     },

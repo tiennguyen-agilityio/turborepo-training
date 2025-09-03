@@ -10,7 +10,7 @@
     "dist"
   ],
   "exports": {
-    ".": "./src",
+    ".": "./src/index.ts",
     "./config": "./src/config.ts"
   },
   "dependencies": {

@@ -1,19 +1,40 @@
 "use client";
 
-import Button from "@repo/ui/components/Button";
-import Heading from "@repo/ui/components/Heading";
+import { H2, Paragraph, Stack, Text } from "tamagui";
+import { FaceFrownIcon } from "@packages/tamagui-ui/icons/FaceFrownIcon";
+import Button from "@packages/tamagui-ui/components/Button";
 
 const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-fit pb-15 pt-35 gap-6">
-      <Heading as="h4" className="text-2xl font-bold text-error mb-2">
+    <Stack
+      flex={1}
+      justifyContent="center"
+      alignContent="center"
+      alignItems="center"
+      marginHorizontal="auto"
+      paddingVertical="$10"
+      gap="$10"
+    >
+      <Paragraph color="$error">
+        <FaceFrownIcon height="200" width="200" />
+      </Paragraph>
+      <H2
+        color="$error"
+        fontWeight="$bold"
+        fontSize="$3xl"
+        textAlign="center"
+        lineHeight="$3xl"
+        whiteSpace="pre-line"
+      >
         Oops! Something went wrong.
-      </Heading>
-      <p className="mb-4">{error.message}.</p>
-      <Button variant="destructive" onClick={() => reset()} className="px-10 py-">
+      </H2>
+      <Text color="$error" fontSize="$xl" textAlign="center">
+        {error.message}.
+      </Text>
+      <Button backgroundColor="$error" paddingHorizontal="$10" onPress={() => reset()}>
         Try again
       </Button>
-    </div>
+    </Stack>
   );
 };
 
