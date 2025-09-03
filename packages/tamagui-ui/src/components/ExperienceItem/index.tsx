@@ -1,52 +1,13 @@
 import { Experience } from "@repo/types/common";
 
 // Components
-import { H6, YStack, styled } from "tamagui";
+import { H6, YStack } from "tamagui";
 import Button from "../Button";
 
 export interface ExperienceItemProps extends Experience {
   isActive?: boolean;
   onClick?: () => void;
 }
-
-const LinkButton = styled(Button, {
-  variant: "link",
-  borderWidth: 0,
-  borderRadius: 0,
-  borderBottomWidth: 1,
-  borderColor: "transparent",
-  paddingVertical: "$1",
-  paddingRight: "$3",
-  paddingLeft: 0,
-  color: "$color",
-  fontWeight: 700,
-  height: "$5",
-  hoverStyle: {
-    opacity: 1,
-    backgroundColor: "transparent",
-    borderColor: "$primary",
-  },
-  textProps: {
-    fontSize: "$3",
-    lineHeight: "$sm",
-    textTransform: "capitalize",
-    hoverStyle: {
-      color: "$primary",
-    },
-    $xs: {
-      fontSize: "$4",
-    },
-  },
-
-  variants: {
-    active: {
-      true: {
-        color: "$primary",
-        borderColor: "$primary",
-      },
-    },
-  } as const,
-});
 
 const ExperienceItem = ({
   title,
@@ -55,7 +16,7 @@ const ExperienceItem = ({
   onClick,
 }: ExperienceItemProps) => {
   return (
-    <YStack maxWidth="fit-content" gap="$2.5" justifyContent="flex-start">
+    <YStack gap="$2.5" justifyContent="flex-start">
       {label && (
         <H6
           size="$2.5"
@@ -73,9 +34,28 @@ const ExperienceItem = ({
         </H6>
       )}
 
-      <LinkButton active={isActive} onPress={onClick}>
+      <Button
+        variant="ghost"
+        justifyContent="flex-start"
+        height="min-content"
+        width="min-content"
+        paddingVertical={0}
+        paddingRight="$2"
+        borderBottomWidth={isActive ? 1 : 0}
+        borderBottomColor="$primary"
+        borderRadius={0}
+        color={isActive ? "$primary" : "$color"}
+        backgroundColor="transparent"
+        hoverStyle={{
+          backgroundColor: "transparent",
+        }}
+        $sm={{
+          paddingRight: "$5",
+        }}
+        onPress={onClick}
+      >
         {title}
-      </LinkButton>
+      </Button>
     </YStack>
   );
 };

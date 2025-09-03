@@ -20,9 +20,13 @@ const Experiences = ({ data, onItemClick }: ExperiencesProps) => {
 
   return (
     <XStack
+      width="100%"
       alignItems="center"
       justifyContent="space-between"
-      $xs={{ paddingRight: "$3" }}
+      $md={{
+        flex: 1,
+        paddingRight: "$3",
+      }}
     >
       {data?.map(({ label = "", title }, index) => {
         const isActive = indexActive === index;
@@ -46,7 +50,7 @@ const Experiences = ({ data, onItemClick }: ExperiencesProps) => {
               <Separator
                 vertical
                 height="$12"
-                backgroundColor="$border"
+                borderColor="$border"
                 $lg={{ height: 70 }}
                 transform={[{ rotate: "20deg" }]}
               />

@@ -76,7 +76,7 @@ const VideoPlayer = ({
         zIndex={1}
       >
         <Container width="100%" height="100%">
-          <YStack justifyContent="center" flex={1}>
+          <YStack justifyContent="center" width="100%">
             {(subTitle || title) && (
               <YStack>
                 {subTitle && (
@@ -96,24 +96,15 @@ const VideoPlayer = ({
                     unstyled
                     color="white"
                     marginBottom="$3"
-                    // size={36}
-                    fontSize={80}
-                    lineHeight={84}
+                    fontSize={36}
+                    lineHeight={40}
                     textShadowColor="$color"
                     textShadowOffset={{ width: 1, height: 1 }}
                     textShadowRadius={2}
                     whiteSpace="pre-line"
-                    $xs={{
-                      fontSize: 32,
-                      lineHeight: 36,
-                    }}
-                    $sm={{
-                      fontSize: 32,
-                      lineHeight: 36,
-                    }}
                     $md={{
-                      fontSize: 36,
-                      lineHeight: 40,
+                      fontSize: 80,
+                      lineHeight: 84,
                     }}
                   >
                     {title}

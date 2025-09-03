@@ -16,7 +16,7 @@ export const TamaguiProviderWeb = ({
   const theme = useThemeStore((state) => state.theme);
 
   return (
-    <TamaguiProvider config={config} {...rest}>
+    <TamaguiProvider config={config} defaultTheme={theme || "light"} {...rest}>
       <PortalProvider shouldAddRootHost>
         <ToastProvider swipeDirection="horizontal">
           <Theme name={theme || "light"}>
