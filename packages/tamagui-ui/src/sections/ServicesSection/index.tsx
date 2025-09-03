@@ -61,7 +61,7 @@ const ServicesSection = () => {
           );
         })}
       </Stack>
-      <Paragraph marginTop="$25" fontSize="$xxs">
+      <Paragraph width="50%" marginTop="$20" fontSize="$xl" lineHeight="$lg">
         We create awesome experiences by showcasing some of the best places and
         activities in the country
       </Paragraph>

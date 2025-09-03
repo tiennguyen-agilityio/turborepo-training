@@ -1,26 +1,29 @@
 import React from "react";
+import { YStack } from "tamagui";
 
+// Constants
 import { HOME_VIDEO } from "@repo/constants/video";
-import VideoPlayer from "@repo/ui/components/VideoPlayer";
-import HeroSection from "@repo/ui/sections/HeroSection";
-import CarouselSection from "@repo/ui/sections/CarouselSection";
-import AboutSection from "@repo/ui/sections/AboutSection";
-import ServicesSection from "@repo/ui/sections/ServicesSection";
-import StatisticsSection from "@repo/ui/sections/StatisticsSection";
-import Layout from "@repo/ui/layout";
+
+// Components
+import { Header } from "@packages/tamagui-ui/layouts";
+import {
+  HeroSection,
+  AboutSection,
+  ServicesSection,
+  StatisticsSection,
+} from "@packages/tamagui-ui/sections";
+import VideoPlayer from "@packages/tamagui-ui/components/VideoPlayer";
 
 const Home = () => {
   return (
-    <Layout>
-      <div className="w-full overflow-hidden">
-        <HeroSection />
-        <CarouselSection />
-        <AboutSection />
-        <ServicesSection />
-        <StatisticsSection />
-        <VideoPlayer hasPlayed {...HOME_VIDEO} />
-      </div>
-    </Layout>
+    <YStack gap="$20">
+      <Header position="absolute" top="0" left={0} zIndex={4} />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <StatisticsSection />
+      <VideoPlayer hasPlayed {...HOME_VIDEO} />
+    </YStack>
   );
 };
 

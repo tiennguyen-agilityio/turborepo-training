@@ -1,18 +1,18 @@
 "use client";
 
-import React from "react";
 import { Stack, H2, H6 } from "tamagui";
 
-import Post from "../../components/Post";
+import { Container, Post } from "../../components";
 
 const AboutSection = () => {
   const handleReadMore = () => {};
 
   return (
-    <Stack
-      marginHorizontal="auto"
+    <Container
       marginTop="$6"
-      paddingHorizontal="$4"
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
     >
       <H6
         fontWeight={700}
@@ -24,11 +24,7 @@ const AboutSection = () => {
         ABOUT US
       </H6>
 
-      <H2
-        fontSize="$3xl"
-        lineHeight="$3xl"
-        whiteSpace="pre-line"
-      >
+      <H2 fontSize="$3xl" lineHeight="$3xl" whiteSpace="pre-line">
         A Guide To Rocky Mountain
         {"\n"}
         Vacations
@@ -56,7 +52,7 @@ const AboutSection = () => {
           text="In some places the water seeps down through cracks & eats out holes beneath the surface. When the side rock erodes away, an archway is left behind. Eventually the arch collapses, leaving one more pillars to join the rest. The ever changing vista of colors, spires, walls & archways is spectacular at any season, & the park is open all year round."
         />
       </Stack>
-    </Stack>
+    </Container>
   );
 };
 
