@@ -4,7 +4,7 @@ import { memo, useCallback, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { useToastController } from "@tamagui/toast";
-import { Popover, Stack, XStack, YStack } from "tamagui";
+import { Popover, Stack, XStack, YStack, Text } from "tamagui";
 
 // Types
 import { DIRECTION } from "@repo/types/svg";
@@ -20,10 +20,14 @@ import { Avatar, AlertDialog, Button } from "..";
 import { ChevronIcon } from "../../icons";
 
 interface UserDropdownProps {
+  iconColor?: string;
   onChange?: () => void;
 }
 
-const UserDropdown = ({ onChange }: UserDropdownProps) => {
+const UserDropdown = ({
+  iconColor = "$color",
+  onChange,
+}: UserDropdownProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const toast = useToastController();
@@ -98,9 +102,11 @@ const UserDropdown = ({ onChange }: UserDropdownProps) => {
           <Popover.Trigger asChild cursor="pointer">
             <XStack gap="$4" alignItems="center">
               <Avatar src={imageUrl || ""} name={displayName} isActive />
-              <ChevronIcon
-                direction={isOpenMenu ? DIRECTION.UP : DIRECTION.DOWN}
-              />
+              <Text color={iconColor}>
+                <ChevronIcon
+                  direction={isOpenMenu ? DIRECTION.UP : DIRECTION.DOWN}
+                />
+              </Text>
             </XStack>
           </Popover.Trigger>
 
