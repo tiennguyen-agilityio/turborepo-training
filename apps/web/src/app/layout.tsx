@@ -1,14 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import "@repo/tailwind-config";
-import "@repo/ui/styles.css";
 
+// Constants
 import { LOCALIZATION } from "@repo/constants/localization";
 import { abel } from "@repo/ui/fonts";
-import { Toaster } from "@repo/ui/components/ui/sonner";
-import SessionWatcher from "@repo/ui/components/SessionWatcher";
 
-// import { ThemeProvider } from "@repo/ui/providers/NextTheme";
+// Providers
 import { TamaguiProviderWeb } from "@packages/tamagui-ui/providers/TamaguiProviderWeb";
 
 export const metadata: Metadata = {
@@ -39,19 +36,7 @@ export default function RootLayout({
             cssLayerName: "clerk",
           }}
         >
-          {/* <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <SessionWatcher />
-            <Toaster theme="light" closeButton richColors />
-          </ThemeProvider> */}
           <TamaguiProviderWeb>{children}</TamaguiProviderWeb>
-          <SessionWatcher />
-          <Toaster theme="light" closeButton richColors />
         </ClerkProvider>
       </body>
     </html>

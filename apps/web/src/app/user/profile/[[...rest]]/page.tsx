@@ -1,14 +1,13 @@
+"use client";
+
 import { UserProfile } from "@clerk/nextjs";
+import { Container } from "@packages/tamagui-ui/components";
 
 const ProfilePage = () => {
   return (
-    <UserProfile
-      appearance={{
-        elements: {
-          rootBox: "w-full mx-auto px-5 py-10",
-        },
-      }}
-    />
+    <Container paddingVertical="$10" justifyContent="center">
+      <UserProfile />
+    </Container>
   );
 };
 

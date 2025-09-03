@@ -1,6 +1,8 @@
 "use client";
 
-import { Anchor, XStack, YStack, Text } from "tamagui";
+import { useRouter } from "next/navigation";
+import { XStack, YStack } from "tamagui";
+import Button from "../Button";
 
 interface MenuItem {
   name: string;
@@ -10,43 +12,55 @@ interface MenuItem {
 interface NavigationMenuProps {
   list: MenuItem[];
   path?: string;
+  color?: string;
 }
 
-const NavigationMenu = ({ list, path = "" }: NavigationMenuProps) => {
+const NavigationMenu = ({
+  list,
+  path = "",
+  color = "$color",
+}: NavigationMenuProps) => {
+  const router = useRouter();
+
   return (
-    <XStack gap="$3" justifyContent="center" alignItems="center">
+    <XStack
+      alignItems="center"
+      gap="$3"
+      $sm={{
+        gap: "$5",
+      }}
+      $md={{
+        gap: "$7",
+      }}
+    >
       {list?.map(({ name, href }, index) => {
         const isActive = path === href;
+        const handlePress = () => router.push(href || "/");
 
         return (
-          <YStack
+          <Button
             key={index}
-            alignContent="center"
-            alignItems="center"
-            justifyContent="center"
-            paddingHorizontal="$2"
-            paddingTop="$5"
-            paddingBottom="$1"
+            variant="ghost"
+            flexDirection="column"
+            gap={0}
+            paddingTop="$2"
+            color={isActive ? "$primary" : color}
+            fontWeight={700}
+            hoverStyle={{
+              opacity: 1,
+              backgroundColor: "transparent",
+            }}
+            onPress={handlePress}
           >
-            <Anchor
-              asChild
-              href={href}
-              fontWeight={700}
-              fontSize="$sm"
-              color={isActive ? "$primary" : "$color"}
-            >
-              <Text>{name}</Text>
-            </Anchor>
-
+            {name}
             <YStack
-              width={8}
-              height={8}
-              marginTop="$1.5"
+              width="$2"
+              height="$2"
               borderRadius="$full"
               backgroundColor={isActive ? "$primary" : "transparent"}
               animation="quick"
             />
-          </YStack>
+          </Button>
         );
       })}
     </XStack>

@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { useToastController } from "@tamagui/toast";
-import { Popover, XStack, YStack } from "tamagui";
+import { Popover, Stack, XStack, YStack } from "tamagui";
 
 // Types
 import { DIRECTION } from "@repo/types/svg";
@@ -47,17 +47,20 @@ const UserDropdown = ({ onChange }: UserDropdownProps) => {
     setIsOpenMenu((prev) => !prev);
   }, []);
 
-  const handleClick = (href: string, isSignOut: boolean) => {
-    setIsOpenMenu(false);
-    if (isSignOut) {
-      return setIsOpenAlert(true);
-    }
+  const handleClick = useCallback(
+    (href: string, isSignOut: boolean) => {
+      setIsOpenMenu(false);
+      if (isSignOut) {
+        return setIsOpenAlert(true);
+      }
 
-    onChange?.();
-    return router.push(href);
-  };
+      onChange?.();
+      return router.push(href);
+    },
+    [onChange],
+  );
 
-  const handleSignOut = async () => {
+  const handleSignOut = useCallback(async () => {
     setIsLoading(true);
     localStorage.setItem(LOCAL_STORAGE_KEYS.MANUAL_SIGN_OUT, "true");
 
@@ -78,57 +81,69 @@ const UserDropdown = ({ onChange }: UserDropdownProps) => {
           type: "error",
         });
       });
-  };
+  }, []);
 
   return (
     <XStack>
-      <Popover
-        resize
-        allowFlip
-        stayInFrame
-        offset={6}
-        placement="bottom"
-        open={isOpenMenu}
-        onOpenChange={handleToggleMenu}
-      >
-        <Popover.Trigger asChild cursor="pointer">
-          <XStack gap="$4" alignItems="center">
-            <Avatar src={imageUrl || ""} name={displayName} isActive />
-            <ChevronIcon
-              direction={isOpenMenu ? DIRECTION.UP : DIRECTION.DOWN}
-            />
-          </XStack>
-        </Popover.Trigger>
+      <Stack>
+        <Popover
+          resize
+          allowFlip
+          stayInFrame
+          offset={6}
+          placement="bottom"
+          open={isOpenMenu}
+          onOpenChange={handleToggleMenu}
+        >
+          <Popover.Trigger asChild cursor="pointer">
+            <XStack gap="$4" alignItems="center">
+              <Avatar src={imageUrl || ""} name={displayName} isActive />
+              <ChevronIcon
+                direction={isOpenMenu ? DIRECTION.UP : DIRECTION.DOWN}
+              />
+            </XStack>
+          </Popover.Trigger>
 
-        <Popover.Content bordered marginRight="$5" elevate animation="quick">
-          <YStack>
-            {USER_DROPDOWNS.map(({ text, href, isSignOut = false }, index) => {
-              const isActive = isUserProfile && href === ROUTES.USER_PROFILE;
-              return (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  justifyContent="center"
-                  alignContent="center"
-                  alignItems="center"
-                  height="$10.5"
-                  paddingHorizontal="$5"
-                  borderBottomWidth={
-                    index === USER_DROPDOWNS?.length - 1 ? 0 : 1
-                  }
-                  borderRadius="none"
-                  borderBottomColor="$border"
-                  color={isActive ? "$primary" : "$color"}
-                  backgroundColor={isActive ? "$accent" : "transparent"}
-                  onPress={() => handleClick(href, isSignOut)}
-                >
-                  {text}
-                </Button>
-              );
-            })}
-          </YStack>
-        </Popover.Content>
-      </Popover>
+          <Popover.Content
+            bordered
+            borderColor="$border"
+            marginRight="$5"
+            elevate
+            animation="quick"
+          >
+            <YStack>
+              {USER_DROPDOWNS.map(
+                ({ text, href, isSignOut = false }, index) => {
+                  const isActive =
+                    isUserProfile && href === ROUTES.USER_PROFILE;
+                  const handleItemClick = () => handleClick(href, isSignOut);
+                  return (
+                    <Button
+                      key={index}
+                      variant="ghost"
+                      justifyContent="center"
+                      alignContent="center"
+                      alignItems="center"
+                      height="$10.5"
+                      paddingHorizontal="$5"
+                      borderBottomWidth={
+                        index === USER_DROPDOWNS?.length - 1 ? 0 : 1
+                      }
+                      borderRadius="none"
+                      borderBottomColor="$border"
+                      color={isActive ? "$primary" : "$color"}
+                      backgroundColor={isActive ? "$accent" : "transparent"}
+                      onPress={handleItemClick}
+                    >
+                      {text}
+                    </Button>
+                  );
+                },
+              )}
+            </YStack>
+          </Popover.Content>
+        </Popover>
+      </Stack>
 
       <AlertDialog
         open={isOpenAlert}
@@ -143,4 +158,4 @@ const UserDropdown = ({ onChange }: UserDropdownProps) => {
   );
 };
 
-export default UserDropdown;
+export default memo(UserDropdown);
