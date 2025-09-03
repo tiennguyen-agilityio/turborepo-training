@@ -9,3 +9,4 @@ export { default as SocialButtons } from "./SocialButtons";
 export { default as SignInForm } from "./SignInForm";
 export { default as SignUpForm } from "./SignUpForm";
 export { default as VerifyForm } from "./VerifyForm";
+export { default as RedirectCallback } from "./RedirectCallback";

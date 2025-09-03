@@ -1,9 +1,7 @@
 "use client";
 
-import { Spinner } from "tamagui";
+import { Loading } from "@packages/tamagui-ui/components";
 
-const LoadingPage = () => {
-  return <Spinner marginTop="$5" color="$primary" size="large" />;
-};
+const LoadingPage = () => <Loading />;
 
 export default LoadingPage;
