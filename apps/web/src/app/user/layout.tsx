@@ -1,4 +1,4 @@
-import { Stack, YStack } from "tamagui";
+import Container from "@packages/ui/components/Container";
 import { Header, Footer } from "@packages/ui/layouts";
 
 const UserLayout = ({
@@ -7,11 +7,11 @@ const UserLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <Stack>
+    <>
       <Header hasBorderBottom />
-      <YStack justifyContent="center">{children}</YStack>
+      <Container justifyContent="center">{children}</Container>
       <Footer />
-    </Stack>
+    </>
   );
 };
 

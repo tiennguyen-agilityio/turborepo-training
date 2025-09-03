@@ -1,5 +1,4 @@
 import React from "react";
-import { YStack } from "tamagui";
 
 // Constants
 import { HOME_VIDEO } from "@repo/constants/video";
@@ -16,7 +15,7 @@ import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const Home = () => {
   return (
-    <YStack gap="$20">
+    <>
       <Header position="absolute" top="0" left={0} zIndex={4} />
       <HeroSection />
       <AboutSection />
@@ -24,7 +23,7 @@ const Home = () => {
       <StatisticsSection />
       <VideoPlayer hasPlayed {...HOME_VIDEO} />
       <Footer />
-    </YStack>
+    </>
   );
 };
 

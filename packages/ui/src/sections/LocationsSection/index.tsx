@@ -8,6 +8,7 @@ import { LocationItem } from "@repo/types/location";
 
 // Constants
 import { PAGE_SIZE } from "@repo/constants/common";
+import { MAX_WITH_SCREEN } from "@repo/constants/styles";
 
 // Hooks
 import { useLoadMore } from "@repo/hooks/useLoadMore";
@@ -34,7 +35,12 @@ const LocationsSection = () => {
   } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: PAGE_SIZE });
 
   const { width } = useScreenSize();
-  const tileWidth = useMemo(() => (width - 40) / 3, [width]);
+
+  const tileWidth = useMemo(() => {
+    const currentWidth = width >= MAX_WITH_SCREEN ? MAX_WITH_SCREEN : width;
+
+    return (currentWidth - 40) / 3;
+  }, [width]);
 
   return (
     <Container marginVertical="$20" flexDirection="column">

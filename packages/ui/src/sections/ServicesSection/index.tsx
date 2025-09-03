@@ -5,20 +5,31 @@ import { YStack, Paragraph, H2, H6, Stack } from "tamagui";
 
 // Constants
 import { LOCATION_TILES } from "@repo/constants/location";
+import { MAX_WITH_SCREEN } from "@repo/constants/styles";
 
 // Hooks
 import { useScreenSize } from "@repo/hooks/useScreenSize";
 
 // Components
 import LocationTile from "../../components/LocationTile";
+import { Container } from "../../components";
 
 const ServicesSection = () => {
   const { width } = useScreenSize();
 
-  const tileWidth = useMemo(() => (width - 40) / 3, [width]);
+  const tileWidth = useMemo(() => {
+    const currentWidth = width >= MAX_WITH_SCREEN ? MAX_WITH_SCREEN : width;
+
+    return (currentWidth - 40) / 3;
+  }, [width]);
 
   return (
-    <YStack paddingHorizontal="$5" marginTop="$35">
+    <Container
+      marginTop="$25"
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+    >
       <H6
         fontWeight={700}
         fontSize="$sm"
@@ -65,7 +76,7 @@ const ServicesSection = () => {
         We create awesome experiences by showcasing some of the best places and
         activities in the country
       </Paragraph>
-    </YStack>
+    </Container>
   );
 };
 
