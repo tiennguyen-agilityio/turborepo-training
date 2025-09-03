@@ -13,6 +13,7 @@ export { default as Logo } from "./Logo";
 export { default as NavigationMenu } from "./NavigationMenu";
 export { default as Post } from "./Post";
 export { default as Toast } from "./Toast";
+export { default as ThemeToggle } from "./ThemeToggle";
 export { default as Skeleton } from "./Skeleton";
 export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
 export { default as Select } from "./Select";

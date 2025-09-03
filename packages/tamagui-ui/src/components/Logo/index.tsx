@@ -1,34 +1,35 @@
 "use client";
 
-import { Button, ButtonProps } from "tamagui";
+import { ButtonProps } from "tamagui";
+
+import Button from "../Button";
 
 interface LogoProps extends ButtonProps {
   text?: string;
   color?: string;
-  className?: string;
 }
 
 const Logo = ({
   text = "Travelsy",
-  className = "",
   color = "$color",
-  textProps = {},
+  textProps,
   ...props
 }: LogoProps) => {
   return (
     <Button
-      unstyled
-      fontWeight="$bold"
-      fontSize="$lg"
-      width="min-content"
-      pressStyle={{ opacity: 0.8 }}
+      variant="ghost"
+      padding={0}
+      height="min-content"
       textProps={{
         lineHeight: "$base",
+        fontSize: "$lg",
         fontWeight: 700,
         color,
         ...textProps,
       }}
-      className={className}
+      hoverStyle={{
+        backgroundColor: "transparent",
+      }}
       {...props}
     >
       {text}

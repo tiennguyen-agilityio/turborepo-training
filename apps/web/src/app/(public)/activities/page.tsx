@@ -1,9 +1,12 @@
 import React from "react";
-
-import HeroVideoSection from "@repo/ui/sections/HeroVideoSection";
+import { Stack, Text } from "tamagui";
 
 const ActivitiesPage = () => {
-  return <HeroVideoSection title="Activities Page" />;
+  return (
+    <Stack>
+      <Text>Hello ActivitiesPage</Text>
+    </Stack>
+  );
 };
 
 export default ActivitiesPage;

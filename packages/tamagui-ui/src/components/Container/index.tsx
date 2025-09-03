@@ -10,7 +10,7 @@ const Container = ({ children, ...props }: ContainerProps) => {
       width="100%"
       justifyContent="space-between"
       alignItems="center"
-      maxWidth={1440}
+      maxWidth={1240}
       paddingHorizontal="$5"
       marginHorizontal="auto"
       {...props}
