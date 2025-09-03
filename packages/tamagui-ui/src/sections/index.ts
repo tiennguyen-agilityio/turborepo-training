@@ -1,5 +1,6 @@
 export { default as AboutSection } from "./AboutSection";
 export { default as HeroSection } from "./HeroSection";
+export { default as HeroVideoSection } from "./HeroVideoSection";
 export { default as ServicesSection } from "./ServicesSection";
 export { default as StatisticsSection } from "./StatisticsSection";
 export { default as SocialButtons } from "./SocialButtons";

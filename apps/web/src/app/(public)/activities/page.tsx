@@ -1,12 +1,8 @@
+import HeroVideoSection from "@packages/tamagui-ui/sections/HeroVideoSection";
 import React from "react";
-import { Stack, Text } from "tamagui";
 
 const ActivitiesPage = () => {
-  return (
-    <Stack>
-      <Text>Hello ActivitiesPage</Text>
-    </Stack>
-  );
+  return <HeroVideoSection title="Activities Page" />;
 };
 
 export default ActivitiesPage;

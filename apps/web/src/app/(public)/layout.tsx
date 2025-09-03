@@ -1,5 +1,5 @@
-import { Header } from "@packages/tamagui-ui/layouts";
 import { Stack, YStack } from "tamagui";
+import { Header } from "@packages/tamagui-ui/layouts";
 
 const PublicLayout = ({
   children,
@@ -8,7 +8,7 @@ const PublicLayout = ({
 }>) => {
   return (
     <Stack>
-      <Header />
+      <Header position="absolute" top="0" left={0} zIndex={4} />
       <YStack justifyContent="center">{children}</YStack>
     </Stack>
   );
