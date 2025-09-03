@@ -1,3 +1,5 @@
+"use client";
+
 import { XStack, XStackProps } from "tamagui";
 
 interface ContainerProps extends XStackProps {

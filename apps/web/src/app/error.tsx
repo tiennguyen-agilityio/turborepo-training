@@ -19,7 +19,14 @@ const GlobalError = ({ reset }: { error: Error; reset: () => void }) => {
       <Paragraph color="$error">
         <FaceFrownIcon height="200" width="200" />
       </Paragraph>
-      <H2 color="$error" fontWeight="$bold" fontSize="$3xl" lineHeight="$3xl" whiteSpace="pre-line">
+      <H2
+        color="$error"
+        fontWeight="$bold"
+        fontSize="$3xl"
+        textAlign="center"
+        lineHeight="$3xl"
+        whiteSpace="pre-line"
+      >
         Oops! Something went wrong. Please try again!
       </H2>
       <Button backgroundColor="$error" paddingHorizontal="$10" onPress={() => reset()}>
