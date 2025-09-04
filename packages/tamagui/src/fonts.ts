@@ -1,5 +1,4 @@
 import { createFont } from "tamagui";
-import { space } from "./metrics";
 import { fontSize, lineHeight } from "./typography";
 
 export const fonts = {
@@ -9,7 +8,6 @@ export const fonts = {
 
 export const fontConfig = {
   size: {
-    ...space,
     ...fontSize,
     true: 16,
   },

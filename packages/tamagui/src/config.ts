@@ -15,10 +15,13 @@ const tokens = {
 
 export const config = createTamagui({
   ...defaultConfig,
+  shouldAddPrefersColorThemes: true,
+  themeClassNameOnRoot: true,
   fonts: {
     body: defaultFont,
     heading: headingFont,
   },
+  defaultFont: "body",
   tokens: createTokens({
     ...tokens,
     color: colorsMapping,

@@ -1,14 +1,7 @@
 {
   "name": "@packages/tamagui",
   "version": "0.0.0",
-  "sideEffects": [
-    "*.css"
-  ],
   "private": true,
-  "files": [
-    "types",
-    "dist"
-  ],
   "exports": {
     ".": "./src/index.ts",
     "./config": "./src/config.ts"

@@ -1,11 +1,9 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { useThemeSetting } from "@tamagui/next-theme";
 import { Popover, PopoverTrigger, PopoverContent, PopoverArrow } from "tamagui";
 import { YStack, XStack } from "tamagui";
-
-// Hooks
-import { useThemeStore, ThemeName } from "@repo/hooks/useThemeStore";
 
 // Components
 import { MoonIcon, SunIcon } from "../../icons";
@@ -16,16 +14,16 @@ interface ThemeToggleProps {
 }
 
 const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
-  const { setTheme, toggleTheme, theme = "light" } = useThemeStore();
+  const { current, toggle, set } = useThemeSetting();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = useCallback(
-    (value: ThemeName) => {
-      setTheme(value);
+    (value: string) => {
+      set(value);
       setIsOpen(false);
       onChange?.();
     },
-    [onChange, setTheme],
+    [onChange, set],
   );
 
   const handleOpenChange = useCallback((value: boolean) => {
@@ -33,9 +31,9 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
   }, []);
 
   const handleToggleTheme = useCallback(() => {
-    toggleTheme();
+    toggle();
     onChange?.();
-  }, [onChange, toggleTheme]);
+  }, [onChange, toggle]);
 
   return (
     <YStack>
@@ -52,7 +50,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
               height="$9"
               backgroundColor="transparent"
             >
-              {theme === "light" ? <SunIcon /> : <MoonIcon />}
+              {current === "light" ? <SunIcon /> : <MoonIcon />}
             </Button>
           </PopoverTrigger>
           <PopoverContent
@@ -97,7 +95,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
           backgroundColor="transparent"
           onPress={handleToggleTheme}
         >
-          {theme === "light" ? <SunIcon /> : <MoonIcon />}
+          {current === "light" ? <SunIcon /> : <MoonIcon />}
         </Button>
       </XStack>
     </YStack>

@@ -32,6 +32,13 @@ export default function createConfig(
       ],
       externalDir: true,
     },
+    transpilePackages: [
+      "@tamagui/next-plugin",
+      "@tamagui/next-theme",
+      "@tamagui/config",
+      "@tamagui/toast",
+      "tamagui",
+    ],
   };
 
   const tamaguiPlugin = withTamagui({
