@@ -11,13 +11,15 @@
     "@tamagui/core": "^1.132.20",
     "@tamagui/shorthands": "^1.132.20",
     "@tamagui/themes": "^1.132.20",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "tamagui": "^1.132.20"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

@@ -42,8 +42,8 @@
   },
   "peerDependencies": {
     "next": "*",
-    "react": "*",
-    "react-dom": "*",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hook-form": "*"
   }
 }
