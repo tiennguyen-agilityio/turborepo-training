@@ -21,7 +21,6 @@ export const ButtonFrame = styled(TButton, {
   },
   textProps: {
     fontSize: "$sm",
-    lineHeight: "$base",
   },
   gap: 4,
   variants: {
@@ -34,7 +33,6 @@ export const ButtonFrame = styled(TButton, {
         color: "$primaryForeground",
         shadowColor: "$shadowColor",
         shadowOpacity: 0.2,
-        textDecorationLine: "unset",
       },
       outlined: {
         backgroundColor: "$background",
@@ -70,7 +68,6 @@ export const ButtonFrame = styled(TButton, {
     size: {
       default: {
         height: 50,
-        lineHeight: "$lg",
       },
     },
   },
