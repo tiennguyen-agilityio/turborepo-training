@@ -1,27 +1,31 @@
+import { StatusBar, StyleSheet, useColorScheme, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { MAX_WITH_SCREEN } from "@repo/constants/styles";
+import Button from "@packages/ui/components/Button";
 
-import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import { TamaguiProviderMobile } from "@packages/ui/providers/TamaguiProviderMobile";
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === "dark";
+
+  console.log("max", MAX_WITH_SCREEN);
 
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={styles.container}>
-				<Text >Hellow</Text>
-			</View>
+      <TamaguiProviderMobile>
+        <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
+        <View style={styles.container}>
+          <Button>Hello</Button>
+        </View>
+      </TamaguiProviderMobile>
     </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-		backgroundColor: 'red',
-		flex: 1,
-		padding: 40
+    flex: 1,
+    padding: 40,
   },
 });
 

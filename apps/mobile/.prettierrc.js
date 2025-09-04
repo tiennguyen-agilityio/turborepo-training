@@ -1,5 +1,3 @@
-module.exports = {
-  arrowParens: 'avoid',
-  singleQuote: true,
-  trailingComma: 'all',
-};
+import prettierConfig from "@repo/prettier-config";
+
+export default prettierConfig;

@@ -12,6 +12,7 @@ export default defineConfig([
       ...pluginRN.configs.all.rules,
       "react-native/no-inline-styles": "warn",
       "react-native/no-color-literals": "off",
+      "react-native/no-raw-text": "off",
     },
     languageOptions: {
       globals: {
