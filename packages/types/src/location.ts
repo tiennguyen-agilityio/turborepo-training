@@ -9,3 +9,11 @@ export interface LocationItem {
   rating: number;
   reviews: number;
 }
+
+export interface LocationTileItem {
+  id?: string;
+  title: string;
+  imageUrl: string;
+  slug: string;
+  count: number;
+}

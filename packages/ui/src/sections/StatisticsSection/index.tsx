@@ -6,7 +6,8 @@ import { YStack, XStack } from "tamagui";
 import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
 
 // Components
-import { Container, StatisticsCard } from "../../components";
+import Container from "../../components/Container";
+import StatisticsCard from "../../components/StatisticsCard";
 
 const StatisticsSection = () => {
   return (

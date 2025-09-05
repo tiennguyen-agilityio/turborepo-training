@@ -14,11 +14,17 @@ import { EMPTY_IMAGE } from "@repo/constants/images";
 import { formatMinutes } from "@repo/utils/time";
 
 interface LocationCardProps extends CardProps {
+  imageHeight?: number | string;
   item: LocationItem;
   onItemClick?: () => void;
 }
 
-const LocationCard = ({ item, onItemClick, ...props }: LocationCardProps) => {
+const LocationCard = ({
+  imageHeight = 300,
+  item,
+  onItemClick,
+  ...props
+}: LocationCardProps) => {
   const {
     title = "",
     image,
@@ -42,7 +48,7 @@ const LocationCard = ({ item, onItemClick, ...props }: LocationCardProps) => {
       onPress={onItemClick}
       {...props}
     >
-      <CardHeader padding={0} minHeight={300} maxHeight={350}>
+      <CardHeader padding={0} minHeight={imageHeight} maxHeight={350}>
         <CardBackground>
           <Image
             source={{
