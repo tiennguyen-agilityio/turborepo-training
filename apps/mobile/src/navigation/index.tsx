@@ -1,38 +1,30 @@
-import { StatusBar } from "react-native";
+import { StatusBar, useColorScheme } from "react-native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-// Interfaces
-import { SCREENS } from "../types";
+// Providers
+import { TamaguiProviderMobile } from "@packages/ui/providers/TamaguiProviderMobile";
 
 // Stacks | Screens
-import {
-  // CartScreen,
-  // ProfileScreen,
-  // SearchScreen,
-  SignInScreen,
-  // HomeScreen
-} from "../screens";
-// import TabsStack from './TabsStack';
-// import AuthStack from './AuthStack';
+import { SignInScreen } from "../screens";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-// export const Navigation = createStaticNavigation(RootStack);
-
-// const AppStack = createNativeStackNavigator()
-
 export const Navigation = () => {
-  console.log(" ---Screen", SCREENS.HOME);
+  const queryClient = new QueryClient();
+  const isDarkMode = useColorScheme() === "dark";
 
   return (
-    <GestureHandlerRootView>
-      <StatusBar />
-      <SignInScreen />
-      {/* <NavigationContainer>
-					<AppStack.Navigator>
-						<AppStack.Screen name={SCREENS.AUTH_STACK} component={AuthStack} />
-						<AppStack.Screen name={SCREENS.SIGN_IN} component={SignInScreen} />
-						<AppStack.Screen name={SCREENS.HOME} component={HomeScreen} />
-					</AppStack.Navigator>
-				</NavigationContainer> */}
-    </GestureHandlerRootView>
+    <QueryClientProvider client={queryClient}>
+      <GestureHandlerRootView>
+        <SafeAreaProvider>
+          <TamaguiProviderMobile>
+            <StatusBar
+              barStyle={isDarkMode ? "light-content" : "dark-content"}
+            />
+            <SignInScreen />
+          </TamaguiProviderMobile>
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
+    </QueryClientProvider>
   );
 };

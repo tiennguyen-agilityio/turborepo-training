@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
+    "./env": "./src/env.ts",
     "./carousel": "./src/carousel.ts",
     "./common": "./src/common.ts",
     "./images": "./src/images.ts",
@@ -13,7 +14,8 @@
     "./routes": "./src/routes.ts",
     "./validation": "./src/validation.ts",
     "./video": "./src/video.ts",
-    "./styles": "./src/styles.ts"
+    "./styles": "./src/styles.ts",
+    "./storageKeys": "./src/storageKeys.ts"
   },
   "dependencies": {
     "@repo/types": "workspace:*"
@@ -21,6 +23,8 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^24.3.1",
+    "react-native-dotenv": "^3.4.11"
   }
 }

@@ -1,0 +1,10 @@
+import { setEnv } from "@repo/constants/env";
+
+setEnv({
+  CLERK_SIGN_IN_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL!,
+  CLERK_SIGN_UP_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL!,
+  API_URL: process.env.NEXT_PUBLIC_API_URL!,
+  CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY!,
+  CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!,
+  CLERK_WEBHOOK_SECRET: process.env.CLERK_WEBHOOK_SECRET!,
+});

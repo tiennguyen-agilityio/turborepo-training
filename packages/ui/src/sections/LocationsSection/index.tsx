@@ -18,12 +18,10 @@ import { useScreenSize } from "@repo/hooks/useScreenSize";
 import { fetchLocations } from "@repo/services/location";
 
 // Components
-import {
-  Button,
-  Container,
-  LocationCard,
-  SkeletonLocationCard,
-} from "../../components";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import LocationCard from "../../components/LocationCard";
+import SkeletonLocationCard from "../../components/SkeletonLocationCard";
 
 const LocationsSection = () => {
   const {
@@ -53,7 +51,7 @@ const LocationsSection = () => {
         flexWrap="wrap"
         $md={{ flexDirection: "row" }}
       >
-        {locations.map((item: LocationItem, index: number) => (
+        {locations?.map((item: LocationItem, index: number) => (
           <YStack
             key={item.id || index}
             width="100%"

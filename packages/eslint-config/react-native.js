@@ -21,7 +21,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["*.config.js", ".*.js", "jest.config.js"],
+    files: ["*.config.js", ".*.js", "jest.config.js", "**/babel.config.js"],
     languageOptions: {
       globals: {
         module: "readonly",

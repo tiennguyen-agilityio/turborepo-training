@@ -9,6 +9,7 @@ const SkeletonLocationCard = (props: CardProps) => {
       overflow="hidden"
       shadowColor="$shadowColor"
       shadowOpacity={0.1}
+      borderColor="$border"
       {...props}
     >
       <Stack width="auto" minHeight={300} maxHeight={350}>
