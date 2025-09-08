@@ -38,7 +38,6 @@ const TabStack = () => {
             break;
 
           case SCREENS.CART:
-            console.log("----focused CartIcon", focused);
             Icon = CartIcon;
             break;
 

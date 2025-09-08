@@ -9,6 +9,7 @@ type AuthState = {
   sessionToken: string | null;
   setAuth: (user: User, token: string) => Promise<void>;
   logout: () => Promise<void>;
+  hydrate: () => Promise<void>;
 };
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -16,7 +17,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   sessionToken: null,
 
   setAuth: async (user, token) => {
-    await Keychain.setGenericPassword("session", token, {
+    await Keychain.setGenericPassword(JSON.stringify(user), token, {
       service: STORAGE_KEYS.TOKEN,
     });
     set({ user, sessionToken: token });
@@ -25,5 +26,18 @@ export const useAuthStore = create<AuthState>((set) => ({
   logout: async () => {
     await Keychain.resetGenericPassword({ service: STORAGE_KEYS.TOKEN });
     set({ user: null, sessionToken: null });
+  },
+
+  hydrate: async () => {
+    const credentials = await Keychain.getGenericPassword({
+      service: STORAGE_KEYS.TOKEN,
+    });
+
+    if (credentials) {
+      const user = JSON.parse(credentials.username);
+      set({ sessionToken: credentials.password, user });
+    } else {
+      set({ sessionToken: null, user: null });
+    }
   },
 }));

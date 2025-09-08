@@ -12,7 +12,7 @@ import {
   Stack,
 } from "tamagui";
 
-import { Button } from "../../components";
+import Button from "../../components/Button";
 
 export interface AlertDialogProps {
   title: string;
@@ -53,6 +53,7 @@ const AlertDialog = ({
           gap="$3"
           width="100%"
           maxWidth="$128"
+          borderColor="$border"
         >
           <AlertDialogTitle fontSize="$md" fontWeight={700}>
             {title}
