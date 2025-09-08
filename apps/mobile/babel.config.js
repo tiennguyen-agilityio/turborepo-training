@@ -26,6 +26,10 @@ module.exports = {
             __dirname,
             "../../packages/ui/src"
           ),
+          "@packages/stores": require("path").resolve(
+            __dirname,
+            "../../packages/stores/src"
+          ),
           "@repo/constants": require("path").resolve(
             __dirname,
             "../../packages/constants/src"
@@ -37,5 +41,6 @@ module.exports = {
         },
       },
     ],
+    "react-native-worklets/plugin",
   ],
 };

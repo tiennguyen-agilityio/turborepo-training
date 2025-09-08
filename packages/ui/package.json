@@ -23,10 +23,9 @@
     "@tamagui/next-plugin": "^1.132.22",
     "@tamagui/portal": "^1.132.22",
     "@tamagui/toast": "^1.132.22",
-    "burnt": "^0.13.0",
     "next": "15.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-native-svg": "^15.12.1"
   },
   "devDependencies": {

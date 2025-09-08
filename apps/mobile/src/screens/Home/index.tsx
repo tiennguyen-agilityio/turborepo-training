@@ -15,25 +15,29 @@ import { useScreenSize } from "@repo/hooks/useScreenSize";
 //  Components
 import LocationCard from "@packages/ui/components/LocationCard";
 import LocationTile from "@packages/ui/components/LocationTile";
+import LocationsSection from "@packages/ui/sections/LocationsSection";
 import StatisticsSection from "@packages/ui/sections/StatisticsSection";
 
 const HomeScreen = () => {
   const insets = useSafeAreaInsets();
   const { width } = useScreenSize();
-  const getKeyExtractor = useCallback(({ id }: LocationItem) => id, []);
+
+  const getKeyExtractorLocationTile = useCallback(
+    ({ slug }: LocationTileItem, index: number) => slug || index.toString(),
+    []
+  );
+
+  const getKeyExtractorLocation = useCallback(
+    ({ id }: LocationItem, index: number) => id || index.toString(),
+    []
+  );
 
   const handleItemClick = useCallback(() => {}, []);
 
   const renderItemLocation = useCallback(
     ({ item }: { item: LocationItem }) => {
       return (
-        <LocationCard
-          key={item.id}
-          imageHeight={160}
-          width="50%"
-          item={item}
-          onItemClick={handleItemClick}
-        />
+        <LocationCard key={item.id} item={item} onItemClick={handleItemClick} />
       );
     },
     [handleItemClick]
@@ -73,7 +77,7 @@ const HomeScreen = () => {
         <FlatList
           horizontal
           data={LOCATION_TILES}
-          keyExtractor={getKeyExtractor}
+          keyExtractor={getKeyExtractorLocationTile}
           renderItem={renderItemLocationTile}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <YStack width="$5" />}
@@ -93,14 +97,14 @@ const HomeScreen = () => {
         </H2>
 
         <FlatList
-          enableScreens={false}
+          scrollEnabled={false}
           data={LOCATIONS}
-          numColumns={2}
-          keyExtractor={getKeyExtractor}
+          keyExtractor={getKeyExtractorLocation}
           renderItem={renderItemLocation}
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={renderItemSpacingYComponent}
         />
+        <LocationsSection />
         <StatisticsSection />
       </YStack>
     </ScrollView>

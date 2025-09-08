@@ -28,17 +28,17 @@
     "@tamagui/toast": "^1.132.20",
     "next": "15.3.4",
     "next-themes": "*",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "tamagui": "^1.132.20",
-    "zustand": "^5.0.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "prettier": "*",
-    "eslint": "*"
+    "eslint": "*",
+    "prettier": "*"
   },
   "peerDependencies": {
     "next": "*",
