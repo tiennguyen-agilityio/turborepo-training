@@ -1,3 +1,4 @@
+import "@/lib/initEnv";
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 

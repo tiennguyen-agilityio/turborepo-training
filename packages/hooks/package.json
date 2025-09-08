@@ -8,12 +8,15 @@
     "./useCleanClerkUrl": "./src/useCleanClerkUrl.ts",
     "./useLoadMore": "./src/useLoadMore.ts",
     "./useThemeStore": "./src/useThemeStore.ts",
-    "./useScreenSize": "./src/useScreenSize.ts"
+    "./useScreenSize": "./src/useScreenSize.ts",
+    "./useAuth": "./src/useAuth.ts"
   },
   "dependencies": {
+    "@packages/tamagui": "workspace:*",
     "@repo/constants": "workspace:*",
+    "@repo/services": "workspace:*",
     "@repo/types": "workspace:*",
-    "@packages/tamagui": "workspace:*"
+    "@tanstack/react-query": "^5.87.1"
   },
   "peerDependencies": {
     "next": "*",
