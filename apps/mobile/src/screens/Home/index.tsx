@@ -69,8 +69,8 @@ const HomeScreen = () => {
   );
 
   return (
-    <ScrollView marginTop={insets.top}>
-      <YStack flex={1} gap="$5">
+    <ScrollView marginTop={insets.top} backgroundColor="$background">
+      <YStack flex={1} gap="$5" marginTop="$5">
         <H2 fontSize="$md" paddingHorizontal="$5">
           Services Camping Location
         </H2>
@@ -85,13 +85,7 @@ const HomeScreen = () => {
           ListFooterComponent={renderItemSpacingXComponent}
         />
       </YStack>
-      <YStack
-        flex={1}
-        marginVertical="$12"
-        justifyContent="center"
-        paddingHorizontal="$5"
-        gap="$5"
-      >
+      <YStack flex={1} justifyContent="center" paddingHorizontal="$5" gap="$5">
         <H2 fontSize="$md" fontWeight={700}>
           List Camping Location
         </H2>
@@ -104,9 +98,9 @@ const HomeScreen = () => {
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={renderItemSpacingYComponent}
         />
-        <LocationsSection />
-        <StatisticsSection />
       </YStack>
+      <LocationsSection />
+      <StatisticsSection />
     </ScrollView>
   );
 };
