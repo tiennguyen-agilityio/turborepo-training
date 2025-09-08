@@ -5,7 +5,7 @@ import Container from "@packages/ui/components/Container";
 
 const CartScreen = () => {
   return (
-    <Container>
+    <Container paddingVertical="$5">
       <Text>Cart screen</Text>
     </Container>
   );
