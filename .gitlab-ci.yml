@@ -1,0 +1,63 @@
+image: node:20-bullseye
+
+stages:
+  - prepare
+  - build
+  - deploy
+
+variables:
+  NODE_ENV: production
+  NODE_OPTIONS: "--max-old-space-size=4096"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .turbo/
+    - apps/web/.next/
+
+.before_script: &before_script
+  - corepack enable
+  - corepack prepare pnpm@8 --activate
+  - pnpm install --frozen-lockfile
+  - npm install -g vercel@33.2.0
+
+prepare:
+  stage: prepare
+  script:
+    - echo "$VERCEL_TOKEN"
+
+build:
+  stage: build
+  needs: ["prepare"]
+  script:
+    - *before_script
+    - pnpm build:web
+    - cd apps/web
+    - npx vercel pull --token $VERCEL_TOKEN --yes
+    - npx vercel build --prod --token $VERCEL_TOKEN --yes
+  artifacts:
+    paths:
+      - apps/web/.vercel/output
+      - apps/web/.vercel/project.json
+    expire_in: 1 week
+
+deploy_production:
+  stage: deploy
+  needs: ["build"]
+  script:
+    - cd apps/web
+    - npx vercel deploy --prebuilt --prod --token $VERCEL_TOKEN --yes
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success
+
+deploy_preview:
+  stage: deploy
+  needs: ["build"]
+  script:
+    - cd apps/web
+    - npx vercel deploy --prebuilt --prod --token $VERCEL_TOKEN --yes
+  rules:
+    - if: '$CI_COMMIT_BRANCH != "main"'
+      when: on_success
