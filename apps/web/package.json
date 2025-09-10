@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "TAMAGUI_DEBUG=1 next dev",
-    "build": "TAMAGUI_DEBUG=1 next build",
-    "start": "TAMAGUI_DEBUG=1 next build && next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
     "eslint:fix": "eslint --fix .",

@@ -272,12 +272,6 @@ importers:
       '@repo/types':
         specifier: workspace:*
         version: link:../types
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -296,13 +290,6 @@ importers:
         version: 3.4.11(@babel/runtime@7.28.4)
 
   packages/eslint-config:
-    dependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.31.0
@@ -358,9 +345,6 @@ importers:
       react:
         specifier: '*'
         version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
       tamagui:
         specifier: '*'
         version: 1.132.23(react-dom@19.1.0(react@19.1.0))(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0)(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0)
@@ -378,14 +362,7 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
-  packages/prettier-config:
-    dependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
+  packages/prettier-config: {}
 
   packages/services:
     dependencies:
@@ -404,9 +381,6 @@ importers:
       react:
         specifier: '*'
         version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
       svix:
         specifier: ^1.69.0
         version: 1.76.1
@@ -429,12 +403,6 @@ importers:
       '@repo/types':
         specifier: workspace:*
         version: link:../types
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
       react-native-keychain:
         specifier: ^10.0.0
         version: 10.0.0
@@ -470,7 +438,7 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       tamagui:
         specifier: ^1.132.20
@@ -487,13 +455,6 @@ importers:
         version: link:../typescript-config
 
   packages/types:
-    dependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -510,12 +471,6 @@ importers:
       '@react-native/typescript-config':
         specifier: 0.81.0
         version: 0.81.0
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
 
   packages/ui:
     dependencies:
@@ -583,12 +538,6 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -12492,7 +12441,7 @@ snapshots:
 
   dotenv-expand@11.0.7:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.6.1
 
   dotenv@16.4.7: {}
 
