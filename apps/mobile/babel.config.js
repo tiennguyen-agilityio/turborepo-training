@@ -38,6 +38,10 @@ module.exports = {
             __dirname,
             "../../packages/hooks/src"
           ),
+          "@repo/utils": require("path").resolve(
+            __dirname,
+            "../../packages/utils/src"
+          ),
         },
       },
     ],

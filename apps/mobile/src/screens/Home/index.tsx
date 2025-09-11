@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import { FlatList } from "react-native";
 import { H2, ScrollView, XStack, YStack } from "tamagui";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // Types
 import { LocationItem, LocationTileItem } from "@repo/types/location";
@@ -19,7 +18,6 @@ import LocationsSection from "@packages/ui/sections/LocationsSection";
 import StatisticsSection from "@packages/ui/sections/StatisticsSection";
 
 const HomeScreen = () => {
-  const insets = useSafeAreaInsets();
   const { width } = useScreenSize();
 
   const getKeyExtractorLocationTile = useCallback(
@@ -69,9 +67,9 @@ const HomeScreen = () => {
   );
 
   return (
-    <ScrollView marginTop={insets.top} backgroundColor="$background">
-      <YStack flex={1} gap="$5" marginTop="$5">
-        <H2 fontSize="$md" paddingHorizontal="$5">
+    <ScrollView backgroundColor="$background">
+      <YStack flex={1} gap="$5" paddingVertical="$5">
+        <H2 fontSize="$md" paddingHorizontal="$5" fontWeight="bold">
           Services Camping Location
         </H2>
         <FlatList
@@ -86,7 +84,7 @@ const HomeScreen = () => {
         />
       </YStack>
       <YStack flex={1} justifyContent="center" paddingHorizontal="$5" gap="$5">
-        <H2 fontSize="$md" fontWeight={700}>
+        <H2 fontSize="$md" fontWeight="bold">
           List Camping Location
         </H2>
 

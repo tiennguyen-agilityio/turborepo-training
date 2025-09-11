@@ -1,13 +1,16 @@
 image: node:20-bullseye
 
 stages:
-  - prepare
   - build_web
   - deploy_web
+  - install_mobile
+  - build
 
 variables:
   NODE_ENV: production
-  NODE_OPTIONS: "--max-old-space-size=4096"
+  ANDROID_COMPILE_SDK: "34"
+  ANDROID_BUILD_TOOLS: "34.0.0"
+  ANDROID_SDK_ROOT: "/sdk"
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -15,6 +18,10 @@ cache:
     - node_modules/
     - .turbo/
     - apps/web/.next/
+    - apps/mobile/node_modules/
+    - apps/mobile/android/.gradle/
+    - apps/mobile/android/.cxx/
+    - "/sdk"
 
 .before_script: &before_script
   - corepack enable
@@ -22,19 +29,37 @@ cache:
   - pnpm install --frozen-lockfile
   - npm install -g vercel@33.2.0
 
-prepare:
-  stage: prepare
-  script:
-    - echo "$VERCEL_TOKEN"
+.before_script_mobile: &before_script_mobile
+  - apt-get update && apt-get install -y openjdk-17-jdk
+  - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  - export PATH="$JAVA_HOME/bin:$PATH"
+
+  # Install pnpm
+  - npm install -g pnpm
+
+  # Setup Android SDK
+  - echo "Setting up Android SDK..."
+  - mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools
+  - curl -s https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o cmdline-tools.zip
+  - unzip -q cmdline-tools.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools
+  - mv ${ANDROID_SDK_ROOT}/cmdline-tools/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/latest
+  - export PATH="${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools:$PATH"
+
+ # Accept licenses and install SDK components
+  - yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --licenses || true
+  - sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}" "build-tools;${ANDROID_BUILD_TOOLS}" "ndk;27.1.12297006" "cmake;3.22.1"
 
 build_web:
   stage: build_web
-  needs: ["prepare"]
   script:
     - *before_script
     - pnpm build:web
     - vercel pull --token $VERCEL_TOKEN --yes
     - vercel build --prod --token $VERCEL_TOKEN --yes
+
+  rules:
+    - changes:
+        - apps/web/**
   artifacts:
     paths:
       - .vercel/output
@@ -59,5 +84,58 @@ deploy_web_preview:
     - ls -la .vercel/output
     - vercel deploy --prebuilt --prod --token $VERCEL_TOKEN
   rules:
-    - if: '$CI_COMMIT_BRANCH != "main"'
-      when: on_success
+    # - if: '$CI_COMMIT_BRANCH != "main"'
+    #   when: on_success
+    - changes:
+        - apps/web/**
+
+# MOBILE
+
+install_mobile:
+  stage: install_mobile
+  script:
+    - *before_script_mobile
+    - pnpm install --frozen-lockfile
+    - echo "Check memory inside CI job:"
+    - free -h || cat /proc/meminfo | head -20
+    - echo "Check CPU:"
+    - nproc
+  rules:
+    - changes:
+      - apps/mobile/**
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+      - apps/mobile/node_modules/
+      - apps/mobile/android/
+
+build_mobile:
+  stage: build
+  needs: ["install_mobile"]
+  before_script: 
+    - *before_script_mobile
+  script:
+    # - pnpm build:android
+    - cd apps/mobile/android
+    - ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m" --stacktrace
+  artifacts:
+    name: "app-release.apk"
+    paths:
+      - apps/mobile/android/app/build/outputs/apk/release/app-release.apk
+    expire_in: 1 week
+
+build_mobile_debug:
+  stage: build
+  needs: ["install_mobile"]
+  before_script: 
+    - *before_script_mobile
+  script:
+    # - pnpm build:android-debug
+    - cd apps/mobile/android
+    - ./gradlew assembleDebug --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m" --stacktrace
+  artifacts:
+    name: "app-debug.apk"
+    paths:
+      - apps/mobile/android/app/build/outputs/apk/debug/app-debug.apk
+    expire_in: 1 week
