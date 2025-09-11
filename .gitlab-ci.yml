@@ -33,21 +33,20 @@ build:
   script:
     - *before_script
     - pnpm build:web
-    - cd apps/web
-    - npx vercel pull --token $VERCEL_TOKEN --yes
-    - npx vercel build --prod --token $VERCEL_TOKEN --yes
+    - vercel pull --token $VERCEL_TOKEN --yes
+    - vercel build --prod --token $VERCEL_TOKEN --yes
   artifacts:
     paths:
-      - apps/web/.vercel/output
-      - apps/web/.vercel/project.json
+      - .vercel/output
+      - .vercel/project.json
     expire_in: 1 week
 
 deploy_production:
   stage: deploy
   needs: ["build"]
   script:
-    - cd apps/web
-    - npx vercel deploy --prebuilt --prod --token $VERCEL_TOKEN --yes
+    - ls -la .vercel/output
+    - vercel deploy --prebuilt --prod --token $VERCEL_TOKEN
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: on_success
@@ -56,8 +55,9 @@ deploy_preview:
   stage: deploy
   needs: ["build"]
   script:
-    - cd apps/web
-    - npx vercel deploy --prebuilt --prod --token $VERCEL_TOKEN --yes
+    - *before_script
+    - ls -la .vercel/output
+    - vercel deploy --prebuilt --prod --token $VERCEL_TOKEN
   rules:
     - if: '$CI_COMMIT_BRANCH != "main"'
       when: on_success
