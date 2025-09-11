@@ -8,8 +8,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "dev": "react-native start",
-    "build:android": "cd android/ && ./gradlew clean && ./gradlew assembleRelease",
-    "build:android-debug": "cd android/ && ./gradlew clean && ./gradlew assembleDebug",
+    "build:android": "cd android/ && ./gradlew assembleRelease",
+    "build:android-debug": "cd android/ && ./gradlew assembleDebug",
     "test": "jest"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "@repo/hooks": "workspace:*",
     "@repo/services": "workspace:*",
     "@repo/types": "workspace:*",
+    "@repo/utils": "workspace:*",
     "@tamagui/lucide-icons": "^1.132.23",
     "burnt": "^0.13.0",
     "react": "19.1.0",
