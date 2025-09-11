@@ -7,6 +7,17 @@ apply plugin: "com.facebook.react"
  * By default you don't need to apply any configuration, just uncomment the lines you need.
  */
 
+def currentOS = org.gradle.internal.os.OperatingSystem.current()
+def hermesPlatform
+
+if (currentOS.isWindows()) {
+    hermesPlatform = "win64-bin"
+} else if (currentOS.isMacOsX()) {
+    hermesPlatform = "osx-bin"
+} else {
+    hermesPlatform = "linux64-bin"
+}
+
 react {
     /* Folders */
     //   The root of your project, i.e. where "package.json" lives. Default is '../..'
@@ -47,6 +58,7 @@ react {
     /* Hermes Commands */
     //   The hermes compiler command to run. By default it is 'hermesc'
 		// hermesCommand = "$rootDir/my-custom-hermesc/bin/hermesc"
+    hermesCommand = "$rootDir/../../../node_modules/react-native/sdks/hermesc/${hermesPlatform}/hermesc"
     //
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
     // hermesFlags = ["-O", "-output-source-map"]

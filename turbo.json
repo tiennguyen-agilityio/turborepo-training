@@ -30,6 +30,12 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "build:android": {
+      "dependsOn": ["^build"]
+    },
+    "build:android-debug": {
+      "dependsOn": ["^build"]
+    },
     "test": {
       "dependsOn": ["^test"]
     },
