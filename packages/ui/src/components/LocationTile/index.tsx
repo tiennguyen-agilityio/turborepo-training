@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, SizableText, Paragraph, Image, Stack, CardProps } from "tamagui";
-import { EMPTY_IMAGE } from "@repo/constants/images";
+import { EMPTY_IMAGE } from "@packages/constants/images";
 
 interface LocationTileProps extends CardProps {
   title: string;

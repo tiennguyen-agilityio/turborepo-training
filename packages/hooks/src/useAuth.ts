@@ -1,11 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
 
 // Types
-import { LoginFormData, User } from "@repo/types/auth";
+import { LoginFormData, User } from "@packages/types/auth";
 
 // Constants
-import { API_ROUTES } from "@repo/constants/routes";
-import { ERROR_MESSAGES } from "@repo/constants/messages";
+import { API_ROUTES } from "@packages/constants/routes";
+import { ERROR_MESSAGES } from "@packages/constants/messages";
 
 export const useAuth = () => {
   const logIn = useMutation({

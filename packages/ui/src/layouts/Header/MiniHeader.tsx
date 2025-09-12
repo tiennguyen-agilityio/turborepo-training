@@ -14,10 +14,10 @@ import { YStack, Sheet, XStackProps } from "tamagui";
 import { useToastController } from "@tamagui/toast";
 
 // Constants
-import { NAV_BAR, USER_DROPDOWNS } from "@repo/constants/nav";
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
-import { LOCAL_STORAGE_KEYS } from "@repo/constants/common";
-import { ROUTES } from "@repo/constants/routes";
+import { NAV_BAR, USER_DROPDOWNS } from "@packages/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
+import { LOCAL_STORAGE_KEYS } from "@packages/constants/common";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import {
@@ -92,7 +92,7 @@ const MiniHeader = ({ hasBorderBottom = false, ...props }: MiniHeaderProps) => {
 
       return router.push(href);
     },
-    [router],
+    [router]
   );
 
   const handleToggleAlert = useCallback(() => {
@@ -248,7 +248,7 @@ const MiniHeader = ({ hasBorderBottom = false, ...props }: MiniHeaderProps) => {
                       >
                         {text}
                       </Button>
-                    ),
+                    )
                   )}
                 </YStack>
               </SignedIn>

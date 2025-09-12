@@ -14,9 +14,9 @@
     "tamagui": "^1.132.20"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.1.0",

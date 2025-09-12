@@ -1,5 +1,5 @@
 {
-  "name": "@repo/services",
+  "name": "@packages/services",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.23.2",
-    "@repo/constants": "workspace:*",
-    "@repo/types": "workspace:*",
+    "@packages/constants": "workspace:*",
+    "@packages/types": "workspace:*",
     "svix": "^1.69.0"
   },
   "peerDependencies": {
@@ -25,8 +25,8 @@
     }
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*"
   }
 }

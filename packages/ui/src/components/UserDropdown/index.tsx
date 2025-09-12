@@ -7,13 +7,13 @@ import { useToastController } from "@tamagui/toast";
 import { Popover, Stack, XStack, YStack, Text } from "tamagui";
 
 // Types
-import { DIRECTION } from "@repo/types/svg";
+import { DIRECTION } from "@packages/types/svg";
 
 // Constants
-import { LOCAL_STORAGE_KEYS } from "@repo/constants/common";
-import { USER_DROPDOWNS } from "@repo/constants/nav";
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
-import { ROUTES } from "@repo/constants/routes";
+import { LOCAL_STORAGE_KEYS } from "@packages/constants/common";
+import { USER_DROPDOWNS } from "@packages/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import { Avatar, AlertDialog, Button } from "..";
@@ -41,7 +41,9 @@ const UserDropdown = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const { imageUrl = "", firstName = "", lastName = "" } = user || {};
-  const displayName = `${firstName?.trim().charAt(0)}${lastName?.trim().charAt(0)}`;
+  const displayName = `${firstName?.trim().charAt(0)}${lastName
+    ?.trim()
+    .charAt(0)}`;
 
   const handleToggleAlert = useCallback(() => {
     setIsOpenAlert((prev) => !prev);
@@ -61,7 +63,7 @@ const UserDropdown = ({
       onChange?.();
       return router.push(href);
     },
-    [onChange, router],
+    [onChange, router]
   );
 
   const handleSignOut = useCallback(async () => {
@@ -144,7 +146,7 @@ const UserDropdown = ({
                       {text}
                     </Button>
                   );
-                },
+                }
               )}
             </YStack>
           </Popover.Content>

@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 
 // Constants
-import { LOCALIZATION } from "@repo/constants/localization";
+import { LOCALIZATION } from "@packages/constants/localization";
 import { abel } from "@packages/ui/fonts";
 
 // Providers

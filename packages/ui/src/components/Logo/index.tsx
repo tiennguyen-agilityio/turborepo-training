@@ -4,7 +4,7 @@ import { ButtonProps } from "tamagui";
 import { useRouter } from "next/navigation";
 
 // Constants
-import { ROUTES } from "@repo/constants/routes";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import Button from "../Button";

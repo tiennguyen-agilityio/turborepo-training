@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@packages/tamagui": "workspace:*",
-    "@repo/constants": "workspace:*",
-    "@repo/hooks": "workspace:*",
-    "@repo/services": "workspace:*",
-    "@repo/types": "workspace:*",
-    "@repo/utils": "workspace:*",
+    "@packages/constants": "workspace:*",
+    "@packages/hooks": "workspace:*",
+    "@packages/services": "workspace:*",
+    "@packages/types": "workspace:*",
+    "@packages/utils": "workspace:*",
     "@tamagui/lucide-icons": "^1.132.23",
     "@tamagui/next-plugin": "^1.132.22",
     "@tamagui/portal": "^1.132.22",
@@ -29,9 +29,9 @@
     "react-native-svg": "^15.12.1"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*"
   },
   "peerDependencies": {
     "next": "*",

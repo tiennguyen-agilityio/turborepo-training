@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import * as Keychain from "react-native-keychain";
 
-import { STORAGE_KEYS } from "@repo/constants/storageKeys";
-import { User } from "@repo/types/auth";
+import { STORAGE_KEYS } from "@packages/constants/storageKeys";
+import { User } from "@packages/types/auth";
 
 type AuthState = {
   user: User | null;

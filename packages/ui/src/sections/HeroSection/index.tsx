@@ -4,8 +4,8 @@ import { YStack, Stack } from "tamagui";
 import { MoveRight } from "@tamagui/lucide-icons";
 
 // Constants
-import { EXPERIENCES } from "@repo/constants/common";
-import { HOME_VIDEO } from "@repo/constants/video";
+import { EXPERIENCES } from "@packages/constants/common";
+import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
 import { Experiences, VideoPlayer, Button, Container } from "../../components";

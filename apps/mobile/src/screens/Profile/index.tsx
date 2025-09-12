@@ -3,7 +3,7 @@ import { ScrollView, Text, YStack } from "tamagui";
 import Toast from "react-native-toast-message";
 
 // Constants
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@repo/constants/messages";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
 
 // Stores
 import { useAuthStore } from "@packages/stores/auth";

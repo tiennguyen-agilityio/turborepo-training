@@ -1,5 +1,5 @@
 // Constants
-import { HOME_VIDEO } from "@repo/constants/video";
+import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
 import { Header, Footer } from "@packages/ui/layouts";

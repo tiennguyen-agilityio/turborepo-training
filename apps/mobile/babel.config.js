@@ -30,17 +30,21 @@ module.exports = {
             __dirname,
             "../../packages/stores/src"
           ),
-          "@repo/constants": require("path").resolve(
+          "@packages/constants": require("path").resolve(
             __dirname,
             "../../packages/constants/src"
           ),
-          "@repo/hooks": require("path").resolve(
+          "@packages/hooks": require("path").resolve(
             __dirname,
             "../../packages/hooks/src"
           ),
-          "@repo/utils": require("path").resolve(
+          "@packages/utils": require("path").resolve(
             __dirname,
             "../../packages/utils/src"
+          ),
+          "@package/services": require("path").resolve(
+            __dirname,
+            "../../packages/services/src"
           ),
         },
       },

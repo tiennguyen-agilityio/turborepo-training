@@ -1,3 +1,3 @@
-import { webhookHandler } from "@repo/services/webhook";
+import { webhookHandler } from "@packages/services/webhook";
 
 export const POST = webhookHandler;

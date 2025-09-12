@@ -5,10 +5,10 @@ import { useSignIn, useSignUp } from "@clerk/nextjs";
 import { YStack, Paragraph, Separator } from "tamagui";
 
 // Types
-import { OAuthStrategy } from "@repo/types/auth";
+import { OAuthStrategy } from "@packages/types/auth";
 
 // Constants
-import { ERROR_MESSAGES } from "@repo/constants/messages";
+import { ERROR_MESSAGES } from "@packages/constants/messages";
 
 // Components
 import { Button } from "../../components";
@@ -23,7 +23,7 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
   const { isLoaded: isSignInLoaded, signIn } = useSignIn();
 
   const [socialLoading, setSocialLoading] = useState<null | OAuthStrategy>(
-    null,
+    null
   );
   const [errorMessage, setErrorMessage] = useState("");
   const [redirectUrl, setRedirectUrl] = useState<string>("");

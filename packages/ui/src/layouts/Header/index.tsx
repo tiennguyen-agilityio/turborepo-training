@@ -11,8 +11,8 @@ import {
 } from "@clerk/nextjs";
 
 // Constants
-import { NAV_BAR } from "@repo/constants/nav";
-import { ROUTES } from "@repo/constants/routes";
+import { NAV_BAR } from "@packages/constants/nav";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import {

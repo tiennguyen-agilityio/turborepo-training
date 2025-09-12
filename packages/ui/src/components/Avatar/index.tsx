@@ -1,6 +1,6 @@
 "use client";
 
-import { DEFAULT_AVATAR } from "@repo/constants/images";
+import { DEFAULT_AVATAR } from "@packages/constants/images";
 import {
   Avatar as TAvatar,
   AvatarProps as TAvatarProps,

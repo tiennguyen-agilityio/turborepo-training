@@ -1,7 +1,7 @@
 "use client";
 
 import { YStack, XStack, Text, H6, H2, Separator } from "tamagui";
-import { DIRECTION } from "@repo/types/svg";
+import { DIRECTION } from "@packages/types/svg";
 
 // Components
 import TestimonialItem from "./TestimonialItem";

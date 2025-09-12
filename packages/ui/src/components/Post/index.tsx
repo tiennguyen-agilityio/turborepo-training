@@ -4,7 +4,7 @@ import { Stack, Paragraph, StackProps, Image } from "tamagui";
 import { MoveRight } from "@tamagui/lucide-icons";
 
 // Constants
-import { EMPTY_IMAGE } from "@repo/constants/images";
+import { EMPTY_IMAGE } from "@packages/constants/images";
 
 // Components
 import Button from "../Button";

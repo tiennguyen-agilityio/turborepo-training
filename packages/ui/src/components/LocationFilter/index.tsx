@@ -4,10 +4,10 @@ import { memo, useCallback, useState } from "react";
 import { YStack, XStack, Paragraph, Separator, Text } from "tamagui";
 
 // Types
-import { Filter } from "@repo/types/common";
+import { Filter } from "@packages/types/common";
 
 // Constants
-import { LOCATIONS, CATEGORIES } from "@repo/constants/common";
+import { LOCATIONS, CATEGORIES } from "@packages/constants/common";
 
 // Components
 import Button from "../Button";
@@ -29,17 +29,17 @@ const LocationFilter = ({
   onChange,
 }: LocationFilterProps) => {
   const [locations, setLocation] = useState<string[]>(
-    defaultValue?.locations || [],
+    defaultValue?.locations || []
   );
   const [categories, setCategories] = useState<string[]>(
-    defaultValue?.categories || [],
+    defaultValue?.categories || []
   );
 
   const handleChangeBudget = useCallback(
     (value: number[]) => {
       onChange({ budget: value });
     },
-    [onChange],
+    [onChange]
   );
 
   const handleChangeLocation = useCallback(
@@ -56,7 +56,7 @@ const LocationFilter = ({
       onChange({ locations: newLocations });
       setLocation(newLocations);
     },
-    [locations, onChange],
+    [locations, onChange]
   );
 
   const handleChangeCategory = useCallback(
@@ -73,7 +73,7 @@ const LocationFilter = ({
       onChange({ categories: newCategories });
       setCategories(newCategories);
     },
-    [categories, onChange],
+    [categories, onChange]
   );
 
   return (

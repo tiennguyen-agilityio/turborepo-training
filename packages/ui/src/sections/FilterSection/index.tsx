@@ -4,10 +4,10 @@ import { memo, useCallback, useState } from "react";
 import { H2, XStack, YStack } from "tamagui";
 
 // Types
-import { Filter } from "@repo/types/common";
+import { Filter } from "@packages/types/common";
 
 // Constants
-import { LOCATIONS } from "@repo/constants/location";
+import { LOCATIONS } from "@packages/constants/location";
 
 // Components
 import { LocationFilter, LocationCard, Container } from "../../components";

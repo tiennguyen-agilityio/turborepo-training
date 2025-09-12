@@ -3,7 +3,7 @@
 import { YStack, H2 } from "tamagui";
 
 // Constants
-import { HOME_VIDEO } from "@repo/constants/video";
+import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
 import { VideoPlayer, Container } from "../../components";

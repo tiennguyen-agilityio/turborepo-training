@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import { XStack, Separator } from "tamagui";
 
 // Types
-import { Experience } from "@repo/types/common";
+import { Experience } from "@packages/types/common";
 
 // Components
 import ExperienceItem from "../ExperienceItem";

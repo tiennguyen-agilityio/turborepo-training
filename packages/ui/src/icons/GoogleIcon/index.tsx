@@ -1,5 +1,5 @@
 import Svg, { Path } from "react-native-svg";
-import { SVGProps } from "@repo/types/svg";
+import { SVGProps } from "@packages/types/svg";
 
 export const GoogleIcon = ({
   color = "currentColor",
