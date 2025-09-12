@@ -1,8 +1,8 @@
-# Clerk, Shadcn practice
+# Turborepo practice
 
 ## Overview
 
-- This document provides information about Clerk, Shadcn practice
+- This document provides information about Turborepo practice
 
 ## Tech stacks
 
@@ -11,8 +11,6 @@
 - [React](https://react.dev/versions#react-19)
 
 - [NextJS](https://nextjs.org/)
-
-- [Storybook](https://storybook.js.org/blog/get-started-with-storybook-and-next-js/)
 
 - [Husky](https://typicode.github.io/husky/get-started.html)
 
@@ -24,23 +22,9 @@
 
 - [TypeScript](https://www.typescriptlang.org/)
 
-### Unit Testing (UT) Tools
-
-- [Jest](https://jestjs.io/docs/29.6/expect)
-
-- [React Testing Library](https://testing-library.com/)
-
 ### UI Frameworks
 
-- [Clerk](https://clerk.com/)
-
-- [Shadcn](https://v3.shadcn.com/docs/installation)
-
-## Timeline
-
-- Estimated time: 3 weeks
-  - Read and apply Clerk: 8 days
-  - Read and apply Shadcn: 7 days
+- [Tamagui](https://tamagui.dev/)
 
 ## Time size
 
@@ -49,16 +33,6 @@
 ## Editor
 
 - [Visual studio code](https://code.visualstudio.com/)
-
-## Targets
-
-- Understand and practice with [Clerk](https://clerk.com/docs), [Shadcn UI](https://ui.shadcn.com/docs)
-
-- Using Clerk to Practice Authentication Flow
-
-- Using Shadcn to build your component library
-
-- Deploy on [Vercel](https://vercel.com)
 
 ## Features
 
@@ -93,9 +67,7 @@
 | `git checkout feature/apply-shadcn`                                     | Move branch                                   |
 | `cd travel-landing-page`                                                | Move to the folder containing the source code |
 | `pnpm install`                                                          | Installs dependencies                         |
-| `pnpm test`                                                             | Run test                                      |
-| `pnpm storybook`                                                        | Preview UI component: `http://localhost:6006` |
-| `pnpm dev`                                                              | Starts local dev server at `localhost:3000`   |
-| `pnpm start`                                                            | Preview your build locally: `localhost:3000`  |
+| `pnpm dev:web`                                                          | Starts local dev server at `localhost:3000`   |
+| `pnpm build:web`                                                        | Preview your build locally: `localhost:3000`  |
 
-> Note: Before running `pnpm dev` or `pnpm start`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
+> Note: Before running `pnpm dev:web` or `pnpm build:web`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
