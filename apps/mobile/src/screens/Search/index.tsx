@@ -6,7 +6,7 @@ import Container from "@packages/ui/components/Container";
 const SearchScreen = () => (
   <ScrollView backgroundColor="$background">
     <Container paddingVertical="$5">
-      <Text>Search screen</Text>
+      <Text fontWeight="bold">Search screen</Text>
     </Container>
   </ScrollView>
 );
