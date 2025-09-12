@@ -10,6 +10,8 @@ This document provides information about turborepo practice
 
 - [React](https://react.dev/versions#react-19)
 
+- [React Native](https://reactnative.dev/)
+
 - [NextJS](https://nextjs.org/)
 
 - [Husky](https://typicode.github.io/husky/get-started.html)
@@ -24,9 +26,11 @@ This document provides information about turborepo practice
 
 ### UI Frameworks
 
-- [Clerk](https://clerk.com/)
+- [Tamagui](https://tamagui.dev/)
 
-- [Shadcn](https://v3.shadcn.com/docs/installation)
+## Timeline
+
+- Estimated time: 7 days
 
 ## Time size
 
@@ -42,7 +46,7 @@ Make sure you install packages with correct version below:
 
 - [node v20.19.4](https://nodejs.org/en/download)
 - [turbo v2.5.5](https://turborepo.com/docs/getting-started/installation)
-- [yarn v1.22.22](https://classic.yarnpkg.com/en/docs/install)
+- [pnpm v10.14.0](https://pnpm.io/)
 
 ## Folder structure
 
@@ -59,13 +63,15 @@ logic.
 
 #### Step by step to run this app in your local:
 
-| Command                                                                    | Action                                       |
-| :------------------------------------------------------------------------- | :------------------------------------------- |
-| `git clone git@gitlab.asoft-python.com:tien.nguyen/turborepo-training.git` | Download source code                         |
-| `cd turborepo-training`                                                    | Move to folder                               |
-| `git checkout feature/turborepo`                                           | Move branch                                  |
-| `yarn install`                                                             | Installs dependencies                        |
-| `yarn dev`                                                                 | Starts local dev server at `localhost:3000`  |
-| `yarn start`                                                               | Preview your build locally: `localhost:3000` |
+| Command                                                                    | Action                                              |
+| :------------------------------------------------------------------------- | :-------------------------------------------------- |
+| `git clone git@gitlab.asoft-python.com:tien.nguyen/turborepo-training.git` | Download source code                                |
+| `cd turborepo-training`                                                    | Move to folder                                      |
+| `git checkout feature/turborepo`                                           | Move branch                                         |
+| `pnpm install`                                                             | Installs dependencies                               |
+| `pnpm dev:web`                                                             | Starts website local dev server at `localhost:3000` |
+| `pnpm build:web`                                                           | Preview your build locally: `localhost:3000`        |
+| `pnpm dev:mobile`                                                          | Starts app local dev server at: `localhost:8081`    |
+| `pnpm build:mobile`                                                        | Build Android APK file                              |
 
-> Note: Before running `yarn dev` or `yarn start`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
+> Note: Before running `pnpm dev:*` or `pnpm build:*`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
