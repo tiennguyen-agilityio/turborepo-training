@@ -59,7 +59,7 @@ build_web:
 
   rules:
     - changes:
-        - apps/web/**
+      - apps/web/**
   artifacts:
     paths:
       - .vercel/output
@@ -87,7 +87,7 @@ deploy_web_preview:
     # - if: '$CI_COMMIT_BRANCH != "main"'
     #   when: on_success
     - changes:
-        - apps/web/**
+      - apps/web/**
 
 # MOBILE
 
