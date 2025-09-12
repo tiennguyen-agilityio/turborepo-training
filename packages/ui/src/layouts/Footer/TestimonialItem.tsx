@@ -3,7 +3,7 @@
 import { YStack, XStack, Text, Paragraph, Image } from "tamagui";
 
 // Constants
-import { DEFAULT_AVATAR } from "@repo/constants/images";
+import { DEFAULT_AVATAR } from "@packages/constants/images";
 
 interface TestimonialItemProps {
   title: string;

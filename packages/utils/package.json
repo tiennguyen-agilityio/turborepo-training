@@ -1,5 +1,5 @@
 {
-  "name": "@repo/utils",
+  "name": "@packages/utils",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,8 +11,8 @@
     "date-fns": "^4.1.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*"
   }
 }

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { H2, Paragraph, Stack } from "tamagui";
 
 // Constants
-import { ROUTES } from "@repo/constants/routes";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";

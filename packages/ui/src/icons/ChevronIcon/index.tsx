@@ -1,5 +1,5 @@
 import Svg, { Path } from "react-native-svg";
-import { DIRECTION, SVGProps } from "@repo/types/svg";
+import { DIRECTION, SVGProps } from "@packages/types/svg";
 
 interface ChevronIconProps extends SVGProps {
   direction?: DIRECTION;

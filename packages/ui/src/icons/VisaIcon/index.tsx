@@ -1,5 +1,5 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
-import { SVGProps } from "@repo/types/svg";
+import { SVGProps } from "@packages/types/svg";
 
 export const VisaIcon = ({ width = 42, height = 13, ...props }: SVGProps) => {
   return (

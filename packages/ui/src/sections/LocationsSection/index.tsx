@@ -4,18 +4,18 @@ import { Text, XStack, YStack } from "tamagui";
 import { memo, useMemo } from "react";
 
 // Types
-import { LocationItem } from "@repo/types/location";
+import { LocationItem } from "@packages/types/location";
 
 // Constants
-import { PAGE_SIZE } from "@repo/constants/common";
-import { MAX_WITH_SCREEN } from "@repo/constants/styles";
+import { PAGE_SIZE } from "@packages/constants/common";
+import { MAX_WITH_SCREEN } from "@packages/constants/styles";
 
 // Hooks
-import { useLoadMore } from "@repo/hooks/useLoadMore";
-import { useScreenSize } from "@repo/hooks/useScreenSize";
+import { useLoadMore } from "@packages/hooks/useLoadMore";
+import { useScreenSize } from "@packages/hooks/useScreenSize";
 
 // Services
-import { fetchLocations } from "@repo/services/location";
+import { fetchLocations } from "@packages/services/location";
 
 // Components
 import Button from "../../components/Button";

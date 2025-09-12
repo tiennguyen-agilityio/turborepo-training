@@ -1,6 +1,6 @@
 import Svg, { Circle, Path } from "react-native-svg";
 
-import { SVGProps } from "@repo/types/svg";
+import { SVGProps } from "@packages/types/svg";
 
 export const InfoIcon = ({
   color = "currentColor",

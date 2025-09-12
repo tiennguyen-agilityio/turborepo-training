@@ -5,13 +5,13 @@ import { YStack, XStack, Paragraph, SizableText, Image } from "tamagui";
 import { MapPin, Star } from "@tamagui/lucide-icons";
 
 // Types
-import { LocationItem } from "@repo/types/location";
+import { LocationItem } from "@packages/types/location";
 
 // Constants
-import { EMPTY_IMAGE } from "@repo/constants/images";
+import { EMPTY_IMAGE } from "@packages/constants/images";
 
 // Utils
-import { formatMinutes } from "@repo/utils/time";
+import { formatMinutes } from "@packages/utils/time";
 
 interface LocationCardProps extends CardProps {
   imageHeight?: number | string;

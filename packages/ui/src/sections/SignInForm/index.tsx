@@ -7,15 +7,15 @@ import { Controller, useForm } from "react-hook-form";
 import { YStack, XStack, Paragraph, H1, Form, TamaguiElement } from "tamagui";
 
 // Types
-import { LoginFormData } from "@repo/types/auth";
+import { LoginFormData } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@repo/constants/validation";
-import { ERROR_MESSAGES } from "@repo/constants/messages";
-import { ROUTES } from "@repo/constants/routes";
+import { SCHEMA } from "@packages/constants/validation";
+import { ERROR_MESSAGES } from "@packages/constants/messages";
+import { ROUTES } from "@packages/constants/routes";
 
 // Hooks
-import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@packages/hooks/useCleanClerkUrl";
 
 // Components
 import SocialButtons from "../SocialButtons";

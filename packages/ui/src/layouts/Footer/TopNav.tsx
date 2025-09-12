@@ -3,7 +3,7 @@
 import { YStack, XStack, Text, Paragraph } from "tamagui";
 
 // Constants
-import { NAV_FOOTERS } from "@repo/constants/nav";
+import { NAV_FOOTERS } from "@packages/constants/nav";
 
 // Components
 import { Button, Input, Container } from "../../components/";

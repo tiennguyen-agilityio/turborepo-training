@@ -4,11 +4,11 @@ import { useMemo, memo } from "react";
 import { YStack, Paragraph, H2, H6, Stack } from "tamagui";
 
 // Constants
-import { LOCATION_TILES } from "@repo/constants/location";
-import { MAX_WITH_SCREEN } from "@repo/constants/styles";
+import { LOCATION_TILES } from "@packages/constants/location";
+import { MAX_WITH_SCREEN } from "@packages/constants/styles";
 
 // Hooks
-import { useScreenSize } from "@repo/hooks/useScreenSize";
+import { useScreenSize } from "@packages/hooks/useScreenSize";
 
 // Components
 import LocationTile from "../../components/LocationTile";

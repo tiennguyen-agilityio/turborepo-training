@@ -3,7 +3,7 @@
 import { YStack, XStack } from "tamagui";
 
 // Constants
-import { STATISTICS_BY_SERVICES } from "@repo/constants/common";
+import { STATISTICS_BY_SERVICES } from "@packages/constants/common";
 
 // Components
 import Container from "../../components/Container";

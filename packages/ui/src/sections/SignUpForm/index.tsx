@@ -15,16 +15,16 @@ import {
 } from "tamagui";
 
 // Types
-import { SignUpFormData } from "@repo/types/auth";
+import { SignUpFormData } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@repo/constants/validation";
-import { ERROR_MESSAGES } from "@repo/constants/messages";
-import { ROUTES } from "@repo/constants/routes";
-import { DAYS, MONTHS, YEARS } from "@repo/constants/common";
+import { SCHEMA } from "@packages/constants/validation";
+import { ERROR_MESSAGES } from "@packages/constants/messages";
+import { ROUTES } from "@packages/constants/routes";
+import { DAYS, MONTHS, YEARS } from "@packages/constants/common";
 
 // Hooks
-import { useCleanClerkUrl } from "@repo/hooks/useCleanClerkUrl";
+import { useCleanClerkUrl } from "@packages/hooks/useCleanClerkUrl";
 
 // Components
 import SocialButtons from "../SocialButtons";
@@ -80,7 +80,9 @@ const SignUpForm = () => {
         });
 
         const url = redirectUrl
-          ? `${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(redirectUrl)}`
+          ? `${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(
+              redirectUrl
+            )}`
           : ROUTES.SIGN_UP_VERIFY;
 
         router.push(url);

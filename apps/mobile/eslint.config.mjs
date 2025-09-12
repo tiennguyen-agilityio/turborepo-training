@@ -1,1 +1,1 @@
-export { default } from "@repo/eslint-config/react-native";
+export { default } from "@packages/eslint-config/react-native";

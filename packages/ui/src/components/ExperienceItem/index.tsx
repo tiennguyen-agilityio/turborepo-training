@@ -1,4 +1,4 @@
-import { Experience } from "@repo/types/common";
+import { Experience } from "@packages/types/common";
 
 // Components
 import { H6, YStack } from "tamagui";

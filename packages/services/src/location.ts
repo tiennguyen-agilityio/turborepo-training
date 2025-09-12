@@ -1,8 +1,8 @@
-import { PAGE_SIZE } from "@repo/constants/common";
-import { API_ROUTES } from "@repo/constants/routes";
+import { PAGE_SIZE } from "@packages/constants/common";
+import { API_ROUTES } from "@packages/constants/routes";
 
-import { QueryParams, Response } from "@repo/types/api";
-import { LocationItem } from "@repo/types/location";
+import { QueryParams, Response } from "@packages/types/api";
+import { LocationItem } from "@packages/types/location";
 
 export const fetchLocations = async ({
   page = 1,
@@ -16,7 +16,7 @@ export const fetchLocations = async ({
         headers: {
           "Content-Type": "application/json",
         },
-      },
+      }
     );
 
     if (!response.ok) {

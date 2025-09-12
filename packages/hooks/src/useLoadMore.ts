@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { PAGE_SIZE } from "@repo/constants/common";
-import { QueryParams, Response } from "@repo/types/api";
+import { PAGE_SIZE } from "@packages/constants/common";
+import { QueryParams, Response } from "@packages/types/api";
 
 type UseLoadMoreOptions<T> = {
   fetcher: (params: QueryParams) => Promise<Response<T>>;

@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from "uuid";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 // Types
-import { LoginFormData } from "@repo/types/auth";
+import { LoginFormData } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@repo/constants/validation";
-import { useAuth } from "@repo/hooks/useAuth";
+import { SCHEMA } from "@packages/constants/validation";
+import { useAuth } from "@packages/hooks/useAuth";
 
 // Hooks | Stores
 import { useAuthStore } from "@packages/stores/auth";

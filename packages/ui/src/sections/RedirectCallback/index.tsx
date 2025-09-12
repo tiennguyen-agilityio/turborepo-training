@@ -1,7 +1,7 @@
 import { AuthenticateWithRedirectCallback } from "@clerk/nextjs";
 
 // Constants
-import { ROUTES } from "@repo/constants/routes";
+import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import Loading from "@packages/ui/components/Loading";

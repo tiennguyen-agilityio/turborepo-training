@@ -3,13 +3,13 @@ import { FlatList } from "react-native";
 import { H2, ScrollView, XStack, YStack } from "tamagui";
 
 // Types
-import { LocationItem, LocationTileItem } from "@repo/types/location";
+import { LocationItem, LocationTileItem } from "@packages/types/location";
 
 // Constants
-import { LOCATION_TILES, LOCATIONS } from "@repo/constants/location";
+import { LOCATION_TILES, LOCATIONS } from "@packages/constants/location";
 
 // Hooks
-import { useScreenSize } from "@repo/hooks/useScreenSize";
+import { useScreenSize } from "@packages/hooks/useScreenSize";
 
 //  Components
 import LocationCard from "@packages/ui/components/LocationCard";

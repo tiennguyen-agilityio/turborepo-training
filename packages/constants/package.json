@@ -1,5 +1,5 @@
 {
-  "name": "@repo/constants",
+  "name": "@packages/constants",
   "version": "0.0.0",
   "type": "module",
   "exports": {
@@ -18,12 +18,12 @@
     "./storageKeys": "./src/storageKeys.ts"
   },
   "dependencies": {
-    "@repo/types": "workspace:*"
+    "@packages/types": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*",
     "@types/node": "^24.3.1",
     "react-native-dotenv": "^3.4.11"
   }

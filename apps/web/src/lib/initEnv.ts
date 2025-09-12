@@ -1,4 +1,4 @@
-import { setEnv } from "@repo/constants/env";
+import { setEnv } from "@packages/constants/env";
 
 setEnv({
   CLERK_SIGN_IN_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL!,

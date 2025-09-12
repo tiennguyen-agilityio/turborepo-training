@@ -1,4 +1,4 @@
-import { API_ROUTES } from "@repo/constants/routes";
+import { API_ROUTES } from "@packages/constants/routes";
 import {
   User as ClerkUser,
   UserJSON as ClerkUserJSON,
@@ -13,7 +13,7 @@ export interface UserJSON extends ClerkUserJSON {
 }
 
 export const fetchUsers = async (
-  query: string,
+  query: string
 ): Promise<{
   users: User[];
   error: string | null;
@@ -44,7 +44,7 @@ export const fetchUsers = async (
 };
 
 export const fetchUserById = async (
-  userId: string,
+  userId: string
 ): Promise<{
   user?: User;
   error: string | null;
@@ -76,7 +76,7 @@ export const fetchUserById = async (
 };
 
 export const createUser = async (
-  data: UserJSON,
+  data: UserJSON
 ): Promise<{
   user: User | null;
   error: string | null;
@@ -109,7 +109,7 @@ export const createUser = async (
 
 export const updateUser = async (
   userId: string,
-  data: UserJSON,
+  data: UserJSON
 ): Promise<{
   user: User | null;
   error: string | null;
@@ -141,7 +141,7 @@ export const updateUser = async (
 };
 
 export const deleteUser = async (
-  userId: string,
+  userId: string
 ): Promise<{
   message: string | null;
 }> => {

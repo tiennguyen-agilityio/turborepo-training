@@ -7,14 +7,14 @@
     "./auth": "./src/auth.ts"
   },
   "dependencies": {
-    "@repo/constants": "workspace:*",
-    "@repo/types": "workspace:*",
+    "@packages/constants": "workspace:*",
+    "@packages/types": "workspace:*",
     "react-native-keychain": "^10.0.0",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*"
   }
 }

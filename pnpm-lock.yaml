@@ -63,19 +63,19 @@ importers:
       '@react-navigation/native-stack':
         specifier: ^7.3.26
         version: 7.3.26(@react-navigation/native@7.1.17(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.6.1(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0))(react-native-screens@4.16.0(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0))(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0)
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../../packages/constants
-      '@repo/hooks':
+      '@packages/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
-      '@repo/services':
+      '@packages/services':
         specifier: workspace:*
         version: link:../../packages/services
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@repo/utils':
+      '@packages/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       '@tamagui/lucide-icons':
@@ -160,13 +160,13 @@ importers:
       '@react-native/typescript-config':
         specifier: 0.81.1
         version: 0.81.1
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../../packages/prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/jest':
@@ -205,19 +205,19 @@ importers:
       '@packages/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../../packages/constants
-      '@repo/hooks':
+      '@packages/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
-      '@repo/services':
+      '@packages/services':
         specifier: workspace:*
         version: link:../../packages/services
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@repo/utils':
+      '@packages/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       '@tamagui/next-plugin':
@@ -254,13 +254,13 @@ importers:
         specifier: ^5.0.8
         version: 5.0.8(@types/react@19.1.12)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../../packages/prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       eslint:
@@ -272,17 +272,17 @@ importers:
 
   packages/constants:
     dependencies:
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -330,13 +330,13 @@ importers:
       '@packages/tamagui':
         specifier: workspace:*
         version: link:../tamagui
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../constants
-      '@repo/services':
+      '@packages/services':
         specifier: workspace:*
         version: link:../services
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../types
       '@tanstack/react-query':
@@ -355,13 +355,13 @@ importers:
         specifier: '*'
         version: 5.0.8(@types/react@19.1.12)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -372,10 +372,10 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.23.2
         version: 6.31.9(next@15.3.4(@babel/core@7.28.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../constants
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../types
       next:
@@ -388,22 +388,22 @@ importers:
         specifier: ^1.69.0
         version: 1.76.1
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/stores:
     dependencies:
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../constants
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../types
       react-native-keychain:
@@ -413,13 +413,13 @@ importers:
         specifier: ^5.0.8
         version: 5.0.8(@types/react@19.1.12)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -447,25 +447,25 @@ importers:
         specifier: ^1.132.20
         version: 1.132.23(react-dom@19.1.0(react@19.1.0))(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0)(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0)
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
   packages/types:
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -480,19 +480,19 @@ importers:
       '@packages/tamagui':
         specifier: workspace:*
         version: link:../tamagui
-      '@repo/constants':
+      '@packages/constants':
         specifier: workspace:*
         version: link:../constants
-      '@repo/hooks':
+      '@packages/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@repo/services':
+      '@packages/services':
         specifier: workspace:*
         version: link:../services
-      '@repo/types':
+      '@packages/types':
         specifier: workspace:*
         version: link:../types
-      '@repo/utils':
+      '@packages/utils':
         specifier: workspace:*
         version: link:../utils
       '@tamagui/lucide-icons':
@@ -526,13 +526,13 @@ importers:
         specifier: '*'
         version: 1.132.23(react-dom@19.1.0(react@19.1.0))(react-native@0.81.1(@babel/core@7.28.4)(@react-native-community/cli@20.0.0)(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.12)(react@19.1.0))(react@19.1.0)
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -542,13 +542,13 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
     devDependencies:
-      '@repo/eslint-config':
+      '@packages/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/prettier-config':
+      '@packages/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      '@repo/typescript-config':
+      '@packages/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
