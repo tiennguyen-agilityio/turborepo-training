@@ -7,7 +7,7 @@ const CartScreen = () => {
   return (
     <ScrollView backgroundColor="$background">
       <Container paddingVertical="$5">
-        <Text>Cart screen</Text>
+        <Text fontWeight="bold">Cart screen</Text>
       </Container>
     </ScrollView>
   );

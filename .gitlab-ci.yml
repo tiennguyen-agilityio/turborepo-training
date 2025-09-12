@@ -119,6 +119,9 @@ build_mobile:
     # - pnpm build:android
     - cd apps/mobile/android
     - ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m" --stacktrace
+  rules:
+    - changes:
+      - apps/mobile/**
   artifacts:
     name: "app-release.apk"
     paths:
@@ -134,6 +137,9 @@ build_mobile_debug:
     # - pnpm build:android-debug
     - cd apps/mobile/android
     - ./gradlew assembleDebug --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m" --stacktrace
+  rules:
+    - changes:
+      - apps/mobile/**
   artifacts:
     name: "app-debug.apk"
     paths:
