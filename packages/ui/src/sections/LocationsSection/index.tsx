@@ -1,6 +1,6 @@
 "use client";
 
-import { Text, XStack, YStack } from "tamagui";
+import { Stack, Text, XStack, YStack } from "tamagui";
 import { memo, useMemo } from "react";
 
 // Types
@@ -75,7 +75,7 @@ const LocationsSection = () => {
             </YStack>
           ))}
       </XStack>
-      <YStack>
+      <Stack>
         {hasMore && (
           <Button
             height="$10"
@@ -93,7 +93,7 @@ const LocationsSection = () => {
             {error}
           </Text>
         )}
-      </YStack>
+      </Stack>
     </Container>
   );
 };

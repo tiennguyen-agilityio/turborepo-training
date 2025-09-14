@@ -26,7 +26,7 @@ export const lightTheme = {
   ring: "#a1a1a1",
 
   chart1: "#f54a00",
-  chart2: "#30797c)",
+  chart2: "#30797c",
   chart3: "#104e64",
   chart4: "#ffba00",
   chart5: "#fd9a00",

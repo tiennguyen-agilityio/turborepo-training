@@ -1,7 +1,7 @@
 "use client";
 
 import { Text } from "tamagui";
-import { Container } from "../../components";
+import Container from "../../components/Container";
 
 const CopyRight = () => {
   return (

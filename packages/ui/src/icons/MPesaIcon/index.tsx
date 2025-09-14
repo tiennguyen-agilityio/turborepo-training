@@ -1,7 +1,7 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const MPesaIcon = ({ width = 50, height = 25, ...props }: SVGProps) => {
+const MPesaIcon = ({ width = 50, height = 25, ...props }: SVGProps) => {
   return (
     <Svg
       width={width}
@@ -31,3 +31,5 @@ export const MPesaIcon = ({ width = 50, height = 25, ...props }: SVGProps) => {
     </Svg>
   );
 };
+
+export default MPesaIcon;

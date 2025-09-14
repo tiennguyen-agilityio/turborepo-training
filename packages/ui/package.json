@@ -4,7 +4,6 @@
   "scripts": {},
   "exports": {
     "./fonts": "./src/assets/fonts/index.ts",
-    "./components": "./src/components/index.ts",
     "./components/*": "./src/components/*/index.tsx",
     "./layouts": "./src/layouts/index.ts",
     "./sections": "./src/sections/index.ts",

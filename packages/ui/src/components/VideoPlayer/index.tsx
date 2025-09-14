@@ -76,7 +76,7 @@ const VideoPlayer = ({
         zIndex={1}
       >
         <Container width="100%" height="100%">
-          <YStack justifyContent="center" width="100%">
+          <Stack justifyContent="center" width="100%">
             {(subTitle || title) && (
               <YStack>
                 {subTitle && (
@@ -161,7 +161,7 @@ const VideoPlayer = ({
                 </Stack>
               )}
             </XStack>
-          </YStack>
+          </Stack>
         </Container>
       </Stack>
     </Stack>

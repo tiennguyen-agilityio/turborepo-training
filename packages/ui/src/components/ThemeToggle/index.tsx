@@ -6,7 +6,8 @@ import { Popover, PopoverTrigger, PopoverContent, PopoverArrow } from "tamagui";
 import { YStack, XStack } from "tamagui";
 
 // Components
-import { MoonIcon, SunIcon } from "../../icons";
+import MoonIcon from "../../icons/MoonIcon";
+import SunIcon from "../../icons/SunIcon";
 import Button from "../Button";
 
 interface ThemeToggleProps {
@@ -23,7 +24,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
       setIsOpen(false);
       onChange?.();
     },
-    [onChange, set],
+    [onChange, set]
   );
 
   const handleOpenChange = useCallback((value: boolean) => {
@@ -61,14 +62,19 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
             animation="quick"
           >
             <PopoverArrow />
-            <YStack minWidth="$25">
+            <YStack minWidth="$25" justifyContent="flex-start">
               <Button
                 variant="ghost"
                 height="$10"
                 borderRadius="none"
+                justifyContent="flex-start"
+                paddingHorizontal="$5"
                 borderBottomWidth={1}
                 borderBottomColor="$border"
                 color="$color"
+                textProps={{
+                  textAlign: "left",
+                }}
                 onPress={() => handleChange("light")}
               >
                 Light
@@ -77,7 +83,12 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
                 variant="ghost"
                 height="$10"
                 color="$color"
+                justifyContent="flex-start"
+                paddingHorizontal="$5"
                 borderRadius="none"
+                textProps={{
+                  textAlign: "left",
+                }}
                 onPress={() => handleChange("dark")}
               >
                 Dark

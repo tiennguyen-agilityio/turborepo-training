@@ -2,8 +2,8 @@
 
 import { Stack, H2, Paragraph } from "tamagui";
 
-import { Button } from "@packages/ui/components";
-import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
+import Button from "@packages/ui/components/Button";
+import FaceFrownIcon from "@packages/ui/icons/FaceFrownIcon";
 
 const GlobalError = ({ reset }: { error: Error; reset: () => void }) => {
   return (
@@ -29,7 +29,11 @@ const GlobalError = ({ reset }: { error: Error; reset: () => void }) => {
       >
         Oops! Something went wrong. Please try again!
       </H2>
-      <Button backgroundColor="$error" paddingHorizontal="$10" onPress={() => reset()}>
+      <Button
+        backgroundColor="$error"
+        paddingHorizontal="$10"
+        onPress={() => reset()}
+      >
         Try again
       </Button>
     </Stack>

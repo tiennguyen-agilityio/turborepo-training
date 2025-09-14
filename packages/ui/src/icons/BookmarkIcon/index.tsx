@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const BookmarkIcon = ({
+const BookmarkIcon = ({
   color = "currentColor",
   width = 13,
   height = 14,
@@ -24,3 +24,5 @@ export const BookmarkIcon = ({
     </Svg>
   );
 };
+
+export default BookmarkIcon;

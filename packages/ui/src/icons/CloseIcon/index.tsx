@@ -1,7 +1,7 @@
 import Svg, { Circle, Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const CloseIcon = ({
+const CloseIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -24,3 +24,5 @@ export const CloseIcon = ({
     </Svg>
   );
 };
+
+export default CloseIcon;

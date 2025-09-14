@@ -1,7 +1,7 @@
 import Svg, { Rect, Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const HamburgerIcon = ({
+const HamburgerIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -26,3 +26,5 @@ export const HamburgerIcon = ({
     </Svg>
   );
 };
+
+export default HamburgerIcon;

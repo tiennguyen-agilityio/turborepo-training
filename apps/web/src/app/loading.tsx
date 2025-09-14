@@ -1,6 +1,6 @@
 "use client";
 
-import { Loading } from "@packages/ui/components";
+import Loading from "@packages/ui/components/Loading";
 
 const LoadingPage = () => <Loading />;
 

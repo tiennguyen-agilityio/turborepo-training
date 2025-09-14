@@ -12,7 +12,7 @@ import {
   Stack,
 } from "tamagui";
 
-import Button from "../../components/Button";
+import Button from "../Button";
 
 export interface AlertDialogProps {
   title: string;

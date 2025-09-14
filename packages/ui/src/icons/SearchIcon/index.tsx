@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const SearchIcon = ({
+const SearchIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -29,3 +29,5 @@ export const SearchIcon = ({
     </Svg>
   );
 };
+
+export default SearchIcon;

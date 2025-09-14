@@ -7,8 +7,9 @@ import { H2, Paragraph, Stack } from "tamagui";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
-import { Container, Button } from "@packages/ui/components";
+import FaceFrownIcon from "@packages/ui/icons/FaceFrownIcon";
+import Container from "@packages/ui/components/Container";
+import Button from "@packages/ui/components/Button";
 
 const NotFound = () => {
   const router = useRouter();

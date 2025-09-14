@@ -10,7 +10,9 @@ import { Filter } from "@packages/types/common";
 import { LOCATIONS } from "@packages/constants/location";
 
 // Components
-import { LocationFilter, LocationCard, Container } from "../../components";
+import Container from "../../components/Container";
+import LocationCard from "../../components/LocationCard";
+import LocationFilter from "../../components/LocationFilter";
 
 const FilterSection = () => {
   const [filter, setFilter] = useState<Filter>({

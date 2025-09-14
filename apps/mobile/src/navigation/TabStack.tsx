@@ -14,10 +14,10 @@ import {
 } from "../screens";
 
 // Components
-import { HomeIcon } from "@packages/ui/icons/HomeIcon";
-import { SearchIcon } from "@packages/ui/icons/SearchIcon";
-import { CartIcon } from "@packages/ui/icons/CartIcon";
-import { UserIcon } from "@packages/ui/icons/UserIcon";
+import HomeIcon from "@packages/ui/icons/HomeIcon";
+import SearchIcon from "@packages/ui/icons/SearchIcon";
+import CartIcon from "@packages/ui/icons/CartIcon";
+import UserIcon from "@packages/ui/icons/UserIcon";
 
 const Tab = createBottomTabNavigator();
 

@@ -6,7 +6,8 @@ import { YStack, H2 } from "tamagui";
 import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
-import { VideoPlayer, Container } from "../../components";
+import Container from "../../components/Container";
+import VideoPlayer from "../../components/VideoPlayer";
 
 const HeroVideoSection = ({ title }: { title: string }) => {
   return (

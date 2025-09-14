@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const MoonIcon = ({
+const MoonIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -23,3 +23,5 @@ export const MoonIcon = ({
     </Svg>
   );
 };
+
+export default MoonIcon;

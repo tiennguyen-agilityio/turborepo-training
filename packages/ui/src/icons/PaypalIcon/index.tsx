@@ -1,7 +1,7 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const PaypalIcon = ({ width = 70, height = 20, ...props }: SVGProps) => {
+const PaypalIcon = ({ width = 70, height = 20, ...props }: SVGProps) => {
   return (
     <Svg
       width={width}
@@ -31,3 +31,5 @@ export const PaypalIcon = ({ width = 70, height = 20, ...props }: SVGProps) => {
     </Svg>
   );
 };
+
+export default PaypalIcon;
