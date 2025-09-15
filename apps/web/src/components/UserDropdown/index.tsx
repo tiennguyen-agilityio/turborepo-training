@@ -16,10 +16,10 @@ import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import Avatar from "../Avatar";
-import AlertDialog from "../AlertDialog";
-import Button from "../Button";
-import ChevronIcon from "../../icons/ChevronIcon";
+import Avatar from "@packages/ui/components/Avatar";
+import AlertDialog from "@packages/ui/components/AlertDialog";
+import Button from "@packages/ui/components/Button";
+import ChevronIcon from "@packages/ui/icons/ChevronIcon";
 
 interface UserDropdownProps {
   iconColor?: string;
@@ -131,7 +131,6 @@ const UserDropdown = ({
                     <Button
                       key={index}
                       variant="ghost"
-                      textAlign="left"
                       justifyContent="flex-start"
                       alignContent="center"
                       alignItems="center"

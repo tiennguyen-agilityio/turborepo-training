@@ -15,17 +15,16 @@ import { NAV_BAR } from "@packages/constants/nav";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import Button from "../../components/Button";
-import Container from "../../components/Container";
-import Divider from "../../components/Divider";
-import Logo from "../../components/Logo";
-import NavigationMenu from "../../components/NavigationMenu";
-import ThemeToggle from "../../components/ThemeToggle";
-import UserDropdown from "../../components/UserDropdown";
-
-import BookmarkIcon from "../../icons/BookmarkIcon";
-import SearchIcon from "../../icons/SearchIcon";
 import MiniHeader from "./MiniHeader";
+import UserDropdown from "@/components/UserDropdown";
+import Button from "@packages/ui/components/Button";
+import Container from "@packages/ui/components/Container";
+import Divider from "@packages/ui/components/Divider";
+import Logo from "@packages/ui/components/Logo";
+import NavigationMenu from "@packages/ui/components/NavigationMenu";
+import ThemeToggle from "@packages/ui/components/ThemeToggle";
+import BookmarkIcon from "@packages/ui/icons/BookmarkIcon";
+import SearchIcon from "@packages/ui/icons/SearchIcon";
 
 interface HeaderProps extends XStackProps {
   hasBorderBottom?: boolean;
@@ -49,11 +48,8 @@ const Header = ({ hasBorderBottom = false, ...props }: HeaderProps) => {
           marginLeft="$5"
           alignItems="center"
           gap="$3"
-          $sm={{
-            gap: "$5",
-          }}
           $md={{
-            gap: "$7",
+            gap: "$5",
           }}
         >
           <ThemeToggle />
@@ -72,7 +68,7 @@ const Header = ({ hasBorderBottom = false, ...props }: HeaderProps) => {
             <SearchIcon />
           </Text>
           <XStack
-            minWidth="$21"
+            minWidth="$22"
             justifyContent="center"
             alignContent="center"
             alignItems="center"

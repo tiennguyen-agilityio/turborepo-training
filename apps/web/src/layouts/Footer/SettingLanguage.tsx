@@ -3,14 +3,14 @@
 import { XStack, YStack } from "tamagui";
 
 // Components
-import Container from "../../components/Container";
-import Logo from "../../components/Logo";
-import Select from "../../components/Select";
-import DiscoverIcon from "../../icons/DiscoverIcon";
-import MasterCardIcon from "../../icons/MasterCardIcon";
-import MPesaIcon from "../../icons/MPesaIcon";
-import PaypalIcon from "../../icons/PaypalIcon";
-import VisaIcon from "../../icons/VisaIcon";
+import Container from "@packages/ui/components/Container";
+import Logo from "@packages/ui/components/Logo";
+import Select from "@packages/ui/components/Select";
+import DiscoverIcon from "@packages/ui/icons/DiscoverIcon";
+import MasterCardIcon from "@packages/ui/icons/MasterCardIcon";
+import MPesaIcon from "@packages/ui/icons/MPesaIcon";
+import PaypalIcon from "@packages/ui/icons/PaypalIcon";
+import VisaIcon from "@packages/ui/icons/VisaIcon";
 
 const SettingLanguage = () => {
   return (

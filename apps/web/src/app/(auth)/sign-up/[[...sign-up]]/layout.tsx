@@ -1,5 +1,6 @@
 import Container from "@packages/ui/components/Container";
-import { Header, Footer } from "@packages/ui/layouts";
+import Footer from "@/layouts/Footer";
+import Header from "@/layouts/Header";
 
 const SignUpLayout = ({
   children,

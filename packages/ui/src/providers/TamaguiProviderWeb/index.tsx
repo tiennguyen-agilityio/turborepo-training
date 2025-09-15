@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   TamaguiProvider,
   Theme,
@@ -14,16 +14,22 @@ import { NextThemeProvider, useThemeSetting } from "@tamagui/next-theme";
 import { config } from "@packages/tamagui/config";
 
 import Toast from "../../components/Toast";
+import Loading from "../../components/Loading";
 
 export const InnerProvider = ({ children, ...rest }: TamaguiProviderProps) => {
   const { resolvedTheme } = useThemeSetting();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <TamaguiProvider config={config} defaultTheme={resolvedTheme} {...rest}>
       <PortalProvider shouldAddRootHost>
         <ToastProvider swipeDirection="horizontal">
           <Theme name={resolvedTheme as ThemeName}>
-            {children}
+            {isLoaded ? children : <Loading />}
             <Toast />
             <ToastViewport bottom="$5" right="$5" portalToRoot />
           </Theme>

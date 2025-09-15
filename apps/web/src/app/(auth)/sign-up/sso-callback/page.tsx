@@ -1,4 +1,4 @@
-import RedirectCallback from "@packages/ui/sections/RedirectCallback";
+import RedirectCallback from "@/sections/RedirectCallback";
 
 const Page = () => <RedirectCallback />;
 

@@ -1,4 +1,5 @@
-import { Header, Footer } from "@packages/ui/layouts";
+import Footer from "@/layouts/Footer";
+import Header from "@/layouts/Header";
 
 const PublicLayout = ({
   children,
