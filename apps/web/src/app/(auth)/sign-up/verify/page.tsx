@@ -1,4 +1,4 @@
-import VerifyForm from "@packages/ui/sections/VerifyForm";
+import VerifyForm from "@/sections/VerifyForm";
 
 const VerifySignUpPage = () => {
   return <VerifyForm />;

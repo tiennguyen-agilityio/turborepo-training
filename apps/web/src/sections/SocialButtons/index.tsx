@@ -11,9 +11,9 @@ import { OAuthStrategy } from "@packages/types/auth";
 import { ERROR_MESSAGES } from "@packages/constants/messages";
 
 // Components
-import Button from "../../components/Button";
-import GoogleIcon from "../../icons/GoogleIcon";
-import FacebookIcon from "../../icons/FacebookIcon";
+import Button from "@packages/ui/components/Button";
+import GoogleIcon from "@packages/ui/icons/GoogleIcon";
+import FacebookIcon from "@packages/ui/icons/FacebookIcon";
 
 interface Props {
   isSignIn?: boolean;

@@ -71,7 +71,7 @@ const AlertDialog = ({
               flexDirection: "row",
             }}
           >
-            <AlertDialogCancel asChild onPress={onClickCancel}>
+            <AlertDialogCancel asChild onPress={onClickCancel} key="cancel">
               <Button
                 size={40}
                 paddingHorizontal="$4"
@@ -81,7 +81,7 @@ const AlertDialog = ({
                 {textCancel}
               </Button>
             </AlertDialogCancel>
-            <AlertDialogAction asChild onPress={onClickAction}>
+            <AlertDialogAction asChild onPress={onClickAction} key="action">
               <Button size={40} paddingHorizontal="$4" disabled={isLoading}>
                 {textAction}
               </Button>

@@ -2,14 +2,13 @@
 import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
-import { Header, Footer } from "@packages/ui/layouts";
-import { FilterSection, LocationsSection } from "@packages/ui/sections";
+import FilterSection from "@packages/ui/sections/FilterSection";
+import LocationsSection from "@packages/ui/sections/LocationsSection";
 import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const CampingLocationsPage = () => {
   return (
     <>
-      <Header position="absolute" top="0" left={0} zIndex={4} />
       <VideoPlayer
         autoPlay
         {...HOME_VIDEO}
@@ -19,7 +18,6 @@ const CampingLocationsPage = () => {
       <FilterSection />
       <VideoPlayer hasPlayed {...HOME_VIDEO} />
       <LocationsSection />
-      <Footer />
     </>
   );
 };

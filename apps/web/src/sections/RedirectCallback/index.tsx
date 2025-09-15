@@ -4,7 +4,7 @@ import { AuthenticateWithRedirectCallback } from "@clerk/nextjs";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import Loading from "../../components/Loading";
+import Loading from "@packages/ui/components/Loading";
 
 const RedirectCallback = () => {
   return (

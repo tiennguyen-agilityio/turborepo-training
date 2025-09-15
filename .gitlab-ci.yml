@@ -123,25 +123,6 @@ build_mobile:
     - changes:
       - apps/mobile/**
   artifacts:
-    name: "app-release.apk"
     paths:
       - apps/mobile/android/app/build/outputs/apk/release/app-release.apk
-    expire_in: 1 week
-
-build_mobile_debug:
-  stage: build
-  needs: ["install_mobile"]
-  before_script: 
-    - *before_script_mobile
-  script:
-    # - pnpm build:android-debug
-    - cd apps/mobile/android
-    - ./gradlew assembleDebug --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m" --stacktrace
-  rules:
-    - changes:
-      - apps/mobile/**
-  artifacts:
-    name: "app-debug.apk"
-    paths:
-      - apps/mobile/android/app/build/outputs/apk/debug/app-debug.apk
-    expire_in: 1 week
+    expire_in: 1 day

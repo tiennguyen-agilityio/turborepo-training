@@ -4,13 +4,12 @@ import React from "react";
 import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
-import { Header, Footer } from "@packages/ui/layouts";
-import {
-  HeroSection,
-  AboutSection,
-  ServicesSection,
-  StatisticsSection,
-} from "@packages/ui/sections";
+import Footer from "@/layouts/Footer";
+import Header from "@/layouts/Header";
+import HeroSection from "@packages/ui/sections/HeroSection";
+import AboutSection from "@packages/ui/sections/AboutSection";
+import ServicesSection from "@packages/ui/sections/ServicesSection";
+import StatisticsSection from "@packages/ui/sections/StatisticsSection";
 import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const Home = () => {

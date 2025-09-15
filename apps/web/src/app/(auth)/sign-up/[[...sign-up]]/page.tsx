@@ -1,4 +1,4 @@
-import SignUpForm from "@packages/ui/sections/SignUpForm";
+import SignUpForm from "@/sections/SignUpForm";
 
 const SignUpPage = () => {
   return <SignUpForm />;

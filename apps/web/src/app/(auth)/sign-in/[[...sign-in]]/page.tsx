@@ -1,4 +1,4 @@
-import SignInForm from "@packages/ui/sections/SignInForm";
+import SignInForm from "@/sections/SignInForm";
 
 const SignInPage = () => {
   return <SignInForm />;

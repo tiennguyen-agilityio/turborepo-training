@@ -5,6 +5,7 @@ import { radius, size, space, zIndex } from "./metrics";
 import { colorsMapping } from "./colors";
 import { themes } from "./themes";
 import { defaultFont, headingFont } from "./fonts";
+import { media } from "./media";
 
 const tokens = {
   radius,
@@ -27,4 +28,8 @@ export const config = createTamagui({
     color: colorsMapping,
   }),
   themes,
+  media: {
+    ...defaultConfig.media,
+    ...media,
+  },
 });

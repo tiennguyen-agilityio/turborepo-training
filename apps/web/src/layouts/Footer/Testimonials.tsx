@@ -5,8 +5,8 @@ import { DIRECTION } from "@packages/types/svg";
 
 // Components
 import TestimonialItem from "./TestimonialItem";
-import ChevronIcon from "../../icons/ChevronIcon";
-import Container from "../../components/Container";
+import ChevronIcon from "@packages/ui/icons/ChevronIcon";
+import Container from "@packages/ui/components/Container";
 
 const TESTIMONIALS = [
   {
