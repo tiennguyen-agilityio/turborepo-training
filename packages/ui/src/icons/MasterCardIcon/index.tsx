@@ -1,11 +1,7 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const MasterCardIcon = ({
-  width = 34,
-  height = 27,
-  ...props
-}: SVGProps) => {
+const MasterCardIcon = ({ width = 34, height = 27, ...props }: SVGProps) => {
   return (
     <Svg
       width={width}
@@ -38,3 +34,5 @@ export const MasterCardIcon = ({
     </Svg>
   );
 };
+
+export default MasterCardIcon;

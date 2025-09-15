@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const HomeIcon = ({
+const HomeIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -24,3 +24,5 @@ export const HomeIcon = ({
     </Svg>
   );
 };
+
+export default HomeIcon;

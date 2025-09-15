@@ -1,8 +1,8 @@
 "use client";
 
 import { H2, Stack } from "tamagui";
-import { Button } from "@packages/ui/components";
-import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
+import Button from "@packages/ui/components/Button";
+import FaceFrownIcon from "@packages/ui/icons/FaceFrownIcon";
 
 const Error = ({ reset }: { error: Error; reset: () => void }) => {
   return (

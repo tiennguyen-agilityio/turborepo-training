@@ -11,8 +11,8 @@ import { MAX_WITH_SCREEN } from "@packages/constants/styles";
 import { useScreenSize } from "@packages/hooks/useScreenSize";
 
 // Components
+import Container from "../../components/Container";
 import LocationTile from "../../components/LocationTile";
-import { Container } from "../../components";
 
 const ServicesSection = () => {
   const { width } = useScreenSize();

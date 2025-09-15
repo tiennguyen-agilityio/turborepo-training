@@ -1,11 +1,7 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const DiscoverIcon = ({
-  width = 76,
-  height = 16,
-  ...props
-}: SVGProps) => {
+const DiscoverIcon = ({ width = 76, height = 16, ...props }: SVGProps) => {
   return (
     <Svg
       width={width}
@@ -38,3 +34,5 @@ export const DiscoverIcon = ({
     </Svg>
   );
 };
+
+export default DiscoverIcon;

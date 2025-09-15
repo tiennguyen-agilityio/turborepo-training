@@ -1,7 +1,7 @@
 "use client";
 
 import { H2, Paragraph, Stack, Text } from "tamagui";
-import { FaceFrownIcon } from "@packages/ui/icons/FaceFrownIcon";
+import FaceFrownIcon from "@packages/ui/icons/FaceFrownIcon";
 import Button from "@packages/ui/components/Button";
 
 const Error = ({ reset }: { error: Error; reset: () => void }) => {
@@ -31,7 +31,11 @@ const Error = ({ reset }: { error: Error; reset: () => void }) => {
       <Text color="$error" fontSize="$xl">
         We couldn&rsquo;t load the user page. Please try again.
       </Text>
-      <Button backgroundColor="$error" paddingHorizontal="$10" onPress={() => reset()}>
+      <Button
+        backgroundColor="$error"
+        paddingHorizontal="$10"
+        onPress={() => reset()}
+      >
         Try again
       </Button>
     </Stack>

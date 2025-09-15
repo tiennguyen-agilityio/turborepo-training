@@ -28,7 +28,11 @@ import { useCleanClerkUrl } from "@packages/hooks/useCleanClerkUrl";
 
 // Components
 import SocialButtons from "../SocialButtons";
-import { Divider, Input, Button, Checkbox, Select } from "../../components";
+import Button from "../../components/Button";
+import Checkbox from "../../components/Checkbox";
+import Divider from "../../components/Divider";
+import Input from "../../components/Input";
+import Select from "../../components/Select";
 
 const SignUpForm = () => {
   const { redirectUrl } = useCleanClerkUrl();

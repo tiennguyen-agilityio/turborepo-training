@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const FacebookIcon = ({
+const FacebookIcon = ({
   color = "currentColor",
   width = 16,
   height = 16,
@@ -22,3 +22,5 @@ export const FacebookIcon = ({
     </Svg>
   );
 };
+
+export default FacebookIcon;

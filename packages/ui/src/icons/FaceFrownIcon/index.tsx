@@ -1,7 +1,7 @@
 import Svg, { Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const FaceFrownIcon = ({
+const FaceFrownIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -24,3 +24,5 @@ export const FaceFrownIcon = ({
     </Svg>
   );
 };
+
+export default FaceFrownIcon;

@@ -8,7 +8,10 @@ import { EXPERIENCES } from "@packages/constants/common";
 import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
-import { Experiences, VideoPlayer, Button, Container } from "../../components";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Experiences from "../../components/Experiences";
+import VideoPlayer from "../../components/VideoPlayer";
 
 const HeroSection = () => {
   const handleExperienceClick = () => {};

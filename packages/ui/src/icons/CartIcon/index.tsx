@@ -1,7 +1,7 @@
 import Svg, { Circle, Path } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const CartIcon = ({
+const CartIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -25,3 +25,5 @@ export const CartIcon = ({
     </Svg>
   );
 };
+
+export default CartIcon;

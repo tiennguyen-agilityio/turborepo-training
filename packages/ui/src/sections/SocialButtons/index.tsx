@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSignIn, useSignUp } from "@clerk/nextjs";
-import { YStack, Paragraph, Separator } from "tamagui";
+import { YStack, Paragraph, Separator, Stack } from "tamagui";
 
 // Types
 import { OAuthStrategy } from "@packages/types/auth";
@@ -11,8 +11,9 @@ import { OAuthStrategy } from "@packages/types/auth";
 import { ERROR_MESSAGES } from "@packages/constants/messages";
 
 // Components
-import { Button } from "../../components";
-import { GoogleIcon, FacebookIcon } from "../../icons";
+import Button from "../../components/Button";
+import GoogleIcon from "../../icons/GoogleIcon";
+import FacebookIcon from "../../icons/FacebookIcon";
 
 interface Props {
   isSignIn?: boolean;
@@ -93,7 +94,7 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
   }, []);
 
   return (
-    <YStack width="100%" marginTop="$6">
+    <Stack width="100%" marginTop="$6">
       <YStack
         flex={1}
         gap="$5"
@@ -136,7 +137,7 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
           {errorMessage}
         </Paragraph>
       )}
-    </YStack>
+    </Stack>
   );
 };
 

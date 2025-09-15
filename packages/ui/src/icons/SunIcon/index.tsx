@@ -1,7 +1,7 @@
 import Svg, { Path, Circle } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const SunIcon = ({
+const SunIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -31,3 +31,5 @@ export const SunIcon = ({
     </Svg>
   );
 };
+
+export default SunIcon;

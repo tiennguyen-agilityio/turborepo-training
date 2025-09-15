@@ -2,7 +2,8 @@
 
 import { Stack, H2, H6 } from "tamagui";
 
-import { Container, Post } from "../../components";
+import Container from "../../components/Container";
+import Post from "../../components/Post";
 
 const AboutSection = () => {
   const handleReadMore = () => {};

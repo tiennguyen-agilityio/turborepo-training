@@ -16,8 +16,10 @@ import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import { Avatar, AlertDialog, Button } from "..";
-import { ChevronIcon } from "../../icons";
+import Avatar from "../Avatar";
+import AlertDialog from "../AlertDialog";
+import Button from "../Button";
+import ChevronIcon from "../../icons/ChevronIcon";
 
 interface UserDropdownProps {
   iconColor?: string;
@@ -50,8 +52,8 @@ const UserDropdown = ({
   }, []);
 
   const handleToggleMenu = useCallback(() => {
-    setIsOpenMenu((prev) => !prev);
-  }, []);
+    setIsOpenMenu(!isOpenMenu);
+  }, [isOpenMenu]);
 
   const handleClick = useCallback(
     (href: string, isSignOut: boolean) => {
@@ -129,7 +131,8 @@ const UserDropdown = ({
                     <Button
                       key={index}
                       variant="ghost"
-                      justifyContent="center"
+                      textAlign="left"
+                      justifyContent="flex-start"
                       alignContent="center"
                       alignItems="center"
                       height="$10.5"
@@ -141,6 +144,9 @@ const UserDropdown = ({
                       borderBottomColor="$border"
                       color={isActive ? "$primary" : "$color"}
                       backgroundColor={isActive ? "$accent" : "transparent"}
+                      textProps={{
+                        textAlign: "left",
+                      }}
                       onPress={handleItemClick}
                     >
                       {text}

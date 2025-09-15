@@ -6,7 +6,9 @@ import { YStack, XStack, Text, Paragraph } from "tamagui";
 import { NAV_FOOTERS } from "@packages/constants/nav";
 
 // Components
-import { Button, Input, Container } from "../../components/";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Input from "../../components/Input";
 
 const TopNav = () => {
   return (

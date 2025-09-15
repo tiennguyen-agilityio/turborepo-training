@@ -5,7 +5,10 @@ import { CircleCheck } from "@tamagui/lucide-icons";
 import { Toast as TToast, useToastState } from "@tamagui/toast";
 import { XStack, YStack } from "tamagui";
 
-import { CloseIcon, InfoIcon, WarningIcon } from "../../icons";
+// Components
+import CloseIcon from "../../icons/CloseIcon";
+import InfoIcon from "../../icons/InfoIcon";
+import WarningIcon from "../../icons/WarningIcon";
 
 interface TypeConfig {
   backgroundColor: string;

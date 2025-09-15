@@ -1,7 +1,7 @@
 import Svg, { Defs, Image, Pattern, Rect, Use } from "react-native-svg";
 import { SVGProps } from "@packages/types/svg";
 
-export const VisaIcon = ({ width = 42, height = 13, ...props }: SVGProps) => {
+const VisaIcon = ({ width = 42, height = 13, ...props }: SVGProps) => {
   return (
     <Svg
       width={width}
@@ -34,3 +34,5 @@ export const VisaIcon = ({ width = 42, height = 13, ...props }: SVGProps) => {
     </Svg>
   );
 };
+
+export default VisaIcon;

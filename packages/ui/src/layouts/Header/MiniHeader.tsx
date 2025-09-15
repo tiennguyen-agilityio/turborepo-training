@@ -20,14 +20,13 @@ import { LOCAL_STORAGE_KEYS } from "@packages/constants/common";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import {
-  Logo,
-  Button,
-  ThemeToggle,
-  Container,
-  AlertDialog,
-} from "../../components";
-import { CloseIcon, HamburgerIcon } from "../../icons";
+import AlertDialog from "../../components/AlertDialog";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Logo from "../../components/Logo";
+import ThemeToggle from "../../components/ThemeToggle";
+import CloseIcon from "../../icons/CloseIcon";
+import HamburgerIcon from "../../icons/HamburgerIcon";
 
 interface MiniHeaderProps extends XStackProps {
   hasBorderBottom?: boolean;

@@ -5,7 +5,7 @@ interface ChevronIconProps extends SVGProps {
   direction?: DIRECTION;
 }
 
-export const ChevronIcon = ({
+const ChevronIcon = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -45,3 +45,5 @@ export const ChevronIcon = ({
     </Svg>
   );
 };
+
+export default ChevronIcon;

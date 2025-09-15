@@ -15,16 +15,16 @@ import { NAV_BAR } from "@packages/constants/nav";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import {
-  Button,
-  Container,
-  Divider,
-  Logo,
-  NavigationMenu,
-  ThemeToggle,
-  UserDropdown,
-} from "../../components";
-import { BookmarkIcon, SearchIcon } from "../../icons";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Divider from "../../components/Divider";
+import Logo from "../../components/Logo";
+import NavigationMenu from "../../components/NavigationMenu";
+import ThemeToggle from "../../components/ThemeToggle";
+import UserDropdown from "../../components/UserDropdown";
+
+import BookmarkIcon from "../../icons/BookmarkIcon";
+import SearchIcon from "../../icons/SearchIcon";
 import MiniHeader from "./MiniHeader";
 
 interface HeaderProps extends XStackProps {

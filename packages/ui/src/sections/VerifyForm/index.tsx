@@ -15,7 +15,8 @@ import { ERROR_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
-import { Input, Button } from "../../components";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 const VerifyForm = () => {
   const { signUp, isLoaded, setActive } = useSignUp();
