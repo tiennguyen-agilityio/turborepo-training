@@ -1,44 +1,45 @@
-import { PAGE_SIZE } from "@packages/constants/common";
-import { API_ROUTES } from "@packages/constants/routes";
+import { Effect } from "effect";
 
+// Types
 import { QueryParams, Response } from "@packages/types/api";
 import { LocationItem } from "@packages/types/location";
 
-export const fetchLocations = async ({
+// Constants
+import { PAGE_SIZE } from "@packages/constants/common";
+import { API_ROUTES } from "@packages/constants/routes";
+
+export const fetchLocations = ({
   page = 1,
   limit = PAGE_SIZE,
-}: QueryParams): Promise<Response<LocationItem>> => {
-  try {
-    const response = await fetch(
-      `${API_ROUTES.LOCATIONS}?page=${page}&limit=${limit}`,
-      {
+}: QueryParams): Effect.Effect<Response<LocationItem>, never, never> => {
+  return Effect.tryPromise({
+    try: () =>
+      fetch(`${API_ROUTES.LOCATIONS}222?page=${page}&limit=${limit}`, {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    if (!response.ok) {
-      return {
-        data: [],
-        error: "Failed to fetch the Locations.",
-      };
-    }
-
-    const data: LocationItem[] = await response.json();
-
-    return {
-      data,
-      error: "",
-    };
-  } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : "Failed to fetch the Locations.";
-
-    return {
-      data: [],
-      error: errorMessage,
-    };
-  }
+        headers: { "Content-Type": "application/json" },
+      }),
+    catch: (err) =>
+      err instanceof Error ? err.message : "Failed to fetch the Locations.",
+  }).pipe(
+    Effect.flatMap((res) =>
+      !res.ok
+        ? Effect.fail("Failed to fetch the Locations.")
+        : Effect.tryPromise({
+            try: () => res.json() as Promise<LocationItem[]>,
+            catch: () => "Invalid JSON response.",
+          })
+    ),
+    Effect.matchEffect({
+      onFailure: (err) =>
+        Effect.succeed({
+          data: [],
+          error: err,
+        }),
+      onSuccess: (data) =>
+        Effect.succeed({
+          data,
+          error: "",
+        }),
+    })
+  );
 };
