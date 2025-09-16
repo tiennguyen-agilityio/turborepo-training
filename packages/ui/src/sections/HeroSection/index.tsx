@@ -37,6 +37,7 @@ const HeroSection = () => {
           bottom: 0,
           left: "50%",
           x: "-50%",
+          zIndex: 1,
         }}
       >
         <Container position="relative">

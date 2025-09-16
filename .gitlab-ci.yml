@@ -60,6 +60,7 @@ build_web:
   rules:
     - changes:
       - apps/web/**
+    - when: never
   artifacts:
     paths:
       - .vercel/output
@@ -88,6 +89,7 @@ deploy_web_preview:
     #   when: on_success
     - changes:
       - apps/web/**
+    - when: never
 
 # MOBILE
 
@@ -103,6 +105,7 @@ install_mobile:
   rules:
     - changes:
       - apps/mobile/**
+    - when: never
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
@@ -122,6 +125,7 @@ build_mobile:
   rules:
     - changes:
       - apps/mobile/**
+    - when: never
   artifacts:
     paths:
       - apps/mobile/android/app/build/outputs/apk/release/app-release.apk
