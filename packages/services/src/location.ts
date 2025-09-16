@@ -14,7 +14,7 @@ export const fetchLocations = ({
 }: QueryParams): Effect.Effect<Response<LocationItem>, never, never> => {
   return Effect.tryPromise({
     try: () =>
-      fetch(`${API_ROUTES.LOCATIONS}222?page=${page}&limit=${limit}`, {
+      fetch(`${API_ROUTES.LOCATIONS}?page=${page}&limit=${limit}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       }),
