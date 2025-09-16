@@ -2,8 +2,8 @@
 import { HOME_VIDEO } from "@packages/constants/video";
 
 // Components
+import LocationsSection from "@/sections/LocationsSection";
 import FilterSection from "@packages/ui/sections/FilterSection";
-import LocationsSection from "@packages/ui/sections/LocationsSection";
 import VideoPlayer from "@packages/ui/components/VideoPlayer";
 
 const CampingLocationsPage = () => {

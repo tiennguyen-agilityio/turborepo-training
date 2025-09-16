@@ -18,10 +18,10 @@ import { useScreenSize } from "@packages/hooks/useScreenSize";
 import { fetchLocations } from "@packages/services/location";
 
 // Components
-import Button from "../../components/Button";
-import Container from "../../components/Container";
-import LocationCard from "../../components/LocationCard";
-import SkeletonLocationCard from "../../components/SkeletonLocationCard";
+import Button from "@packages/ui/components/Button";
+import Container from "@packages/ui/components/Container";
+import LocationCard from "@packages/ui/components/LocationCard";
+import SkeletonLocationCard from "@packages/ui/components/SkeletonLocationCard";
 
 const LocationsSection = () => {
   const {

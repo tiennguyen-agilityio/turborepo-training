@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
+import { Effect } from "effect";
 
 import { PAGE_SIZE } from "@packages/constants/common";
 import { QueryParams, Response } from "@packages/types/api";
 
 type UseLoadMoreOptions<T> = {
-  fetcher: (params: QueryParams) => Promise<Response<T>>;
+  fetcher: (params: QueryParams) => Effect.Effect<Response<T>, never, never>;
   limit?: number;
 };
 
@@ -20,21 +21,25 @@ export const useLoadMore = <T>({
 
   const handleLoadMore = useCallback(async () => {
     if (isLoading || !hasMore) return;
+
     setIsLoading(true);
     setError("");
 
-    const { data: newData, error: newError } = await fetcher({ page, limit });
-    const length = newData?.length;
+    const effect = fetcher({ page, limit });
 
-    if (length) {
-      setData((prev) => [...prev, ...newData]);
-    }
-    setHasMore(length === limit);
-    setPage((prev) => prev + 1);
+    await Effect.runPromise(effect)
+      .then(({ data: newData }) => {
+        if (newData.length > 0) {
+          setData((prev) => [...prev, ...newData]);
+        }
 
-    if (newError) {
-      setError(newError);
-    }
+        setHasMore(newData.length === limit);
+        setPage((prev) => prev + 1);
+      })
+      .catch((err) => {
+        setError(err);
+        setHasMore(false);
+      });
 
     setIsLoading(false);
   }, [fetcher, page, limit, isLoading, hasMore]);

@@ -1,5 +1,6 @@
 import "./src/lib/initEnv";
 import "react-native-get-random-values";
+import "fast-text-encoding";
 
 import { AppRegistry } from "react-native";
 import App from "./App";
