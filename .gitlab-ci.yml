@@ -84,8 +84,6 @@ deploy_web_preview:
     - ls -la .vercel/output
     - vercel deploy --prebuilt --prod --token $VERCEL_TOKEN
   rules:
-    # - if: '$CI_COMMIT_BRANCH != "main"'
-    #   when: on_success
     - changes:
       - apps/web/**
 
