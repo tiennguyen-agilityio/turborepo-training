@@ -25,21 +25,20 @@ export const useLoadMore = <T>({
     setIsLoading(true);
     setError("");
 
-    const effect = fetcher({ page, limit });
+    const { data: newData, error } = await Effect.runPromise(
+      fetcher({ page, limit })
+    );
 
-    await Effect.runPromise(effect)
-      .then(({ data: newData }) => {
-        if (newData.length > 0) {
-          setData((prev) => [...prev, ...newData]);
-        }
-
-        setHasMore(newData.length === limit);
-        setPage((prev) => prev + 1);
-      })
-      .catch((err) => {
-        setError(err);
-        setHasMore(false);
-      });
+    if (error) {
+      setError(error);
+      setHasMore(false);
+    } else {
+      if (newData.length > 0) {
+        setData((prev) => [...prev, ...newData]);
+      }
+      setHasMore(newData.length === limit);
+      setPage((prev) => prev + 1);
+    }
 
     setIsLoading(false);
   }, [fetcher, page, limit, isLoading, hasMore]);

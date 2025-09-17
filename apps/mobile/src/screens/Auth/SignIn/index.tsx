@@ -39,13 +39,14 @@ const SignInScreen = () => {
 
   const handleSignIn = useCallback(
     async (data: LoginFormData) => {
+      setErrorMessage("");
       mutate(data, {
-        onSuccess: async (data) => {
-          const { user, error } = data;
-          if (!error && user) {
+        onSuccess: async ({ user, error }) => {
+          if (user) {
             setAuth(user, uuidv4());
             return;
           }
+
           setErrorMessage(error);
         },
         onError: (error: Error) => {
