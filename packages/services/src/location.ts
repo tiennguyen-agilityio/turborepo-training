@@ -32,13 +32,12 @@ export const fetchLocations = ({
     Effect.matchEffect({
       onFailure: (err) =>
         Effect.succeed({
-          data: [],
+          data: [] as LocationItem[],
           error: err,
         }),
       onSuccess: (data) =>
         Effect.succeed({
           data,
-          error: "",
         }),
     })
   );

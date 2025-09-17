@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
@@ -13,6 +13,7 @@ import {
   TamaguiElement,
   Label,
 } from "tamagui";
+import { Effect } from "effect";
 
 // Types
 import { SignUpFormData } from "@packages/types/auth";
@@ -39,67 +40,100 @@ const SignUpForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
-  const { control, handleSubmit, formState } = useForm<SignUpFormData>({
+  const { control, handleSubmit } = useForm<SignUpFormData>({
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
       password: "",
-      day: "",
-      month: "",
-      year: "",
     },
     mode: "onBlur",
   });
 
   const [errorMessage, setErrorMessage] = useState("");
-
-  const { isSubmitting } = formState;
-  const isLoading = isSubmitting || !isLoaded;
+  const [isLoading, setIsLoading] = useState(false);
 
   const lastNameRef = useRef<TamaguiElement | null>(null);
   const emailRef = useRef<TamaguiElement | null>(null);
   const passwordRef = useRef<TamaguiElement | null>(null);
 
-  const handleSignUp = async (data: SignUpFormData) => {
-    if (!isLoaded) return;
-    setErrorMessage("");
+  const signUpEffect = useCallback(
+    (
+      data: SignUpFormData,
+      signUp: NonNullable<ReturnType<typeof useSignUp>["signUp"]>,
+      setActive: NonNullable<ReturnType<typeof useSignUp>["setActive"]>,
+      router: ReturnType<typeof useRouter>,
+      redirectUrl?: string
+    ) =>
+      Effect.gen(function* () {
+        const { firstName, lastName, email, password } = data;
 
-    try {
-      const { firstName, lastName, email, password, day, month, year } = data;
-
-      const attempt = await signUp.create({
-        firstName,
-        lastName,
-        emailAddress: email,
-        password,
-        unsafeMetadata: {
-          dob: `${day} ${month} ${year}`,
-        },
-      });
-
-      if (attempt.status === "missing_requirements") {
-        await signUp.prepareEmailAddressVerification({
-          strategy: "email_code",
+        const attempt = yield* Effect.tryPromise({
+          try: () =>
+            signUp.create({
+              firstName,
+              lastName,
+              emailAddress: email,
+              password,
+            }),
+          catch: (error) =>
+            error instanceof Error
+              ? error.message
+              : ERROR_MESSAGES.SIGN_UP_FAILED,
         });
 
-        const url = redirectUrl
-          ? `${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(
-              redirectUrl
-            )}`
-          : ROUTES.SIGN_UP_VERIFY;
+        if (attempt.status === "missing_requirements") {
+          yield* Effect.tryPromise({
+            try: () =>
+              signUp.prepareEmailAddressVerification({
+                strategy: "email_code",
+              }),
+            catch: () => "Verification prepare failed",
+          });
 
-        router.push(url);
-      } else if (attempt.status === "complete") {
-        await setActive({ session: attempt.createdSessionId });
-        router.push(redirectUrl || "/");
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : ERROR_MESSAGES.SIGN_UP_FAILED;
-      setErrorMessage(message);
-    }
-  };
+          const url = redirectUrl
+            ? `${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(
+                redirectUrl
+              )}`
+            : ROUTES.SIGN_UP_VERIFY;
+
+          yield* Effect.sync(() => router.push(url || "/"));
+        } else if (attempt.status === "complete") {
+          yield* Effect.tryPromise({
+            try: () => setActive({ session: attempt.createdSessionId }),
+            catch: () => "Set active failed",
+          });
+          yield* Effect.sync(() => router.push(redirectUrl || "/"));
+        }
+      }),
+    []
+  );
+
+  const handleSignUp = useCallback(
+    (data: SignUpFormData) => {
+      if (!isLoaded || !signUp || !setActive) return;
+      setErrorMessage("");
+      setIsLoading(true);
+
+      Effect.runPromise(
+        signUpEffect(data, signUp, setActive, router, redirectUrl).pipe(
+          Effect.matchEffect({
+            onFailure: (error) =>
+              Effect.sync(() => {
+                setErrorMessage(
+                  typeof error === "string"
+                    ? error
+                    : ERROR_MESSAGES.SIGN_UP_FAILED
+                );
+                setIsLoading(false);
+              }),
+            onSuccess: () => Effect.sync(() => setIsLoading(false)),
+          })
+        )
+      );
+    },
+    [isLoaded, redirectUrl, router, setActive, signUp, signUpEffect]
+  );
 
   const handleGoToSignIn = () => {
     router.push(ROUTES.SIGN_IN);
@@ -120,7 +154,7 @@ const SignUpForm = () => {
             Create Account
           </H1>
 
-          <SocialButtons />
+          <SocialButtons disabled={isLoading} />
           <Divider text="OR" />
 
           <XStack gap="$5">
