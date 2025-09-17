@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { YStack, XStack, Paragraph, H1, Form, TamaguiElement } from "tamagui";
+import { Effect } from "effect";
 
 // Types
 import { LoginFormData } from "@packages/types/auth";
@@ -29,7 +30,7 @@ const SignInForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();
   const router = useRouter();
 
-  const { control, handleSubmit, formState } = useForm<LoginFormData>({
+  const { control, handleSubmit } = useForm<LoginFormData>({
     defaultValues: {
       email: "",
       password: "",
@@ -38,31 +39,69 @@ const SignInForm = () => {
   });
 
   const [errorMessage, setErrorMessage] = useState("");
-
-  const { isSubmitting } = formState;
-  const isLoading = isSubmitting || !isLoaded;
+  const [isLoading, setIsLoading] = useState(false);
 
   const passwordRef = useRef<TamaguiElement | null>(null);
 
-  const handleSignIn = async ({ email, password }: LoginFormData) => {
-    if (!isLoaded) return;
+  const signInEffect = useCallback(
+    (
+      data: LoginFormData,
+      signIn: NonNullable<ReturnType<typeof useSignIn>["signIn"]>,
+      setActive: NonNullable<ReturnType<typeof useSignIn>["setActive"]>,
+      router: ReturnType<typeof useRouter>,
+      redirectUrl?: string
+    ) =>
+      Effect.gen(function* () {
+        const { email, password } = data;
 
-    try {
-      const attempt = await signIn.create({
-        identifier: email,
-        password,
-      });
+        const attempt = yield* Effect.tryPromise({
+          try: () =>
+            signIn.create({
+              identifier: email,
+              password,
+            }),
+          catch: (error) =>
+            error instanceof Error
+              ? error.message
+              : ERROR_MESSAGES.SIGN_IN_FAILED,
+        });
 
-      if (attempt.status === "complete") {
-        await setActive({ session: attempt.createdSessionId });
-        router.push(redirectUrl || "/");
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : ERROR_MESSAGES.SIGN_IN_FAILED;
-      setErrorMessage(message);
-    }
-  };
+        if (attempt.status === "complete") {
+          yield* Effect.tryPromise({
+            try: () => setActive({ session: attempt.createdSessionId }),
+            catch: () => "Set active failed",
+          });
+          yield* Effect.sync(() => router.push(redirectUrl || "/"));
+        }
+      }),
+    []
+  );
+
+  const handleSignIn = useCallback(
+    async (data: LoginFormData) => {
+      if (!isLoaded || !signIn || !setActive) return;
+      setIsLoading(true);
+      setErrorMessage("");
+
+      Effect.runPromise(
+        signInEffect(data, signIn, setActive, router, redirectUrl).pipe(
+          Effect.matchEffect({
+            onFailure: (error) =>
+              Effect.sync(() => {
+                setErrorMessage(
+                  typeof error === "string"
+                    ? error
+                    : ERROR_MESSAGES.SIGN_IN_FAILED
+                );
+                setIsLoading(false);
+              }),
+            onSuccess: () => Effect.sync(() => setIsLoading(false)),
+          })
+        )
+      );
+    },
+    [isLoaded, redirectUrl, router, setActive, signIn, signInEffect]
+  );
 
   const handleGoToSignUp = () => {
     router.push(ROUTES.SIGN_UP);
@@ -83,7 +122,7 @@ const SignInForm = () => {
             Sign In
           </H1>
 
-          <SocialButtons isSignIn />
+          <SocialButtons isSignIn disabled={isLoading} />
           <Divider text="OR" />
 
           <Controller

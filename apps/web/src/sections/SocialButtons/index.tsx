@@ -16,10 +16,11 @@ import GoogleIcon from "@packages/ui/icons/GoogleIcon";
 import FacebookIcon from "@packages/ui/icons/FacebookIcon";
 
 interface Props {
+  disabled?: boolean;
   isSignIn?: boolean;
 }
 
-const SocialButtons = ({ isSignIn = false }: Props) => {
+const SocialButtons = ({ isSignIn = false, disabled = false }: Props) => {
   const { isLoaded: isSignUpLoaded, signUp } = useSignUp();
   const { isLoaded: isSignInLoaded, signIn } = useSignIn();
 
@@ -107,7 +108,7 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
           backgroundColor="$facebook"
           justifyContent="center"
           icon={FacebookIcon}
-          disabled={!!socialLoading}
+          disabled={disabled || !!socialLoading}
           isLoading={socialLoading === OAuthStrategy.Facebook}
           onPress={handleClickFacebook}
         >
@@ -117,7 +118,7 @@ const SocialButtons = ({ isSignIn = false }: Props) => {
         <Button
           flex={1}
           backgroundColor="$google"
-          disabled={!!socialLoading}
+          disabled={disabled || !!socialLoading}
           icon={GoogleIcon}
           isLoading={socialLoading === OAuthStrategy.Google}
           onPress={handleClickGoogle}

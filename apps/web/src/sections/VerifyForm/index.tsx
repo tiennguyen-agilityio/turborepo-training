@@ -5,6 +5,7 @@ import { useSignUp } from "@clerk/nextjs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { YStack, XStack, Paragraph, H1, Form } from "tamagui";
+import { Effect } from "effect";
 
 // Types
 import { VerifyFormData } from "@packages/types/auth";
@@ -35,31 +36,57 @@ const VerifyForm = () => {
 
   const [errorMessage, setErrorMessage] = useState("");
 
+  const verifyEffect = (
+    code: string,
+    signUp: NonNullable<ReturnType<typeof useSignUp>["signUp"]>,
+    setActive: NonNullable<ReturnType<typeof useSignUp>["setActive"]>,
+    router: ReturnType<typeof useRouter>,
+    redirectUrl: string
+  ) =>
+    Effect.gen(function* () {
+      const attempt = yield* Effect.tryPromise({
+        try: () => signUp.attemptEmailAddressVerification({ code }),
+        catch: (error) =>
+          error instanceof Error
+            ? error.message
+            : ERROR_MESSAGES.VERIFICATION_INCOMPLETE,
+      });
+
+      if (attempt.status === "complete") {
+        yield* Effect.tryPromise({
+          try: () => setActive({ session: attempt.createdSessionId }),
+          catch: () => "Set active failed",
+        });
+        router.replace(redirectUrl);
+      } else {
+        yield* Effect.fail(ERROR_MESSAGES.VERIFICATION_INCOMPLETE);
+      }
+    });
+
   const handleVerifyForm = async ({ code }: VerifyFormData) => {
-    if (!isLoaded || !signUp) return;
+    if (!isLoaded || !signUp || !setActive) return;
     setErrorMessage("");
     setIsLoading(true);
 
-    try {
-      const attempt = await signUp.attemptEmailAddressVerification({ code });
-
-      if (attempt.status === "complete") {
-        await setActive({ session: attempt.createdSessionId });
-        router.replace(redirectUrl);
-        setIsLoading(false);
-        return;
-      }
-
-      setIsLoading(false);
-      setErrorMessage(ERROR_MESSAGES.VERIFICATION_INCOMPLETE);
-    } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : ERROR_MESSAGES.VERIFICATION_INCOMPLETE;
-      setErrorMessage(message);
-      setIsLoading(false);
-    }
+    Effect.runPromise(
+      verifyEffect(code, signUp, setActive, router, redirectUrl).pipe(
+        Effect.matchEffect({
+          onFailure: (error) =>
+            Effect.sync(() => {
+              setErrorMessage(
+                typeof error === "string"
+                  ? error
+                  : ERROR_MESSAGES.VERIFICATION_INCOMPLETE
+              );
+              setIsLoading(false);
+            }),
+          onSuccess: () =>
+            Effect.sync(() => {
+              setIsLoading(false);
+            }),
+        })
+      )
+    );
   };
 
   const handleGoToSignIn = () => {

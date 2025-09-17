@@ -42,7 +42,7 @@ module.exports = {
             __dirname,
             "../../packages/utils/src"
           ),
-          "@package/services": require("path").resolve(
+          "@packages/services": require("path").resolve(
             __dirname,
             "../../packages/services/src"
           ),

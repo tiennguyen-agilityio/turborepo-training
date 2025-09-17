@@ -8,13 +8,9 @@ export interface SignUpFormData {
   lastName: string;
   email: string;
   password: string;
-  day?: string;
-  month?: string;
-  year: string;
-}
-
-export interface ContinueFormData {
-  username: string;
+  day?: number;
+  month?: number;
+  year?: number;
 }
 
 export interface VerifyFormData {
