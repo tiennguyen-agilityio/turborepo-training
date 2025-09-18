@@ -1,6 +1,6 @@
 import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
-import { headers } from "next/headers";
+import { Effect } from "effect";
 
 import {
   createUser,
@@ -10,84 +10,75 @@ import {
   UserJSON,
 } from "./user";
 
-const handleEvent = async (event: WebhookEvent) => {
+const handleEvent = (event: WebhookEvent) => {
   const { type, data } = event;
 
   switch (type) {
-    case "user.created": {
-      await createUser({
-        userId: data.id,
-        ...data,
-      } as UserJSON);
-
-      break;
-    }
-
+    case "user.created":
+      return Effect.gen(function* () {
+        yield* createUser({
+          userId: data.id,
+          ...data,
+        } as UserJSON);
+      });
     case "user.updated": {
-      const { user } = await fetchUserById(data.id);
-
-      if (user?.id) {
-        await updateUser(user?.id, data);
-      }
-
-      break;
-    }
-
-    case "user.deleted": {
-      if (data.id) {
-        const { user } = await fetchUserById(data.id);
+      return Effect.gen(function* () {
+        const { data: user } = yield* fetchUserById(data.id);
         if (user?.id) {
-          await deleteUser(user?.id);
+          yield* updateUser(user.id, data);
         }
-      }
-
-      break;
+      });
     }
+
+    case "user.deleted":
+      return Effect.gen(function* () {
+        if (data.id) {
+          const { data: user } = yield* fetchUserById(data.id);
+          if (user?.id) {
+            yield* deleteUser(user.id);
+          }
+        }
+      });
 
     default:
-      break;
+      return Effect.succeed(undefined);
   }
 };
 
-export const webhookHandler = async (req: Request) => {
-  const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
+export const webhookHandler = (req: Request) =>
+  Effect.gen(function* () {
+    const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
+    if (!WEBHOOK_SECRET) {
+      console.error("❌ Missing Clerk Webhook Secret in .env.local");
+      return new Response("Server Misconfiguration", { status: 500 });
+    }
 
-  if (!WEBHOOK_SECRET) {
-    console.error("❌ Missing Clerk Webhook Secret in .env.local");
-    return new Response("Server Misconfiguration", { status: 500 });
-  }
+    const body = yield* Effect.tryPromise({
+      try: () => req.text(),
+      catch: (error) => new Error(`Failed to read request body: ${error}`),
+    });
 
-  const wh = new Webhook(WEBHOOK_SECRET);
+    const svixId = req.headers.get("svix-id");
+    const svixTimestamp = req.headers.get("svix-timestamp");
+    const svixSignature = req.headers.get("svix-signature");
 
-  const headerPayload = await headers();
-  const svixHeaders = {
-    "svix-id": headerPayload.get("svix-id") || "",
-    "svix-timestamp": headerPayload.get("svix-timestamp") || "",
-    "svix-signature": headerPayload.get("svix-signature") || "",
-  };
+    if (!svixId || !svixTimestamp || !svixSignature) {
+      return new Response("Missing Svix headers", { status: 400 });
+    }
 
-  if (
-    !svixHeaders["svix-id"] ||
-    !svixHeaders["svix-timestamp"] ||
-    !svixHeaders["svix-signature"]
-  ) {
-    return new Response("Error: Missing Svix headers", { status: 400 });
-  }
+    const wh = new Webhook(WEBHOOK_SECRET);
 
-  const data = await req.json();
-  const payload = JSON.stringify(data);
+    const event = yield* Effect.try({
+      try: () =>
+        wh.verify(body, {
+          "svix-id": svixId,
+          "svix-timestamp": svixTimestamp,
+          "svix-signature": svixSignature,
+        }) as WebhookEvent,
+      catch: (error) => new Error(`Webhook verification failed: ${error}`),
+    });
 
-  let event;
-  try {
-    event = wh.verify(payload, svixHeaders) as WebhookEvent;
-  } catch (err) {
-    console.error("❌ Webhook signature verification failed:", err);
-    return new Response("Invalid signature", { status: 400 });
-  }
+    yield* handleEvent(event);
 
-  if (event) {
-    await handleEvent(event);
-  }
-
-  return new Response("Webhook processed", { status: 200 });
-};
+    return new Response("OK", { status: 200 });
+  });

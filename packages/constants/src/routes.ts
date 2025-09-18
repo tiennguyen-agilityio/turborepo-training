@@ -13,6 +13,6 @@ export const ROUTES = {
 export const MOCKAPI_URL = ENV.API_URL;
 
 export const API_ROUTES = {
-  USERS: `${ENV.API_URL}/users/`,
-  LOCATIONS: `${ENV.API_URL}/locations/`,
+  USERS: `${ENV.API_URL}/users`,
+  LOCATIONS: `${ENV.API_URL}/locations`,
 };
