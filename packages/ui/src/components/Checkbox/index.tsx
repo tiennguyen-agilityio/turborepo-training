@@ -40,6 +40,7 @@ const Checkbox = ({
         <Label
           htmlFor={id}
           size="$3.5"
+          disabled={disabled}
           cursor={disabled ? "default" : "pointer"}
           {...labelProps}
         >
