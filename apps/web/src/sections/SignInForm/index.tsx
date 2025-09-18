@@ -8,7 +8,7 @@ import { YStack, XStack, Paragraph, H1, Form, TamaguiElement } from "tamagui";
 import { Effect } from "effect";
 
 // Types
-import { LoginFormData } from "@packages/types/auth";
+import { LoginFormData, SIGN_IN_STATUS } from "@packages/types/auth";
 
 // Constants
 import { SCHEMA } from "@packages/constants/validation";
@@ -66,7 +66,7 @@ const SignInForm = () => {
               : ERROR_MESSAGES.SIGN_IN_FAILED,
         });
 
-        if (attempt.status === "complete") {
+        if (attempt.status === SIGN_IN_STATUS.COMPLETE) {
           yield* Effect.tryPromise({
             try: () => setActive({ session: attempt.createdSessionId }),
             catch: () => "Set active failed",

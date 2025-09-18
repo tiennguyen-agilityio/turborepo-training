@@ -16,7 +16,7 @@ import {
 import { Effect } from "effect";
 
 // Types
-import { SignUpFormData } from "@packages/types/auth";
+import { SIGN_UP_STATUS, SignUpFormData } from "@packages/types/auth";
 
 // Constants
 import { SCHEMA } from "@packages/constants/validation";
@@ -82,7 +82,7 @@ const SignUpForm = () => {
               : ERROR_MESSAGES.SIGN_UP_FAILED,
         });
 
-        if (attempt.status === "missing_requirements") {
+        if (attempt.status === SIGN_UP_STATUS.MISSING_REQUIREMENTS) {
           yield* Effect.tryPromise({
             try: () =>
               signUp.prepareEmailAddressVerification({
@@ -98,7 +98,7 @@ const SignUpForm = () => {
             : ROUTES.SIGN_UP_VERIFY;
 
           yield* Effect.sync(() => router.push(url || "/"));
-        } else if (attempt.status === "complete") {
+        } else if (attempt.status === SIGN_UP_STATUS.COMPLETE) {
           yield* Effect.tryPromise({
             try: () => setActive({ session: attempt.createdSessionId }),
             catch: () => "Set active failed",

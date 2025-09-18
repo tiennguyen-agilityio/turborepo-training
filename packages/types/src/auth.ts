@@ -13,6 +13,16 @@ export interface SignUpFormData {
   year?: number;
 }
 
+export enum SIGN_UP_STATUS {
+  MISSING_REQUIREMENTS = "missing_requirements",
+  COMPLETE = "complete",
+}
+
+export enum SIGN_IN_STATUS {
+  NEEDS_IDENTIFIER = "needs_identifier",
+  COMPLETE = "complete",
+}
+
 export interface VerifyFormData {
   code: string;
 }

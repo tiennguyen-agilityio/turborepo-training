@@ -8,7 +8,7 @@ import { YStack, XStack, Paragraph, H1, Form } from "tamagui";
 import { Effect } from "effect";
 
 // Types
-import { VerifyFormData } from "@packages/types/auth";
+import { SIGN_UP_STATUS, VerifyFormData } from "@packages/types/auth";
 
 // Constants
 import { SCHEMA } from "@packages/constants/validation";
@@ -52,7 +52,7 @@ const VerifyForm = () => {
             : ERROR_MESSAGES.VERIFICATION_INCOMPLETE,
       });
 
-      if (attempt.status === "complete") {
+      if (attempt.status === SIGN_UP_STATUS.COMPLETE) {
         yield* Effect.tryPromise({
           try: () => setActive({ session: attempt.createdSessionId }),
           catch: () => "Set active failed",
