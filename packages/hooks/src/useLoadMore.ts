@@ -5,7 +5,7 @@ import { PAGE_SIZE } from "@packages/constants/common";
 import { QueryParams, Response } from "@packages/types/api";
 
 type UseLoadMoreOptions<T> = {
-  fetcher: (params: QueryParams) => Effect.Effect<Response<T>, never, never>;
+  fetcher: (params: QueryParams) => Effect.Effect<Response<T[]>, never, never>;
   limit?: number;
 };
 
@@ -33,10 +33,10 @@ export const useLoadMore = <T>({
       setError(error);
       setHasMore(false);
     } else {
-      if (newData.length > 0) {
+      if (newData && newData.length > 0) {
         setData((prev) => [...prev, ...newData]);
       }
-      setHasMore(newData.length === limit);
+      setHasMore(Boolean(newData && newData.length === limit));
       setPage((prev) => prev + 1);
     }
 

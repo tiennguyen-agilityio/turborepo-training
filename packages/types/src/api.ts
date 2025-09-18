@@ -4,7 +4,7 @@ export interface QueryParams {
 }
 
 export interface Response<T> {
-  data: T[];
+  data?: T;
   error?: string;
   message?: string;
 }

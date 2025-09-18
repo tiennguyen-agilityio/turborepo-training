@@ -42,7 +42,7 @@ const VerifyForm = () => {
     setActive: NonNullable<ReturnType<typeof useSignUp>["setActive"]>,
     router: ReturnType<typeof useRouter>,
     redirectUrl: string
-  ) =>
+  ): Effect.Effect<void, string, never> =>
     Effect.gen(function* () {
       const attempt = yield* Effect.tryPromise({
         try: () => signUp.attemptEmailAddressVerification({ code }),

@@ -64,7 +64,7 @@ const SignUpForm = () => {
       setActive: NonNullable<ReturnType<typeof useSignUp>["setActive"]>,
       router: ReturnType<typeof useRouter>,
       redirectUrl?: string
-    ) =>
+    ): Effect.Effect<void, string, never> =>
       Effect.gen(function* () {
         const { firstName, lastName, email, password } = data;
 
