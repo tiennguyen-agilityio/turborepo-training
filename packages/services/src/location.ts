@@ -11,7 +11,7 @@ import { API_ROUTES } from "@packages/constants/routes";
 export const fetchLocations = ({
   page = 1,
   limit = PAGE_SIZE,
-}: QueryParams): Effect.Effect<Response<LocationItem>, never, never> => {
+}: QueryParams): Effect.Effect<Response<LocationItem[]>, never, never> => {
   return Effect.tryPromise({
     try: () =>
       fetch(`${API_ROUTES.LOCATIONS}?page=${page}&limit=${limit}`, {

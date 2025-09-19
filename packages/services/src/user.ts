@@ -13,7 +13,14 @@ export interface UserJSON extends ClerkUserJSON {
   userId?: string;
 }
 
-export const fetchUserById = (userId: string) =>
+interface UserReponse {
+  data?: User;
+  error?: Error;
+}
+
+export const fetchUserById = (
+  userId: string
+): Effect.Effect<UserReponse, never, never> =>
   Effect.tryPromise({
     try: () =>
       fetch(`${API_ROUTES.USERS}?userId=${userId}`, {
@@ -37,12 +44,14 @@ export const fetchUserById = (userId: string) =>
           })
     ),
     Effect.matchEffect({
-      onFailure: (error) => Effect.succeed({ data: null, error }),
+      onFailure: (error) => Effect.succeed({ error }),
       onSuccess: (data) => Effect.succeed({ data: data[0] }),
     })
   );
 
-export const createUser = (data: UserJSON) =>
+export const createUser = (
+  data: UserJSON
+): Effect.Effect<UserReponse, never, never> =>
   Effect.tryPromise({
     try: () =>
       fetch(API_ROUTES.USERS, {
@@ -67,12 +76,15 @@ export const createUser = (data: UserJSON) =>
           })
     ),
     Effect.match({
-      onFailure: (error) => ({ data: null, error: error.message }),
+      onFailure: (error) => ({ error }),
       onSuccess: (data) => ({ data }),
     })
   );
 
-export const updateUser = (userId: string, data: UserJSON) =>
+export const updateUser = (
+  userId: string,
+  data: UserJSON
+): Effect.Effect<UserReponse, never, never> =>
   Effect.tryPromise({
     try: () =>
       fetch(`${API_ROUTES.USERS}/${userId}`, {
@@ -97,12 +109,14 @@ export const updateUser = (userId: string, data: UserJSON) =>
           })
     ),
     Effect.match({
-      onFailure: (error) => ({ data: null, error: error.message }),
+      onFailure: (error) => ({ error }),
       onSuccess: (data) => ({ data }),
     })
   );
 
-export const deleteUser = (userId: string) =>
+export const deleteUser = (
+  userId: string
+): Effect.Effect<{ message: string }, never, never> =>
   Effect.tryPromise({
     try: () =>
       fetch(`${API_ROUTES.USERS}/${userId}`, {
