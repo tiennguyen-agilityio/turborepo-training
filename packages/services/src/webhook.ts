@@ -9,19 +9,26 @@ import {
   updateUser,
   UserJSON,
 } from "./user";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
+
+enum EVENT_TYPES {
+  UserCreated = "user.created",
+  UserUpdated = "user.updated",
+  UserDeleted = "user.deleted",
+}
 
 const handleEvent = (event: WebhookEvent) => {
   const { type, data } = event;
 
   switch (type) {
-    case "user.created":
+    case EVENT_TYPES.UserCreated:
       return Effect.gen(function* () {
         yield* createUser({
           userId: data.id,
           ...data,
         } as UserJSON);
       });
-    case "user.updated": {
+    case EVENT_TYPES.UserUpdated: {
       return Effect.gen(function* () {
         const { data: user } = yield* fetchUserById(data.id);
         if (user?.id) {
@@ -30,7 +37,7 @@ const handleEvent = (event: WebhookEvent) => {
       });
     }
 
-    case "user.deleted":
+    case EVENT_TYPES.UserDeleted:
       return Effect.gen(function* () {
         if (data.id) {
           const { data: user } = yield* fetchUserById(data.id);
@@ -49,13 +56,15 @@ export const webhookHandler = (req: Request) =>
   Effect.gen(function* () {
     const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
     if (!WEBHOOK_SECRET) {
-      console.error("❌ Missing Clerk Webhook Secret in .env.local");
-      return new Response("Server Misconfiguration", { status: 500 });
+      return new Response(ERROR_MESSAGES.CLERK_WEBHOOK_SECRET_FAILED, {
+        status: 500,
+      });
     }
 
     const body = yield* Effect.tryPromise({
       try: () => req.text(),
-      catch: (error) => new Error(`Failed to read request body: ${error}`),
+      catch: (error) =>
+        new Error(`${ERROR_MESSAGES.READ_REQUEST_FAILED}: ${error}`),
     });
 
     const svixId = req.headers.get("svix-id");
@@ -63,7 +72,7 @@ export const webhookHandler = (req: Request) =>
     const svixSignature = req.headers.get("svix-signature");
 
     if (!svixId || !svixTimestamp || !svixSignature) {
-      return new Response("Missing Svix headers", { status: 400 });
+      return new Response(ERROR_MESSAGES.SVIX_HEADER_INVALID, { status: 400 });
     }
 
     const wh = new Webhook(WEBHOOK_SECRET);
@@ -75,10 +84,13 @@ export const webhookHandler = (req: Request) =>
           "svix-timestamp": svixTimestamp,
           "svix-signature": svixSignature,
         }) as WebhookEvent,
-      catch: (error) => new Error(`Webhook verification failed: ${error}`),
+      catch: (error) =>
+        new Error(`${ERROR_MESSAGES.SVIX_VERIFY_FAILED}: ${error}`),
     });
 
     yield* handleEvent(event);
 
-    return new Response("OK", { status: 200 });
+    return new Response(SUCCESS_MESSAGES.SUBMIT_WEBHOOK_SUCCESS, {
+      status: 200,
+    });
   });

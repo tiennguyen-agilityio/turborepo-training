@@ -1,9 +1,12 @@
-import { API_ROUTES } from "@packages/constants/routes";
 import {
   User as ClerkUser,
   UserJSON as ClerkUserJSON,
 } from "@clerk/nextjs/server";
 import { Effect } from "effect";
+
+// Constants
+import { API_ROUTES } from "@packages/constants/routes";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@packages/constants/messages";
 
 export interface User extends ClerkUser {
   userId?: string;
@@ -30,17 +33,17 @@ export const fetchUserById = (
     catch: (error) =>
       error instanceof Error
         ? error
-        : new Error("Failed to fetch the user by id."),
+        : new Error(ERROR_MESSAGES.FETCH_USER_BY_ID_FAILED),
   }).pipe(
     Effect.flatMap((res) =>
       !res.ok
-        ? Effect.fail(new Error("Failed to fetch the user by id."))
+        ? Effect.fail(new Error(ERROR_MESSAGES.FETCH_USER_BY_ID_FAILED))
         : Effect.tryPromise({
             try: () => res.json() as Promise<User[]>,
             catch: (error) =>
               error instanceof Error
                 ? error
-                : new Error("Failed to parse user JSON."),
+                : new Error(ERROR_MESSAGES.JSON_INVALID_RESPONSE),
           })
     ),
     Effect.matchEffect({
@@ -62,17 +65,19 @@ export const createUser = (
         body: JSON.stringify(data),
       }),
     catch: (error) =>
-      error instanceof Error ? error : new Error("Failed to create user."),
+      error instanceof Error
+        ? error
+        : new Error(ERROR_MESSAGES.CREATE_USER_FAILED),
   }).pipe(
     Effect.flatMap((res) =>
       !res.ok
-        ? Effect.fail(new Error("Failed to create user."))
+        ? Effect.fail(new Error(ERROR_MESSAGES.CREATE_USER_FAILED))
         : Effect.tryPromise({
             try: () => res.json() as Promise<User>,
             catch: (error) =>
               error instanceof Error
                 ? error
-                : new Error("Failed to parse user JSON."),
+                : new Error(ERROR_MESSAGES.JSON_INVALID_RESPONSE),
           })
     ),
     Effect.match({
@@ -95,17 +100,19 @@ export const updateUser = (
         body: JSON.stringify(data),
       }),
     catch: (error) =>
-      error instanceof Error ? error : new Error("Failed to update user."),
+      error instanceof Error
+        ? error
+        : new Error(ERROR_MESSAGES.UPDATE_USER_FAILED),
   }).pipe(
     Effect.flatMap((res) =>
       !res.ok
-        ? Effect.fail(new Error("Failed to update user."))
+        ? Effect.fail(new Error(ERROR_MESSAGES.UPDATE_USER_FAILED))
         : Effect.tryPromise({
             try: () => res.json() as Promise<User>,
             catch: (error) =>
               error instanceof Error
                 ? error
-                : new Error("Failed to parse user JSON."),
+                : new Error(ERROR_MESSAGES.JSON_INVALID_RESPONSE),
           })
     ),
     Effect.match({
@@ -124,21 +131,24 @@ export const deleteUser = (
         headers: { "Content-Type": "application/json" },
       }),
     catch: (error) =>
-      error instanceof Error ? error : new Error("Failed to delete the user."),
+      error instanceof Error
+        ? error
+        : new Error(ERROR_MESSAGES.DELETE_USER_FAILED),
   }).pipe(
     Effect.flatMap((res) =>
       !res.ok
-        ? Effect.fail(new Error("Failed to delete user."))
+        ? Effect.fail(new Error(ERROR_MESSAGES.DELETE_USER_FAILED))
         : Effect.tryPromise({
             try: () => res.json(),
             catch: (error) =>
               error instanceof Error
                 ? error
-                : new Error("Failed to parse user JSON."),
+                : new Error(ERROR_MESSAGES.JSON_INVALID_RESPONSE),
           })
     ),
     Effect.matchEffect({
       onFailure: (error) => Effect.succeed({ message: error.message }),
-      onSuccess: () => Effect.succeed({ message: "Deleted User Success." }),
+      onSuccess: () =>
+        Effect.succeed({ message: SUCCESS_MESSAGES.DELETE_USER_SUCCESS }),
     })
   );
