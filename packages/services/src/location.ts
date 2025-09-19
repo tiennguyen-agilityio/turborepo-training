@@ -7,6 +7,7 @@ import { LocationItem } from "@packages/types/location";
 // Constants
 import { PAGE_SIZE } from "@packages/constants/common";
 import { API_ROUTES } from "@packages/constants/routes";
+import { ERROR_MESSAGES } from "@packages/constants/messages";
 
 export const fetchLocations = ({
   page = 1,
@@ -19,14 +20,14 @@ export const fetchLocations = ({
         headers: { "Content-Type": "application/json" },
       }),
     catch: (err) =>
-      err instanceof Error ? err.message : "Failed to fetch the Locations.",
+      err instanceof Error ? err.message : ERROR_MESSAGES.FETCH_LOCATION_FAILED,
   }).pipe(
     Effect.flatMap((res) =>
       !res.ok
-        ? Effect.fail("Failed to fetch the Locations.")
+        ? Effect.fail(ERROR_MESSAGES.FETCH_LOCATION_FAILED)
         : Effect.tryPromise({
             try: () => res.json() as Promise<LocationItem[]>,
-            catch: () => "Invalid JSON response.",
+            catch: () => ERROR_MESSAGES.JSON_INVALID_RESPONSE,
           })
     ),
     Effect.matchEffect({
