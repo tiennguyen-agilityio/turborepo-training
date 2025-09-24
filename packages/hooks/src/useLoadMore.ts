@@ -5,7 +5,7 @@ import { PAGE_SIZE } from "@packages/constants/common";
 import { QueryParams, Response } from "@packages/types/api";
 
 type UseLoadMoreOptions<T> = {
-  fetcher: (params: QueryParams) => Effect.Effect<Response<T[]>, never, never>;
+  fetcher: (params: QueryParams) => Effect.Effect<Response<T[]>, Error, never>;
   limit?: number;
 };
 
@@ -25,22 +25,22 @@ export const useLoadMore = <T>({
     setIsLoading(true);
     setError("");
 
-    const { data: newData, error } = await Effect.runPromise(
-      fetcher({ page, limit })
-    );
-
-    if (error) {
-      setError(error);
-      setHasMore(false);
-    } else {
+    try {
+      const { data: newData } = await Effect.runPromise(
+        fetcher({ page, limit })
+      );
       if (newData && newData.length > 0) {
         setData((prev) => [...prev, ...newData]);
       }
       setHasMore(Boolean(newData && newData.length === limit));
       setPage((prev) => prev + 1);
+      setIsLoading(false);
+    } catch (err) {
+      const message = (err as Error).message;
+      setError(message);
+      setHasMore(false);
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   }, [fetcher, page, limit, isLoading, hasMore]);
 
   useEffect(() => {

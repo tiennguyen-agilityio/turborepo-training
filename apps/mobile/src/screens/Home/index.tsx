@@ -29,7 +29,7 @@ const HomeScreen = () => {
     data: locations,
     onLoadMore,
     isLoading,
-    error = "",
+    error,
   } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: PAGE_SIZE });
 
   const getKeyExtractorLocationTile = useCallback(
@@ -143,7 +143,8 @@ const HomeScreen = () => {
   }, [isLoading, error]);
 
   const renderListEmptyComponent = useCallback(
-    () => (isLoading ? null : <Text>Locations Empty</Text>),
+    () =>
+      isLoading ? null : <Text paddingHorizontal="$5">Locations Empty</Text>,
     [isLoading]
   );
 

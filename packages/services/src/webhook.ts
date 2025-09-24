@@ -31,6 +31,7 @@ const handleEvent = (event: WebhookEvent) => {
     case EVENT_TYPES.UserUpdated: {
       return Effect.gen(function* () {
         const { data: user } = yield* fetchUserById(data.id);
+
         if (user?.id) {
           yield* updateUser(user.id, data);
         }
@@ -41,12 +42,12 @@ const handleEvent = (event: WebhookEvent) => {
       return Effect.gen(function* () {
         if (data.id) {
           const { data: user } = yield* fetchUserById(data.id);
+
           if (user?.id) {
             yield* deleteUser(user.id);
           }
         }
       });
-
     default:
       return Effect.succeed(undefined);
   }
