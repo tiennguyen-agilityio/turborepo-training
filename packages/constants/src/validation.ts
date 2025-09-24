@@ -1,56 +1,64 @@
+import { Schema } from "effect";
 import { REGEX } from "./common";
 import { ERROR_MESSAGES } from "./messages";
 
 export const SCHEMA = {
-  name: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Name"),
-  },
-  email: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Email"),
-    pattern: {
-      value: REGEX.EMAIL,
-      message: ERROR_MESSAGES.FIELD_INVALID("Email"),
-    },
-  },
-  password: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Password"),
-    minLength: { value: 8, message: ERROR_MESSAGES.PASSWORD_NOT_LONG },
-    validate: (value: string) => {
-      switch (true) {
-        case !REGEX.CHECK_NUMBER.test(value):
-          return ERROR_MESSAGES.PASSWORD_NOT_HAVE_NUMBER;
-        case !REGEX.CHECK_UPPERCASE.test(value):
-          return ERROR_MESSAGES.PASSWORD_NOT_HAVE_UPPERCASE;
-        case !REGEX.CHECK_SYMBOL.test(value):
-          return ERROR_MESSAGES.PASSWORD_NOT_HAVE_SYMBOL;
-      }
-    },
-  },
-  confirmPassword: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Confirm password"),
-  },
-  firstName: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("First Name"),
-  },
-  lastName: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Last Name"),
-  },
-  userName: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("User Name"),
-    validate: (value: string) => {
-      switch (true) {
-        case !REGEX.USERNAME.test(value):
-          return ERROR_MESSAGES.USERNAME_INVALID;
-      }
-    },
-  },
-  code: {
-    required: ERROR_MESSAGES.FIELD_REQUIRED("Code"),
-    validate: (value: string) => {
-      switch (true) {
-        case !REGEX.CHECK_NUMBER.test(value):
-          return ERROR_MESSAGES.CODE_INVALID;
-      }
-    },
-  },
+  email: Schema.String.pipe(
+    Schema.nonEmptyString({
+      message: () => ERROR_MESSAGES.FIELD_REQUIRED("Email"),
+    }),
+    Schema.pattern(REGEX.EMAIL, {
+      message: () => ERROR_MESSAGES.FIELD_INVALID("Email"),
+    })
+  ),
+  password: Schema.String.pipe(
+    Schema.nonEmptyString({
+      message: () => ERROR_MESSAGES.FIELD_REQUIRED("Password"),
+    }),
+    Schema.minLength(8, { message: () => ERROR_MESSAGES.PASSWORD_NOT_LONG }),
+    Schema.pattern(REGEX.CHECK_NUMBER, {
+      message: () => ERROR_MESSAGES.PASSWORD_NOT_HAVE_NUMBER,
+    }),
+    Schema.pattern(REGEX.CHECK_UPPERCASE, {
+      message: () => ERROR_MESSAGES.PASSWORD_NOT_HAVE_UPPERCASE,
+    }),
+    Schema.pattern(REGEX.CHECK_SYMBOL, {
+      message: () => ERROR_MESSAGES.PASSWORD_NOT_HAVE_SYMBOL,
+    })
+  ),
+  firstName: Schema.String.pipe(
+    Schema.nonEmptyString({
+      message: () => ERROR_MESSAGES.FIELD_REQUIRED("First Name"),
+    })
+  ),
+  lastName: Schema.String.pipe(
+    Schema.nonEmptyString({
+      message: () => ERROR_MESSAGES.FIELD_REQUIRED("Last Name"),
+    })
+  ),
+  code: Schema.String.pipe(
+    Schema.nonEmptyString({
+      message: () => ERROR_MESSAGES.FIELD_REQUIRED("Code"),
+    }),
+    Schema.length(6, { message: () => ERROR_MESSAGES.CODE_NOT_LONG }),
+    Schema.pattern(REGEX.CHECK_NUMBER, {
+      message: () => ERROR_MESSAGES.CODE_INVALID,
+    })
+  ),
 };
+
+export const SCHEMA_SIGN_IN = Schema.Struct({
+  email: SCHEMA.email,
+  password: SCHEMA.password,
+});
+
+export const SCHEMA_SIGN_UP = Schema.Struct({
+  email: SCHEMA.email,
+  password: SCHEMA.password,
+  firstName: SCHEMA.firstName,
+  lastName: SCHEMA.lastName,
+});
+
+export const SCHEMA_VERIFY_CODE = Schema.Struct({
+  code: SCHEMA.code,
+});

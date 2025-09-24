@@ -14,12 +14,13 @@ import {
   Label,
 } from "tamagui";
 import { Effect } from "effect";
+import { effectTsResolver } from "@hookform/resolvers/effect-ts";
 
 // Types
-import { SIGN_UP_STATUS, SignUpFormData } from "@packages/types/auth";
+import { SIGN_UP_STATUS } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@packages/constants/validation";
+import { SCHEMA_SIGN_UP } from "@packages/constants/validation";
 import { ERROR_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 import { DAYS, MONTHS, YEARS } from "@packages/constants/common";
@@ -35,6 +36,8 @@ import Divider from "@packages/ui/components/Divider";
 import Input from "@packages/ui/components/Input";
 import Select from "@packages/ui/components/Select";
 
+type SignUpFormData = typeof SCHEMA_SIGN_UP.Type;
+
 const SignUpForm = () => {
   const { redirectUrl } = useCleanClerkUrl();
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -48,6 +51,7 @@ const SignUpForm = () => {
       password: "",
     },
     mode: "onBlur",
+    resolver: effectTsResolver(SCHEMA_SIGN_UP),
   });
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -162,7 +166,6 @@ const SignUpForm = () => {
               <Controller
                 name="firstName"
                 control={control}
-                rules={SCHEMA.firstName}
                 render={({
                   field: { value, onChange, ...props },
                   fieldState: { error },
@@ -184,7 +187,6 @@ const SignUpForm = () => {
               <Controller
                 name="lastName"
                 control={control}
-                rules={SCHEMA.lastName}
                 render={({
                   field: { value, onChange, ...props },
                   fieldState: { error },
@@ -206,7 +208,6 @@ const SignUpForm = () => {
           <Controller
             name="email"
             control={control}
-            rules={SCHEMA.email}
             render={({
               field: { value, onChange, ...props },
               fieldState: { error },
@@ -226,7 +227,6 @@ const SignUpForm = () => {
           <Controller
             name="password"
             control={control}
-            rules={SCHEMA.password}
             render={({
               field: { value, onChange, ...props },
               fieldState: { error },
@@ -256,13 +256,21 @@ const SignUpForm = () => {
 
             <XStack gap="$5">
               <YStack flexGrow={1} maxWidth="$42">
-                <Select items={DAYS} placeholder="Day" />
+                <Select items={DAYS} placeholder="Day" disabled={isLoading} />
               </YStack>
               <YStack flexGrow={1} maxWidth="$42">
-                <Select items={MONTHS} placeholder="Month" />
+                <Select
+                  items={MONTHS}
+                  placeholder="Month"
+                  disabled={isLoading}
+                />
               </YStack>
               <YStack flexGrow={1} maxWidth="$42">
-                <Select items={YEARS} placeholder="Years" />
+                <Select
+                  items={YEARS}
+                  placeholder="Years"
+                  disabled={isLoading}
+                />
               </YStack>
             </XStack>
           </YStack>

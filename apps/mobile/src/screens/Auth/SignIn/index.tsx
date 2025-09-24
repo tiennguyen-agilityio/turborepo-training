@@ -3,12 +3,10 @@ import { Form, H1, Paragraph, TamaguiElement, XStack, YStack } from "tamagui";
 import { Controller, useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-
-// Types
-import { LoginFormData } from "@packages/types/auth";
+import { effectTsResolver } from "@hookform/resolvers/effect-ts";
 
 // Constants
-import { SCHEMA } from "@packages/constants/validation";
+import { SCHEMA_SIGN_IN } from "@packages/constants/validation";
 import { useAuth } from "@packages/hooks/useAuth";
 
 // Hooks | Stores
@@ -18,6 +16,8 @@ import { useAuthStore } from "@packages/stores/auth";
 import Input from "@packages/ui/components/Input";
 import Checkbox from "@packages/ui/components/Checkbox";
 import Button from "@packages/ui/components/Button";
+
+type LoginFormData = typeof SCHEMA_SIGN_IN.Type;
 
 const SignInScreen = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -34,6 +34,7 @@ const SignInScreen = () => {
       email: "",
       password: "",
     },
+    resolver: effectTsResolver(SCHEMA_SIGN_IN),
     mode: "onBlur",
   });
 
@@ -81,7 +82,6 @@ const SignInScreen = () => {
             <Controller
               name="email"
               control={control}
-              rules={SCHEMA.email}
               render={({
                 field: { value, onChange, ...props },
                 fieldState: { error },
@@ -102,7 +102,6 @@ const SignInScreen = () => {
             <Controller
               name="password"
               control={control}
-              rules={SCHEMA.password}
               render={({
                 field: { value, onChange, ...props },
                 fieldState: { error },
