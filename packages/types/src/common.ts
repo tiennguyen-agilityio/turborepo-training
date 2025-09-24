@@ -1,21 +1,21 @@
 export interface Experience {
-  title: string;
-  label?: string;
+  readonly title: string;
+  readonly label: string;
 }
 
 export interface Statistics {
-  title: string;
-  value: number;
+  readonly title: string;
+  readonly value: number;
 }
 
 export interface LinkItem {
-  text: string;
-  href: string;
+  readonly text: string;
+  readonly href: string;
 }
 
 export interface NavFooter {
-  label: string;
-  links: LinkItem[];
+  readonly label: string;
+  readonly links: LinkItem[];
 }
 
 export interface Filter {

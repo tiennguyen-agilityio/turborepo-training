@@ -31,7 +31,7 @@ const Slider = ({
       setValues(value);
       onValueChange(value);
     },
-    [onValueChange],
+    [onValueChange]
   );
 
   return (
@@ -68,6 +68,13 @@ const Slider = ({
           borderColor="$background"
           index={0}
           backgroundColor="$info"
+          hoverStyle={{
+            backgroundColor: "$info",
+            opacity: 0.85,
+          }}
+          focusStyle={{
+            outlineColor: "transparent",
+          }}
         />
         <TSlider.Thumb
           circular
@@ -76,6 +83,13 @@ const Slider = ({
           borderColor="$background"
           index={1}
           backgroundColor="$info"
+          hoverStyle={{
+            backgroundColor: "$info",
+            opacity: 0.85,
+          }}
+          focusStyle={{
+            outlineColor: "transparent",
+          }}
         />
       </TSlider>
 

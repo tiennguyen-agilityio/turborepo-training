@@ -1,19 +1,19 @@
 export interface LocationItem {
-  id: string;
-  title: string;
-  image: string;
-  name: string;
-  fee: number;
-  time: number;
-  address: string;
-  rating: number;
-  reviews: number;
+  readonly id: string;
+  readonly title: string;
+  readonly image: string;
+  readonly name: string;
+  readonly fee: number;
+  readonly time: number;
+  readonly address: string;
+  readonly rating: number;
+  readonly reviews: number;
 }
 
 export interface LocationTileItem {
-  id?: string;
-  title: string;
-  imageUrl: string;
-  slug: string;
-  count: number;
+  readonly id: string;
+  readonly title: string;
+  readonly imageUrl: string;
+  readonly slug: string;
+  readonly count: number;
 }
