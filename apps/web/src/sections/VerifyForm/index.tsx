@@ -55,7 +55,7 @@ const VerifyForm = () => {
       if (attempt.status === SIGN_UP_STATUS.COMPLETE) {
         yield* Effect.tryPromise({
           try: () => setActive({ session: attempt.createdSessionId }),
-          catch: () => "Set active failed",
+          catch: () => ERROR_MESSAGES.SET_ACTIVE_FAILED,
         });
         router.replace(redirectUrl);
       } else {

@@ -69,7 +69,7 @@ const SignInForm = () => {
         if (attempt.status === SIGN_IN_STATUS.COMPLETE) {
           yield* Effect.tryPromise({
             try: () => setActive({ session: attempt.createdSessionId }),
-            catch: () => "Set active failed",
+            catch: () => ERROR_MESSAGES.SET_ACTIVE_FAILED,
           });
           yield* Effect.sync(() => router.push(redirectUrl || "/"));
         }

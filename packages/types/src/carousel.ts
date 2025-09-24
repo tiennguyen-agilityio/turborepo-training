@@ -1,7 +1,7 @@
 export interface CarouselItem {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly image: string;
+  readonly alt: string;
 }

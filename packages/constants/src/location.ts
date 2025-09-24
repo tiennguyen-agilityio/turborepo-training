@@ -113,30 +113,35 @@ export const LOCATIONS = [
 
 export const LOCATION_TILES = [
   {
+    id: "01",
     title: "Nairobi",
     count: 23,
     slug: "nairobi",
     imageUrl: "https://i.ibb.co/hxbHQJf8/Rectangle.png",
   },
   {
+    id: "02",
     title: "Kisumu",
     count: 23,
     slug: "kisumu",
     imageUrl: "https://i.ibb.co/B7QhHS9/Rectangle-Copy-4.png",
   },
   {
+    id: "03",
     title: "Bungee Jumping",
     count: 23,
     slug: "bungee-jumping",
     imageUrl: "https://i.ibb.co/M56kRhGM/Rectangle-Copy-3.png",
   },
   {
+    id: "04",
     title: "Coffee Tasting",
     count: 23,
     slug: "coffee-tasting",
     imageUrl: "https://i.ibb.co/817d0wL/Rectangle-Copy-5.png",
   },
   {
+    id: "05",
     title: "Culture Walk",
     count: 23,
     slug: "culture-walk",
