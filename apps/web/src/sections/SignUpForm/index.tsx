@@ -88,7 +88,7 @@ const SignUpForm = () => {
               signUp.prepareEmailAddressVerification({
                 strategy: "email_code",
               }),
-            catch: () => "Verification prepare failed",
+            catch: () => ERROR_MESSAGES.EMAIL_VERIFY_FAILED,
           });
 
           const url = redirectUrl
@@ -101,7 +101,7 @@ const SignUpForm = () => {
         } else if (attempt.status === SIGN_UP_STATUS.COMPLETE) {
           yield* Effect.tryPromise({
             try: () => setActive({ session: attempt.createdSessionId }),
-            catch: () => "Set active failed",
+            catch: () => ERROR_MESSAGES.SET_ACTIVE_FAILED,
           });
           yield* Effect.sync(() => router.push(redirectUrl || "/"));
         }

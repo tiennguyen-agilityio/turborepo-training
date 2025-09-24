@@ -25,6 +25,8 @@ export const ERROR_MESSAGES = {
   READ_REQUEST_FAILED: "Failed to read request",
   SVIX_HEADER_INVALID: "Invalid Svix headers",
   SVIX_VERIFY_FAILED: "Webhook verification failed",
+  EMAIL_VERIFY_FAILED: "Verification prepare failed",
+  SET_ACTIVE_FAILED: "Set active failed",
 };
 
 export const SUCCESS_MESSAGES = {
