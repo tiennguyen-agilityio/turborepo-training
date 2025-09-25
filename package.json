@@ -12,6 +12,7 @@
     "dev:mobile": "turbo run dev --filter=mobile",
     "build:android": "turbo run build:android --filter=mobile",
     "build:android-debug": "turbo run build:android-debug --filter=mobile",
+    "test": "pnpm turbo run test --filter=@packages/services",
     "clean": "turbo run clean && rm -rf node_modules && rm -rf ./apps/*/node_modules && pnpm store prune",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check --cache-dir=.turbo/typecheck",
@@ -29,9 +30,11 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@vitest/ui": "^3.2.4",
     "babel-plugin-module-resolver": "^5.0.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
-    "turbo": "^2.5.5"
+    "turbo": "^2.5.5",
+    "vitest": "^3.2.4"
   }
 }

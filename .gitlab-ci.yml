@@ -64,7 +64,7 @@ build_web:
     paths:
       - .vercel/output
       - .vercel/project.json
-    expire_in: 3 hours
+    expire_in: 1 week
 
 deploy_web:
   stage: deploy_web
@@ -123,4 +123,4 @@ build_mobile:
   artifacts:
     paths:
       - apps/mobile/android/app/build/outputs/apk/release/app-release.apk
-    expire_in: 3 hours
+    expire_in: 1 week
