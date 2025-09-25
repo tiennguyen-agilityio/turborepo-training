@@ -6,18 +6,21 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { YStack, XStack, Paragraph, H1, Form } from "tamagui";
 import { Effect } from "effect";
+import { effectTsResolver } from "@hookform/resolvers/effect-ts";
 
 // Types
-import { SIGN_UP_STATUS, VerifyFormData } from "@packages/types/auth";
+import { SIGN_UP_STATUS } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@packages/constants/validation";
+import { SCHEMA_VERIFY_CODE } from "@packages/constants/validation";
 import { ERROR_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 
 // Components
 import Button from "@packages/ui/components/Button";
 import Input from "@packages/ui/components/Input";
+
+type VerifyFormData = typeof SCHEMA_VERIFY_CODE.Type;
 
 const VerifyForm = () => {
   const { signUp, isLoaded, setActive } = useSignUp();
@@ -31,6 +34,7 @@ const VerifyForm = () => {
     defaultValues: {
       code: "",
     },
+    resolver: effectTsResolver(SCHEMA_VERIFY_CODE),
     mode: "onBlur",
   });
 
@@ -111,7 +115,6 @@ const VerifyForm = () => {
           <Controller
             name="code"
             control={control}
-            rules={SCHEMA.code}
             render={({
               field: { value, onChange, ...props },
               fieldState: { error },

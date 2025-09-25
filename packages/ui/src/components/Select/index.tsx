@@ -9,6 +9,7 @@ interface SelectProps {
   items: string[];
   placeholder?: string;
   defaultValue?: string;
+  disabled?: boolean;
   onValueChange?: (value: string) => void;
 }
 
@@ -17,6 +18,7 @@ const Select = ({
   placeholder = "Select an option",
   label = "",
   defaultValue = "",
+  disabled = false,
   onValueChange,
 }: SelectProps) => {
   const id = useId();
@@ -28,7 +30,7 @@ const Select = ({
       onValueChange?.(val);
       setValue(val);
     },
-    [onValueChange],
+    [onValueChange]
   );
 
   return (
@@ -51,6 +53,7 @@ const Select = ({
         onValueChange={handleValueChange}
       >
         <TSelect.Trigger
+          disabled={disabled}
           iconAfter={ChevronDown}
           borderColor="$border"
           paddingHorizontal="$2"

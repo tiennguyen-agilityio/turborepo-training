@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { YStack, XStack, Paragraph, H1, Form, TamaguiElement } from "tamagui";
 import { Effect } from "effect";
+import { effectTsResolver } from "@hookform/resolvers/effect-ts";
 
 // Types
-import { LoginFormData, SIGN_IN_STATUS } from "@packages/types/auth";
+import { SIGN_IN_STATUS } from "@packages/types/auth";
 
 // Constants
-import { SCHEMA } from "@packages/constants/validation";
+import { SCHEMA_SIGN_IN } from "@packages/constants/validation";
 import { ERROR_MESSAGES } from "@packages/constants/messages";
 import { ROUTES } from "@packages/constants/routes";
 
@@ -25,6 +26,8 @@ import Checkbox from "@packages/ui/components/Checkbox";
 import Divider from "@packages/ui/components/Divider";
 import Input from "@packages/ui/components/Input";
 
+type LoginFormData = typeof SCHEMA_SIGN_IN.Type;
+
 const SignInForm = () => {
   const { redirectUrl } = useCleanClerkUrl();
   const { isLoaded, signIn, setActive } = useSignIn();
@@ -35,6 +38,7 @@ const SignInForm = () => {
       email: "",
       password: "",
     },
+    resolver: effectTsResolver(SCHEMA_SIGN_IN),
     mode: "onBlur",
   });
 
@@ -128,7 +132,6 @@ const SignInForm = () => {
           <Controller
             name="email"
             control={control}
-            rules={SCHEMA.email}
             render={({
               field: { value, onChange, ...props },
               fieldState: { error },
@@ -149,7 +152,6 @@ const SignInForm = () => {
           <Controller
             name="password"
             control={control}
-            rules={SCHEMA.password}
             render={({
               field: { value, onChange, ...props },
               fieldState: { error },

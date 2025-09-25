@@ -13,6 +13,7 @@ export const ERROR_MESSAGES = {
   LOGIN_FAILED: "Email or password is incorrect!",
   USERNAME_INVALID: "Username can only contain letters, numbers and - or _.",
   CODE_INVALID: "Verification code must contain only numbers.",
+  CODE_NOT_LONG: "Verification code must be 6 characters long.",
   VERIFICATION_INCOMPLETE: "Verification incomplete. Try again.",
   SIGN_OUT_FAILED: "Logout failed. Something went wrong.",
   FETCH_LOCATION_FAILED: "Failed to fetch the Locations.",
