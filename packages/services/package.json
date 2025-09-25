@@ -9,6 +9,9 @@
     "./user": "./src/user.ts",
     "./webhook": "./src/webhook.ts"
   },
+  "scripts": {
+    "test": "vitest run"
+  },
   "dependencies": {
     "@clerk/nextjs": "^6.23.2",
     "@packages/constants": "workspace:*",
