@@ -1,0 +1,66 @@
+{
+  "$schema": "https://github.com/Tiennd0502/claude-turbo-workflow/plugins/turbo-workflow/schema/workflow.schema.json",
+  "version": 1,
+  "packageManager": "pnpm",
+  "git": {
+    "remote": "origin",
+    "baseBranch": "feature/turborepo",
+    "protected": ["feature/turborepo", "main", "develop"]
+  },
+  "tracker": {
+    "type": "trello",
+    "board": "https://trello.com/b/F3nfVK0a/turborepo-training",
+    "lists": {
+      "todo": "TODO",
+      "inProgress": "DOING",
+      "review": "REVIEW",
+      "done": "DONE"
+    }
+  },
+  "autofix": "lint-staged",
+  "specsDir": "docs/specs",
+  "apps": {
+    "web": {
+      "dir": "apps/web",
+      "runner": "Vitest",
+      "coverage": "pnpm exec vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text-summary",
+      "e2e": false,
+      "planChanges": [],
+      "security": ["src/middleware.ts", "next.config.ts", "src/app/api/**"],
+      "ui": [
+        "src/{app,components,sections,layouts}/**",
+        "public/**",
+        "tamagui.config.ts"
+      ],
+      "screenshot": {
+        "dir": "docs/images/{feature}",
+        "format": "png",
+        "devCommand": "pnpm --filter web dev",
+        "url": "http://localhost:3000"
+      }
+    },
+    "mobile": {
+      "dir": "apps/mobile",
+      "runner": "Jest",
+      "coverage": "pnpm run test --coverage --coverageReporters=json-summary --coverageReporters=text-summary",
+      "e2e": false,
+      "planChanges": [],
+      "security": [],
+      "ui": []
+    }
+  },
+  "shared": [
+    "packages/constants",
+    "packages/eslint-config",
+    "packages/hooks",
+    "packages/prettier-config",
+    "packages/services",
+    "packages/stores",
+    "packages/tamagui",
+    "packages/types",
+    "packages/typescript-config",
+    "packages/ui",
+    "packages/utils",
+    "pnpm-workspace.yaml"
+  ]
+}

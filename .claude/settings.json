@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-turbo-workflow": {
+      "source": {
+        "source": "github",
+        "repo": "Tiennd0502/claude-turbo-workflow"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "turbo-workflow@claude-turbo-workflow": true
+  }
+}
