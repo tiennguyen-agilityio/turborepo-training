@@ -61,7 +61,7 @@ const Header = ({ hasBorderBottom = false, ...props }: HeaderProps) => {
             paddingHorizontal="$6.5"
           >
             <BookmarkIcon />
-            Reservations
+            RESERVATIONS
           </Button>
 
           <Text color={textColor}>
